@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<cross_sections>
+  <library materials="U235" path="U235/U235.h5" type="neutron"/>
+  <library materials="U238" path="U238/U238.h5" type="neutron"/>
+  <library materials="H1" path="H1/H1.h5" type="neutron"/>
+  <library materials="H2" path="H2/H2.h5" type="neutron"/>
+  <library materials="H3" path="H3/H3.h5" type="neutron"/>
+  <library materials="C0" path="C12/C12.h5" type="neutron"/>
+  <library materials="Zr0" path="Zr0/Zr0.h5" type="neutron"/>
+  <library materials="Zr90" path="Zr90/Zr90.h5" type="neutron"/>
+  <library materials="Zr91" path="Zr91/Zr91.h5" type="neutron"/>
+  <library materials="Zr92" path="Zr92/Zr92.h5" type="neutron"/>
+  <library materials="Zr93" path="Zr93/Zr93.h5" type="neutron"/>
+  <library materials="Zr94" path="Zr94/Zr94.h5" type="neutron"/>
+  <library materials="Zr95" path="Zr95/Zr95.h5" type="neutron"/>
+  <library materials="Zr96" path="Zr96/Zr96.h5" type="neutron"/>
+  <library materials="c_para_H" path="c_para_H/c_para_H.h5" type="thermal"/>
+  <library materials="c_Graphite" path="c_Graphite/c_Graphite.h5" type="thermal"/>
+</cross_sections>
