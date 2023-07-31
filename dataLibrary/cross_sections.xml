@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <cross_sections>
+  <library materials="c_Al27" path="c_Al27/c_Al27.h5" type="thermal"/>
   <library materials="Al27" path="Al27/Al27.h5" type="neutron"/>
   <library materials="B10" path="B10/B10.h5" type="neutron"/>
   <library materials="B11" path="B11/B11.h5" type="neutron"/>

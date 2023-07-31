@@ -266,13 +266,13 @@ for suffix in ['300', '600', '900', '1200', '1500', '1800']:
 zr96.export_to_hdf5('./dataLibrary/Zr96/Zr96.h5')
 library.register_file('./dataLibrary/Zr96/Zr96.h5')
 
-# c_Graphite
+# c_al27
 
-c_Graphite = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Graphite/grph.00t')
-for suffix in ['00', '04', '08', '12', '16', '18', '20', '22', '24', '26']:
-    c_Graphite.add_temperature_from_ace('./dataLibrary/c_Graphite/grph.{}t'.format(suffix))
-c_Graphite.export_to_hdf5('./dataLibrary/c_Graphite/c_Graphite.h5')
-library.register_file('./dataLibrary/c_Graphite/c_Graphite.h5')
+c_al27 = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Al27/al27.12t')
+for suffix in ['10', '11', '12', '13', '14', '15']:
+    c_al27.add_temperature_from_ace('./dataLibrary/c_Al27/al27.{}t'.format(suffix))
+c_al27.export_to_hdf5('./dataLibrary/c_Al27/c_Al27.h5')
+library.register_file('./dataLibrary/c_Al27/c_Al27.h5')
 
 # c_Graphite
 
