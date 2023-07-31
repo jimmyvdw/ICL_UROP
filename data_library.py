@@ -274,6 +274,14 @@ for suffix in ['00', '04', '08', '12', '16', '18', '20', '22', '24', '26']:
 c_Graphite.export_to_hdf5('./dataLibrary/c_Graphite/c_Graphite.h5')
 library.register_file('./dataLibrary/c_Graphite/c_Graphite.h5')
 
+# c_Graphite
+
+c_Graphite = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Graphite/grph.00t')
+for suffix in ['00', '04', '08', '12', '16', '18', '20', '22', '24', '26']:
+    c_Graphite.add_temperature_from_ace('./dataLibrary/c_Graphite/grph.{}t'.format(suffix))
+c_Graphite.export_to_hdf5('./dataLibrary/c_Graphite/c_Graphite.h5')
+library.register_file('./dataLibrary/c_Graphite/c_Graphite.h5')
+
 # c_para_H
 
 c_para_H = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_para_H/hpara.10t')
