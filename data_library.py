@@ -32,17 +32,17 @@ import openmc
 # h3.export_to_hdf5('./dataLibrary/H3/H3.h5')
 # library.register_file('./dataLibrary/H3/H3.h5')
 
-# c12 = openmc.data.IncidentNeutron.from_ace('./dataLibrary/C12/6000ENDF7300.ace')
+# C0 = openmc.data.IncidentNeutron.from_ace('./dataLibrary/C0/6000ENDF7300.ace')
 # for suffix in ['300', '600', '900', '1200', '1500', '1800']:
-#     c12.add_temperature_from_ace('./dataLibrary/C12/6000ENDF7{}.ace'.format(suffix))
-# c12.export_to_hdf5('./dataLibrary/C12/C12.h5')
-# library.register_file('./dataLibrary/C12/C12.h5')
+#     C0.add_temperature_from_ace('./dataLibrary/C0/6000ENDF7{}.ace'.format(suffix))
+# C0.export_to_hdf5('./dataLibrary/C0/C0.h5')
+# library.register_file('./dataLibrary/C0/C0.h5')
 
 si14 = openmc.data.IncidentNeutron.from_ace('./dataLibrary/Si-nat/14000JNDL32300.ace')
 for suffix in ['300', '1200', '1500', '1800']:
     si14.add_temperature_from_ace('./dataLibrary/Si-nat/14000JNDL32{}.ace'.format(suffix))
 si14.export_to_hdf5('./dataLibrary/Si-nat/Si-nat.h5')
-# library.register_file('./dataLibrary/C12/C12.h5')
+# library.register_file('./dataLibrary/Si-nat/Si-nat.h5')
 
 # zr0 = openmc.data.IncidentNeutron.from_ace('./dataLibrary/Zr0/40000ENDF68300.ace')
 # for suffix in ['300', '600', '900', '1200', '1500', '1800']:
