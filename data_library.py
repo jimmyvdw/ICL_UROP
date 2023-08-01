@@ -274,6 +274,14 @@ for suffix in ['10', '11', '12', '13', '14', '15']:
 c_al27.export_to_hdf5('./dataLibrary/c_Al27/c_Al27.h5')
 library.register_file('./dataLibrary/c_Al27/c_Al27.h5')
 
+# c_Fe56
+
+c_Fe56 = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Fe56/fe56.12t')
+for suffix in ['10', '11', '12', '13', '14', '15']:
+    c_Fe56.add_temperature_from_ace('./dataLibrary/c_Fe56/fe56.{}t'.format(suffix))
+c_Fe56.export_to_hdf5('./dataLibrary/c_Fe56/c_Fe56.h5')
+library.register_file('./dataLibrary/c_Fe56/c_Fe56.h5')
+
 # c_Graphite
 
 c_Graphite = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Graphite/grph.00t')
