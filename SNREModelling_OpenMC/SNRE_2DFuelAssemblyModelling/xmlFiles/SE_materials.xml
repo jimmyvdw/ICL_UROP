@@ -16,13 +16,13 @@
     <nuclide name="B10" wo="9.17774793753663e-06"/>
     <nuclide name="B11" wo="4.0822252062463366e-05"/>
     <nuclide name="C0" wo="0.00073"/>
-    <nuclide name="Al0" wo="0.005"/>
+    <nuclide name="Al27" wo="0.005"/>
     <nuclide name="Si0" wo="0.00318"/>
     <nuclide name="P31" wo="0.00014"/>
     <nuclide name="S0" wo="0.00014"/>
     <nuclide name="Ti0" wo="0.009"/>
     <nuclide name="Cr0" wo="0.19"/>
-    <nuclide name="Mn0" wo="0.00318"/>
+    <nuclide name="Mn55" wo="0.00318"/>
     <nuclide name="Fe0" wo="0.17"/>
     <nuclide name="Ni0" wo="0.525"/>
     <nuclide name="Co59" wo="0.0091"/>
@@ -31,7 +31,6 @@
     <nuclide name="Mo0" wo="0.0305"/>
     <sab name="c_Graphite"/>
     <sab name="c_Al27"/>
-    <sab name="c_Fe56"/>
   </material>
   <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>
@@ -44,9 +43,6 @@
     <density units="g/cm3" value="3.365"/>
     <nuclide name="Zr0" wo="0.88375"/>
     <nuclide name="C0" wo="0.11625"/>
-    <nuclide name="Zr0" wo="0.88375"/>
-    <nuclide name="C0" wo="0.11625"/>
-    <sab name="c_Graphite"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="10" name="SE_supportSleeve" temperature="300">
@@ -58,5 +54,8 @@
   </material>
   <material id="11" name="SE_supportCoating" temperature="300">
     <density units="g/cm3" value="6.73"/>
+    <nuclide name="Zr0" wo="0.88375"/>
+    <nuclide name="C0" wo="0.11625"/>
+    <sab name="c_Graphite"/>
   </material>
 </materials>
