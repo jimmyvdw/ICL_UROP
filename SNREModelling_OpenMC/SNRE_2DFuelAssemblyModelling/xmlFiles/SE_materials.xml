@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
   <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
-  <material id="17" name="SE_coolant" temperature="300">
+  <material id="5" name="SE_coolant" temperature="300">
     <density units="atom/b-cm" value="0.00161317"/>
     <nuclide ao="1.0" name="H1"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="18" name="SE_coolantStagnant" temperature="300">
+  <material id="6" name="SE_coolantStagnant" temperature="300">
     <density units="atom/b-cm" value="0.0019127"/>
     <nuclide ao="1.0" name="H1"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="19" name="SE_inconel718" temperature="300">
+  <material id="7" name="SE_inconel718" temperature="300">
     <density units="g/cm3" value="8.19"/>
     <nuclide name="B10" wo="9.17774793753663e-06"/>
     <nuclide name="B11" wo="4.0822252062463366e-05"/>
@@ -32,27 +32,27 @@
     <sab name="c_Graphite"/>
     <sab name="c_Al27"/>
   </material>
-  <material id="20" name="SE_moderator" temperature="300">
+  <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>
     <nuclide name="H1" wo="0.017582"/>
     <nuclide name="H2" wo="4.0412e-06"/>
     <nuclide name="Zr0" wo="0.98241"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="21" name="SE_insulator" temperature="300">
+  <material id="9" name="SE_insulator" temperature="300">
     <density units="g/cm3" value="3.365"/>
     <nuclide name="Zr0" wo="0.88375"/>
     <nuclide name="C0" wo="0.11625"/>
     <sab name="c_Graphite"/>
   </material>
-  <material id="22" name="SE_supportSleeve" temperature="300">
+  <material id="10" name="SE_supportSleeve" temperature="300">
     <density units="g/cm3" value="1.7"/>
     <nuclide name="C0" wo="0.999999"/>
     <nuclide name="B10" wo="1.8355495875073257e-07"/>
     <nuclide name="B11" wo="8.164450412492672e-07"/>
     <sab name="c_Graphite"/>
   </material>
-  <material id="23" name="SE_supportCoating" temperature="300">
+  <material id="11" name="SE_supportCoating" temperature="300">
     <density units="g/cm3" value="6.73"/>
     <nuclide name="Zr0" wo="0.88375"/>
     <nuclide name="C0" wo="0.11625"/>

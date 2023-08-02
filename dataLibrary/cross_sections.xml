@@ -34,7 +34,6 @@
   <library materials="Zr95" path="Zr95/Zr95.h5" type="neutron"/>
   <library materials="Zr96" path="Zr96/Zr96.h5" type="neutron"/>
   <library materials="c_Al27" path="c_Al27/c_Al27.h5" type="thermal"/>
-  <library materials="c_Fe56" path="c_Fe56/c_Fe56.h5" type="thermal"/>
   <library materials="c_Graphite" path="c_Graphite/c_Graphite.h5" type="thermal"/>
   <library materials="c_para_H" path="c_para_H/c_para_H.h5" type="thermal"/>
 </cross_sections>
