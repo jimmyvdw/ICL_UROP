@@ -1,0 +1,89 @@
+hpara.10t  hpara.10t  3      0  0    1.007825   20  0  /home/jimmy/Documents/SNRE_UROP/Serpent/data_libraries/Serpent_2_xsdata/endfb7u/endfb7/acedata/endf70sab
+
+% -----------------------------------------------------------------------------
+
+% Material data:
+
+% -----------------------------------------------------------------------------
+
+% --- (U-Zr)-C fuel enriched to 3.6 wt-% U-235:
+mat fuel   -3.64 moder grph 6000 rgb 240 240 100
+92235.03c   -0.558
+92238.03c   -0.042
+40000.03c   -1.81
+ 6000.03c   -1.23
+
+% --- Zr-C cladding:
+mat clad    -6.73 moder grph 6000 rgb 150 150 150
+40000.03c   -0.11625
+ 6000.03c   -0.88375
+
+% --- Hydrogen moderator:
+mat coolant sum moder hyd 1001 rgb 200 200 255
+ 1001.03c 1.61317E-03
+
+% -----------------------------------------------------------------------------
+
+% Geometry
+
+% -----------------------------------------------------------------------------
+
+% --- Fuel pin:
+pin 1
+coolant   0.11827
+clad   0.12827
+fuel   
+
+% --- Empty lattice position:
+pin x
+fuel   
+
+% --- Pin lattice definition, name of the lattice "core"
+%     Lattice type 2 (x-hexagonal lattice)
+%     Lattice centered at 0.0 0.0
+%     7 x 7 lattice elements
+%     Lattice pitch 0.40894 cm
+
+lat 10  2  0.0 0.0 7 7 0.40894
+x x x x x x x
+ x x x 1 1 1 x
+  x x 1 1 1 1 x
+   x 1 1 1 1 1 x
+    x 1 1 1 1 x x
+     x 1 1 1 x x x
+      x x x x x x x
+
+% --- Surfaces (assembly pitch = 1.905 cm):
+
+surf s1  hexyc    0.0  0.0  0.9475 % Cladding Inner radius
+surf s2  hexyc    0.0  0.0  0.9525  % Cladding Outer boundary/radius
+
+% --- Cells:
+
+cell  1  0  fill 10   -s1         % Pin lattice                 
+cell  4  0  clad       s1    -s2  % Clad Coating tube                
+cell 99  0  outside           s2  % Outside World?
+
+% -----------------------------------------------------------------------------
+
+% Calculation parameters
+
+% -----------------------------------------------------------------------------
+
+% --- Thermal scattering data for Moderators:
+
+therm hyd 20 hpara.10t hpara.10t
+therm grph 300 gre7.00t gre7.04t
+
+% --- Reflective boundary condition:
+
+set bc 2
+
+% --- Neutron population and criticality cycles:
+
+set pop 1000 500 5
+
+% --- Geometry and mesh plots:
+
+plot 3 500 500
+mesh 3 500 500
