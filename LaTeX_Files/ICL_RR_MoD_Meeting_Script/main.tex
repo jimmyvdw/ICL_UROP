@@ -1,0 +1,71 @@
+\documentclass[8pt,a5paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{tgbonum}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\begin{document}
+
+\pagenumbering{arabic}
+
+\small
+
+\section*{ICL, RR and MoD Meeting Script}
+
+\subsection*{About Me Slide}
+
+Hey, everyone! I'm Jimmy van de Worp, and I'm currently in my final year of the Meng Mechanical with Nuclear Engineering program here at Imperial College London. This summer, I've been a part of the Undergraduates Research Opportunities Programme (UROP), which provides research experience through training programs and applied projects. My UROP project is all about developing multiphysics models, specifically Monte Carlo Models, for the Small Nuclear Rocket Engine. The SNRE is a Thermal Propulsion Rocket design that dates back to the 50s-70s. I'll go into more details later. Some things about me outside of my studies, I do some web-design outside of university, I play football on the weekend, and I do dog-walking with my partner. So, that's just a bit of information about me.
+
+\subsection*{Undergraduate Course Slide}
+
+As I said, I am currently an undergraduate student here at Imperial College London entering my final year of my degree. This slide gives a brief overview of the undergraduate course here and the skills it develops throughout the program. The integrated master's program is divided into four years, each with a distinct focus. The course aims to develop a strong understanding of engineering principles, prepare us for careers after graduation, and advance our technical, practical, and professional skills. \\
+
+In the first two years, us students are exposed to foundational engineering modules and engage in hands-on projects and laboratory reports either individually or in small groups. This general engineering approach caters to the diverse backgrounds that all the students are from and builds knowledge and skills from the ground up. Moving into the third year, we begin to specialize in their chosen fields through elective modules. Additionally, a significant collaborative group project simulates real-world industry experiences. In the fourth year, students advance their specialization and expertise by specializing further into their chosen fields through further elective modules. The big highlight of the fourth year is the individual Master's research project. This Final Year Project (FYP) applies the engineering principles developed over the course to solve complex problems spread over the final year. The projects can take various forms, such as experimental, computer-based, or analytical, and are meant to prepare us for real-world engineering challenges. \\
+
+I, myself, am taking the Nuclear Engineering route and will graduate with a Master’s in Mechanical and Nuclear Engineering. Specialization first begins in the third year with two elective modules: Intro. to Nuclear Energy, and Nuclear Chemical Engineering (which is an inter-departmental module with the Chemical Engineering department). As the titles, suggest, these modules tackle the general aspects of nuclear energy and then the governing chemistry behind nuclear engineering. Additionally, a further three non-nuclear electives are to be taken. There are then a further three modules to take in the fourth year which require those modules as prerequisites and develop on the knowledge gained from them. Those modules are: Nuclear Materials (a module with the Materials department), Nuclear Thermal Hydraulics, and Nuclear Reactor Physics. Like in the third year, an additional three non-nuclear modules are to be taken.\\
+
+To summarise, the Mechanical Engineering program here at Imperial College London provides an advanced education and skillset in the field of engineering. The emphasis on hands-on projects and laboratory reports ensures that students gain both theoretical knowledge and practical experience, making us students well-prepared for our futures. Overall, its rigorous academic structure and focus on practical learning offer students a well-rounded and comprehensive education in the field.
+
+\subsection*{Nuclear Thermal Hydraulic Rig Project Slide}
+
+Next, I'd like to touch on my collaborative project during the third year, which involved working closely with the CFD group of the Nuclear Research Group. To sum it up, our focus was to design, build, and test a rig for analysing Nuclear Thermal Hydraulics in T-junctions.\\
+
+In nuclear power plants, the turbulent mixing of hot and cold-water streams in a T-junction configuration plays a critical role, particularly at the intersection of the Reactor Pressure Vessel (RPV), Steam Generator (SG), and Pressurizer (PRZ) in Pressurized Water Reactors (PWRs). This mixing can lead to stress variations and high-cycle thermal fatigue phenomena, potentially causing pipe failure and reducing the plant's lifespan.\\
+
+Our supergroup's objective was to design, manufacture, and test an experimental nuclear thermal hydraulic rig to study fluid flow in T-junctions both qualitatively and quantitatively. We employed a transparent T-junction setup to aid visualizing the fluid flow dynamics, while the stainless-steel opaque T-junction was used to test conjugate heat transfer effects leading to thermal fatigue. Throughout the rig, temperature and pressure measurements were collected from sensors located at radial and axial positions. These experimental readings were then compared to theoretical simulations using Computational Fluid Dynamics (CFD) simulations. The supergroup was divided into three subassemblies: the testbed, transparent T-Junction, and stainless-steel opaque T-Junction. Additionally, we formed an integration group responsible for developing the electronics and data acquisition system, linking all the subgroup projects together. This super-project marked the beginning of a broader initiative to comprehensively understand transient thermo-fluid-induced stresses in T-junctions and eventually create a platform for future research into continuous health monitoring of nuclear power plants.\\
+
+In the project, we capitalized on each team member's strengths to allocate tasks efficiently. Personally, alongside two other students from the team, I focused on developing all the software aspects. This included designing a GUI for setting running parameters for individual experiments, creating the data acquisition system mentioned earlier, and implementing closed-loop control of various motors regulating flow speed and dye injection for flow visualization, among other smaller systems.\\
+
+Furthermore, I took on the responsibility of working on the electronics, designing, and assembling a PCB, various electrical boxes for mains and surge protection, relay extension cables for flexibility, and an emergency stop system.\\
+
+Finally, we analysed the data using various statistical methods to verify it against CFD modelling simulations. Our findings showed discrepancies between the obtained data and the CFD results, within an appropriate confidence interval. These findings supported our conclusions that there was turbulent flow upstream of the T-junction, causing an increased turbulent mixing region with a completely mixed region of the flows at the junction itself. The results aligned with our hypotheses, and they were further confirmed using the flow visualization system.
+
+\subsection*{Current Work Slide}
+
+Now, let's delve into my current work and plans for the summer. But before we dive in, a brief introduction to Space Nuclear Thermal Rockets:
+As the interest in inter-planetary travel grows, crewed deep space missions will likely require propulsion systems that surpass the efficiency of conventional chemical rockets. One promising solution is Space Nuclear Thermal Rocket Propulsion (SNTRP). SNTRP boasts a remarkably high specific impulse, indicating its efficiency due to the extremely high temperatures it achieves. By utilizing nuclear energy to heat propellant (usually hydrogen), SNTRP can generate powerful thrust, enabling shorter deep space missions and reducing astronauts' exposure to background cosmic radiation. At its core, SNTRP is a High Temperature Gas Cooled Reactor (HTGR), with the coolant serving as the propellant. However, SNTRP poses challenges concerning nuclear fuel safety and performance during extended deep space missions. The extreme temperatures (exceeding 3000 Kelvin) can impact nuclear fuel integrity and lead to critical failures, posing risks to such missions.\\
+
+The focus of my Undergraduate Research Opportunities Programme (UROP) project is to develop mechanistic, coupled, multiphysics, Computational Fluid Dynamics (CFD), and thermal stress models of SNTRP systems. This applied training program aims to enhance skills in these analytical tools. The specific system under analysis is the Small Nuclear Rocket Engine (SNRE), which was the final engine design studied during the Nuclear Engine for Rocket Vehicle Application (NERVA) programme at Los Alamos National Laboratory (LANL) from 1955-1973. The simulations will help understand the behaviour of nuclear fuel assemblies during start-up and shutdown of space nuclear thermal rockets during long-duration deep space missions. A cross-section of the SNRE model is depicted here, showcasing the central fuel assembly with hexagonally shaped fuel elements and tie-tube support elements in an array. The assembly is housed in a barrel housing with rotatable Control Drums to maintain subcriticality. By undertaking this research, we aim to contribute to the advancement of space propulsion technologies and address the critical challenges faced during deep space missions.\\
+
+Furthermore, the system is being modelled using Monte Carlo Codes to simulate the neutronics of the system. This data is then fed into the CFD-code to obtain the power density profile along the assembly and pins. Two different Monte Carlo codes, Serpent and OpenMC, are utilized for the modelling to ensure comparable results and potentially contribute to a benchmark paper comparing various models produced during this UROP project, including the work by other researchers, such as Emma Stewart. Additionally, there is an intention to implement Neural Network Machine Learning into the model by collecting a comprehensive dataset with various control drum positions and training a Neural Network to reduce the number of simulations required for the Monte Carlo Code. This inference from the data set can be applied to various simulation outputs, such as reaction rates and subcritical multiplication factor.
+I should mention that this work has been funded through myself winning the UROP Award from the Engineering \& Physical Sciences Research Council (EPSRC) and with this, it has meant that I am able to do this project in person and for the whole summer period.
+
+\subsection*{Future Plans Slide}
+
+Finally, let me outline the significance of this project and my future steps moving forward.\\
+
+As I approach my final year, it seems logical to pursue a Final Year Project (FYP) related to the work I've been doing—a natural continuation and an opportunity to build upon the concepts I've learned so far. I'm considering applying the skills I've developed to address different challenges, such as exploring other High Temperature Gas Cooled Reactors (HTGRs) or other reactor types. Alternatively, I could further develop and optimize the current Small Nuclear Rocket Engine (SNRE) model, expanding on the progress made during my UROP project. Both options would mean working under the supervision of Matt and collaboratively with the Nuclear Engineering Group, something which I am keen to do. \\
+
+Looking ahead to postgraduate opportunities, I'm contemplating two main paths for my career in Nuclear Engineering. One option is pursuing a PhD in Reactor Physics within this research group. Doing so would enable me to delve deeper into advanced research, contribute to field advancements, and become an expert in my chosen domain while honing my personal skills.\\
+
+On the other hand, I'm also open to exploring a direct entry into the industry. As I've mentioned, my aspiration lies in Nuclear Engineering, whether I enter the industry right after graduation or after completing a PhD to enhance my research contributions. Ultimately, my decision will be guided by my personal preferences and the enjoyment I find in conducting research. So far, I've immensely enjoyed the work I've undertaken, which makes the prospect of staying to do a PhD an appealing one.
+
+\subsection*{Thank You Slide}
+
+Thank you for your attention, and I'm happy to answer any questions you may have.
+
+
+\end{document}
