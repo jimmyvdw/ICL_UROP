@@ -7,6 +7,18 @@
 # *.xml
 *.out
 
+# LaTeX Files #
+###############
+
+*.aux
+*.bib
+*.fls
+*.fdb_latexmk
+*.log
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
 # Libraries #
 ##############
 *.ace
