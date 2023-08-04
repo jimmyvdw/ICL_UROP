@@ -2,21 +2,12 @@
 
 \usepackage[english]{babel}
 \usepackage[margin=0.6in]{geometry}
-\usepackage{tgbonum}
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements
-\usepackage{hyperref}
+\usepackage{longtable}
 \usepackage{ragged2e}
-\usepackage{changepage}
-\usepackage{cleveref}
-\usepackage{array, makecell, caption, subcaption}
-\usepackage{pdfpages}
-\usepackage{nomencl}
-\usepackage{setspace}
-\usepackage{lastpage}
-\usepackage{fancyhdr}
 
 \renewcommand{\familydefault}{\sfdefault}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
@@ -30,72 +21,298 @@
 
 \pagenumbering{arabic}
 
+\centering
 \small
 
 \section*{Small Nuclear Rocket Engine (SNRE) Geometry and Material Configuration}
+
+\raggedright
 
 \subsection*{SNRE Overview}
 
 \begin{table}[h!]
     \label{table: Table 1}
     \centering
+    \small
+    \caption{Core Overview of the SNRE.}
     \begin{tabular}{|l|l|}
     \hline
     \multicolumn{2}{|l|}{\textbf{Core Overview}}\\\hline
-    High Frequency & $B = (q^{-1} + q)/2$\\\hline
+    Uranium Enrichment & $93.0\%$\\
+    Total Number of Fuel Elements & $564$\\
+    Total Number of Support Elements & $241$\\
+    Mass of U235 & \SI{59.6}{kg}\\\hline
     \end{tabular}
-    \caption{Core overview of the Small Nuclear Rocket Engine (SNRE).}
 \end{table}
 
-Hey, everyone! I'm Jimmy van de Worp, and I'm currently in my final year of the Meng Mechanical with Nuclear Engineering program here at Imperial College London. This summer, I've been a part of the Undergraduates Research Opportunities Programme (UROP), which provides research experience through training programs and applied projects. My UROP project is all about developing multiphysics models, specifically Monte Carlo Models, for the Small Nuclear Rocket Engine. The SNRE is a Thermal Propulsion Rocket design that dates back to the 50s-70s. I'll go into more details later. Some things about me outside of my studies, I do some web-design outside of university, I play football on the weekend, and I do dog-walking with my partner. So, that's just a bit of information about me.
+\subsection*{Geometry Data}
 
-\subsection*{Undergraduate Course Slide}
+\begin{table}[h!]
+    \label{table: Table 2}
+    \centering
+    \small
+    \caption{Geometry Data of the SNRE Fuel Element}
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Fuel Element Dimensions}}\\\hline
+    Flat-to-flat width & \SI{1.905}{cm}\\
+    Number of Coolant Channels & $19$\\
+    Borehole Diameter & \SI{0.25654}{cm}\\
+    Borehole Pitch & \SI{0.40894}{cm}\\
+    Internal Coating Thickness & \SI{100}{\mu m}\\
+    External Coating Thickness & \SI{50}{\mu m}\\\hline
+    \end{tabular}
+\end{table}
 
-As I said, I am currently an undergraduate student here at Imperial College London entering my final year of my degree. This slide gives a brief overview of the undergraduate course here and the skills it develops throughout the program. The integrated master's program is divided into four years, each with a distinct focus. The course aims to develop a strong understanding of engineering principles, prepare us for careers after graduation, and advance our technical, practical, and professional skills. \\
+\begin{table}[h!]
+    \label{table: Table 3}
+    \centering
+    \small
+    \caption{Geometry Data of the SNRE Support Element}
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Support Element Dimensions}}\\\hline
+    Flat-to-flat width & \SI{1.89484}{cm}\\
+    Central Coolant Channel Radius & \SI{0.20955}{cm}\\
+    Inner Tie Tube Radius & \SI{0.26035}{cm}\\
+    Inner Gap (Stagnant Hydrogen) Radius & \SI{0.26670}{cm}\\
+    Moderator Radius & \SI{0.58420}{cm}\\
+    Outer Coolant Channel Radius & \SI{0.67818}{cm}\\
+    Outer Tie Tube Radius & \SI{0.69850}{cm}\\
+    Mid Gap (Stagnant Hydrogen) Radius & \SI{0.70485}{cm}\\
+    Insulator Radius & \SI{0.80645}{cm}\\
+    Outer Gap (Stagnant Hydrogen) Radius & \SI{0.81280}{cm}\\
+    External Coating Thickness & \SI{50.8}{\mu m}\\\hline
+    \end{tabular}
+\end{table}
 
-In the first two years, us students are exposed to foundational engineering modules and engage in hands-on projects and laboratory reports either individually or in small groups. This general engineering approach caters to the diverse backgrounds that all the students are from and builds knowledge and skills from the ground up. Moving into the third year, we begin to specialize in their chosen fields through elective modules. Additionally, a significant collaborative group project simulates real-world industry experiences. In the fourth year, students advance their specialization and expertise by specializing further into their chosen fields through further elective modules. The big highlight of the fourth year is the individual Master's research project. This Final Year Project (FYP) applies the engineering principles developed over the course to solve complex problems spread over the final year. The projects can take various forms, such as experimental, computer-based, or analytical, and are meant to prepare us for real-world engineering challenges. \\
+\justifying
 
-I, myself, am taking the Nuclear Engineering route and will graduate with a Master’s in Mechanical and Nuclear Engineering. Specialization first begins in the third year with two elective modules: Intro. to Nuclear Energy, and Nuclear Chemical Engineering (which is an inter-departmental module with the Chemical Engineering department). As the titles, suggest, these modules tackle the general aspects of nuclear energy and then the governing chemistry behind nuclear engineering. Additionally, a further three non-nuclear electives are to be taken. There are then a further three modules to take in the fourth year which require those modules as prerequisites and develop on the knowledge gained from them. Those modules are: Nuclear Materials (a module with the Materials department), Nuclear Thermal Hydraulics, and Nuclear Reactor Physics. Like in the third year, an additional three non-nuclear modules are to be taken.\\
+The external core regions consist of a steel wrapper, beryllium barrel, beryllium
+reflector, containing 12 control drums. Positioned above the core is the control
+drum actuator zone, brim shield, core support plate, tie tube plenum, and shield
+regions. The control drums consist of a cylinder of reflective material, and
+control plate of absorptive material, which covers a 120 degree segment of the control drum.
 
-To summarise, the Mechanical Engineering program here at Imperial College London provides an advanced education and skillset in the field of engineering. The emphasis on hands-on projects and laboratory reports ensures that students gain both theoretical knowledge and practical experience, making us students well-prepared for our futures. Overall, its rigorous academic structure and focus on practical learning offer students a well-rounded and comprehensive education in the field.
+\raggedright
 
-\subsection*{Nuclear Thermal Hydraulic Rig Project Slide}
+\begin{table}[h!]
+    \label{table: Table 4}
+    \centering
+    \small
+    \caption{Geometry Data of the SNRE Core Exterior}
+    \begin{tabular}{|m{0.2\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|}
+    \hline
+    Region & Inner Radius & Outer Radius& Aft Boundary& Fwd Boundary\\\hline
+    Core & - & \SI{29.5275}{cm} & \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Gap & \SI{29.5275}{cm} & \SI{29.8450}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Stainless-Steel Wrapper & \SI{29.8450}{cm} & \SI{30.1625}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Gap & \SI{30.1625}{cm} & \SI{30.4800}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Beryllium Barrel & \SI{30.4800}{cm} & \SI{33.3375}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Gap & \SI{33.3375}{cm} & \SI{33.6550}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
+    Beryllium Reflector & \SI{33.6550}{cm} & \SI{43.3870}{cm} & \SI{0.0}{cm} & \SI{89.1}{cm} \\
+    Gap & \SI{43.3870}{cm} & \SI{48.7045}{cm} &  \SI{0.0}{cm} & \SI{129.640}{cm} \\
+    Pressure Vessel & \SI{48.7045}{cm} & \SI{49.2633}{cm} &  \SI{0.0}{cm} & \SI{129.640}{cm} \\
+    Lower Tie Tube Plenum & - & \SI{33.6550}{cm} & \SI{89.0}{cm} & \SI{96.62}{cm} \\
+    Core Support Plate & - & \SI{33.6550}{cm} & \SI{96.62}{cm} & \SI{106.78}{cm} \\
+    Upper Tie Tube Plenum & - & \SI{33.6550}{cm} & \SI{106.78}{cm} & \SI{111.86}{cm} \\
+    Lower Internal Shield & - & \SI{33.6550}{cm} & \SI{111.86}{cm} & \SI{119.734}{cm} \\
+    Hydrogen Plenum & - & \SI{33.6550}{cm} & \SI{119.734}{cm} & \SI{121.766}{cm} \\
+    Upper Internal Shield & - & \SI{33.6550}{cm} & \SI{121.766}{cm} & \SI{129.640}{cm} \\
+    Control Drum Actuator Zone & \SI{33.6550}{cm} & \SI{43.3870}{cm} & \SI{89.1}{cm} & \SI{111.860}{cm} \\
+    Brim Shield & \SI{33.6550}{cm} & \SI{48.3870}{cm} & \SI{111.860}{cm} & \SI{119.734}{cm} \\
+    Hydrogen Plenum & \SI{33.6550}{cm} & \SI{48.3870}{cm} & \SI{119.734}{cm} & \SI{129.640}{cm} \\\hline
+    \end{tabular}
+\end{table}
 
-Next, I'd like to touch on my collaborative project during the third year, which involved working closely with the CFD group of the Nuclear Research Group. To sum it up, our focus was to design, build, and test a rig for analysing Nuclear Thermal Hydraulics in T-junctions.\\
+\begin{table}[h!]
+    \label{table: Table 5}
+    \centering
+    \small
+    \caption{Geometry Data of the SNRE Control Drum}
+    \begin{tabular}{|l|l|}
+    \hline
+    \multicolumn{2}{|l|}{\textbf{Control Drum Dimensions}}\\\hline
+    Control Drum Radius & \SI{6.0325}{cm}\\
+    Control Plate Inner Radius & \SI{5.3975}{cm}\\
+    Control Plate Thickness & \SI{0.635}{cm}\\\hline
+    \end{tabular}
+\end{table}
 
-In nuclear power plants, the turbulent mixing of hot and cold-water streams in a T-junction configuration plays a critical role, particularly at the intersection of the Reactor Pressure Vessel (RPV), Steam Generator (SG), and Pressurizer (PRZ) in Pressurized Water Reactors (PWRs). This mixing can lead to stress variations and high-cycle thermal fatigue phenomena, potentially causing pipe failure and reducing the plant's lifespan.\\
+\subsection*{Material Data}
 
-Our supergroup's objective was to design, manufacture, and test an experimental nuclear thermal hydraulic rig to study fluid flow in T-junctions both qualitatively and quantitatively. We employed a transparent T-junction setup to aid visualizing the fluid flow dynamics, while the stainless-steel opaque T-junction was used to test conjugate heat transfer effects leading to thermal fatigue. Throughout the rig, temperature and pressure measurements were collected from sensors located at radial and axial positions. These experimental readings were then compared to theoretical simulations using Computational Fluid Dynamics (CFD) simulations. The supergroup was divided into three subassemblies: the testbed, transparent T-Junction, and stainless-steel opaque T-Junction. Additionally, we formed an integration group responsible for developing the electronics and data acquisition system, linking all the subgroup projects together. This super-project marked the beginning of a broader initiative to comprehensively understand transient thermo-fluid-induced stresses in T-junctions and eventually create a platform for future research into continuous health monitoring of nuclear power plants.\\
+\begin{longtable}{|m{0.2\linewidth}|m{0.25\linewidth}|m{0.25\linewidth}|}
+    \caption{Material Data of the SNRE Support Element} \\
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    \multicolumn{3}{|c|}{\textbf{Fuel Element Coolant}}\\\hline
+    Density & - & - \\
+    H & \SI{1.61317E-03}{}& - \\\hline
+    \multicolumn{3}{|c|}{\textbf{Fuel}}\\\hline
+    Density & - & \SI{3.64}{} \\
+    U & - & \SI{0.60}{} \\
+    Zr & - & \SI{1.81}{} \\
+    C & - & \SI{1.23}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Fuel Coating}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    C & - & \SI{0.11625}{} \\
+    Zr & - & \SI{0.88375}{} \\
+\end{longtable}
 
-In the project, we capitalized on each team member's strengths to allocate tasks efficiently. Personally, alongside two other students from the team, I focused on developing all the software aspects. This included designing a GUI for setting running parameters for individual experiments, creating the data acquisition system mentioned earlier, and implementing closed-loop control of various motors regulating flow speed and dye injection for flow visualization, among other smaller systems.\\
+\begin{longtable}{|m{0.2\linewidth}|m{0.25\linewidth}|m{0.25\linewidth}|}
+    \caption{Material Data of the SNRE Support Element} \\
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    \multicolumn{3}{|c|}{\textbf{Support Element Coolant}}\\\hline
+    Density & - & - \\
+    H & \SI{1.61317E-03}{}& - \\\hline
+    \multicolumn{3}{|c|}{\textbf{Stagnant Hydrogen}}\\\hline
+    Density & - & - \\
+    H & \SI{1.9127E-03}{}& - \\\hline
+    \multicolumn{3}{|c|}{\textbf{Inconel 718}}\\\hline
+    Density & - & \SI{8.19}{} \\
+    B & \SI{0.000023}{} & \SI{0.000050}{} \\
+    C & \SI{0.000300}{} & \SI{0.000730}{} \\
+    Al & \SI{0.000914}{} & \SI{0.005000}{} \\
+    Si & \SI{0.000558}{} & \SI{0.003180}{} \\
+    P & \SI{0.000022}{} & \SI{0.000140}{} \\
+    S & \SI{0.000022}{} & \SI{0.000140}{} \\
+    Ti & \SI{0.000927}{} & \SI{0.009000}{} \\
+    Cr & \SI{0.018023}{} & \SI{0.190000}{} \\
+    Mn & \SI{0.000285}{} & \SI{0.003180}{} \\
+    Fe & \SI{0.015014}{} & \SI{0.170000}{} \\
+    Ni & \SI{0.044117}{} & \SI{0.525000}{} \\
+    Co & \SI{0.000762}{} & \SI{0.009100}{} \\
+    Cu & \SI{0.000212}{} & \SI{0.002730}{} \\
+    Nb & \SI{0.002721}{} & \SI{0.051250}{} \\
+    Mo & \SI{0.001568}{} & \SI{0.030500}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Moderator}}\\\hline
+    Density & - & \SI{5.61}{} \\
+    C & - & \SI{0.017582}{} \\
+    Zr & - & \SI{0.98241}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Insulator}}\\\hline
+    Density (50\%) & - & \SI{3.365}{} \\
+    C & - & \SI{0.11625}{} \\
+    Zr & - & \SI{0.88375}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Support Element Sleeve}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    C & \SI{0.085238}{} & \SI{0.999999}{} \\
+    B & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Support Element Coating}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    C & - & \SI{0.11625}{} \\
+    Zr & - & \SI{0.88375}{} \\
+\end{longtable}
 
-Furthermore, I took on the responsibility of working on the electronics, designing, and assembling a PCB, various electrical boxes for mains and surge protection, relay extension cables for flexibility, and an emergency stop system.\\
+Note that the insulator region is porous ZrC at 50\% porosity. The support
+element contains regions of stagnant hydrogen.
 
-Finally, we analysed the data using various statistical methods to verify it against CFD modelling simulations. Our findings showed discrepancies between the obtained data and the CFD results, within an appropriate confidence interval. These findings supported our conclusions that there was turbulent flow upstream of the T-junction, causing an increased turbulent mixing region with a completely mixed region of the flows at the junction itself. The results aligned with our hypotheses, and they were further confirmed using the flow visualization system.
+\begin{longtable}{|m{0.2\linewidth}|m{0.25\linewidth}|m{0.25\linewidth}|}
+    \caption{Material Data of the SNRE Core Exterior} \\
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \textbf{Material} & \textbf{Atom Density $(\SI{}{atoms/bn \cdot cm3})$} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    \multicolumn{3}{|c|}{\textbf{Steel Wrapper (SS-347)}}\\\hline
+    Density & - & \SI{8.19}{} \\
+    C & \SI{0.000023}{} & \SI{0.000050}{} \\
+    Si & \SI{0.000300}{} & \SI{0.000730}{} \\
+    P & \SI{0.000914}{} & \SI{0.005000}{} \\
+    S & \SI{0.000558}{} & \SI{0.003180}{} \\
+    Cr & \SI{0.000022}{} & \SI{0.000140}{} \\
+    Mn & \SI{0.000022}{} & \SI{0.000140}{} \\
+    Fe & \SI{0.000927}{} & \SI{0.009000}{} \\
+    Ni & \SI{0.018023}{} & \SI{0.190000}{} \\
+    Nb & \SI{0.000285}{} & \SI{0.003180}{} \\
+    Ta & \SI{0.015014}{} & \SI{0.170000}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Beryllium Barrel}}\\\hline
+    Density & - & - \\
+    Be & \SI{1.9127E-03}{}& - \\\hline
+    \multicolumn{3}{|c|}{\textbf{Reflector}}\\\hline
+    Density & - & \SI{8.19}{} \\
+    Be & \SI{0.000023}{} & \SI{0.000050}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Control Drum}}\\\hline
+    Density & - & \SI{5.61}{} \\
+    Be & - & \SI{0.98241}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Control Plate}}\\\hline
+    Density (50\%) & - & \SI{3.365}{} \\
+    Hf & - & \SI{0.88375}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Lower Tie Tube Plenum}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    H & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Fe & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Core Support Plate}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    H & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Fe & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Upper Tie Tube Plenum}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    H & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Fe & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Lower Internal Shield}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    H & - & \SI{0.11625}{} \\
+    B & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Zr & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Hydrogen Plenum}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    H & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Upper Internal Shield}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    H & - & \SI{0.11625}{} \\
+    B & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Zr & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Control Drum Actuator Zone}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    H & - & \SI{0.11625}{} \\
+    Fe & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Cu & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Brim Shield}}\\\hline
+    Density (100\%) & - & \SI{6.73}{} \\
+    H & - & \SI{0.11625}{} \\
+    B & \SI{0.085238}{} & \SI{0.999999}{} \\
+    Zr & \SI{0.000000}{} & \SI{0.000001}{} \\\hline
+    \multicolumn{3}{|c|}{\textbf{Pressure Vessel}}\\\hline
+    Density & - & \SI{1.70}{} \\
+    Al & \SI{0.000000}{} & \SI{0.000001}{} \\
+\end{longtable}
 
-\subsection*{Current Work Slide}
-
-Now, let's delve into my current work and plans for the summer. But before we dive in, a brief introduction to Space Nuclear Thermal Rockets:
-As the interest in inter-planetary travel grows, crewed deep space missions will likely require propulsion systems that surpass the efficiency of conventional chemical rockets. One promising solution is Space Nuclear Thermal Rocket Propulsion (SNTRP). SNTRP boasts a remarkably high specific impulse, indicating its efficiency due to the extremely high temperatures it achieves. By utilizing nuclear energy to heat propellant (usually hydrogen), SNTRP can generate powerful thrust, enabling shorter deep space missions and reducing astronauts' exposure to background cosmic radiation. At its core, SNTRP is a High Temperature Gas Cooled Reactor (HTGR), with the coolant serving as the propellant. However, SNTRP poses challenges concerning nuclear fuel safety and performance during extended deep space missions. The extreme temperatures (exceeding 3000 Kelvin) can impact nuclear fuel integrity and lead to critical failures, posing risks to such missions.\\
-
-The focus of my Undergraduate Research Opportunities Programme (UROP) project is to develop mechanistic, coupled, multiphysics, Computational Fluid Dynamics (CFD), and thermal stress models of SNTRP systems. This applied training program aims to enhance skills in these analytical tools. The specific system under analysis is the Small Nuclear Rocket Engine (SNRE), which was the final engine design studied during the Nuclear Engine for Rocket Vehicle Application (NERVA) programme at Los Alamos National Laboratory (LANL) from 1955-1973. The simulations will help understand the behaviour of nuclear fuel assemblies during start-up and shutdown of space nuclear thermal rockets during long-duration deep space missions. A cross-section of the SNRE model is depicted here, showcasing the central fuel assembly with hexagonally shaped fuel elements and tie-tube support elements in an array. The assembly is housed in a barrel housing with rotatable Control Drums to maintain subcriticality. By undertaking this research, we aim to contribute to the advancement of space propulsion technologies and address the critical challenges faced during deep space missions.\\
-
-Furthermore, the system is being modelled using Monte Carlo Codes to simulate the neutronics of the system. This data is then fed into the CFD-code to obtain the power density profile along the assembly and pins. Two different Monte Carlo codes, Serpent and OpenMC, are utilized for the modelling to ensure comparable results and potentially contribute to a benchmark paper comparing various models produced during this UROP project, including the work by other researchers, such as Emma Stewart. Additionally, there is an intention to implement Neural Network Machine Learning into the model by collecting a comprehensive dataset with various control drum positions and training a Neural Network to reduce the number of simulations required for the Monte Carlo Code. This inference from the data set can be applied to various simulation outputs, such as reaction rates and subcritical multiplication factor.
-I should mention that this work has been funded through myself winning the UROP Award from the Engineering \& Physical Sciences Research Council (EPSRC) and with this, it has meant that I am able to do this project in person and for the whole summer period.
-
-\subsection*{Future Plans Slide}
-
-Finally, let me outline the significance of this project and my future steps moving forward.\\
-
-As I approach my final year, it seems logical to pursue a Final Year Project (FYP) related to the work I've been doing—a natural continuation and an opportunity to build upon the concepts I've learned so far. I'm considering applying the skills I've developed to address different challenges, such as exploring other High Temperature Gas Cooled Reactors (HTGRs) or other reactor types. Alternatively, I could further develop and optimize the current Small Nuclear Rocket Engine (SNRE) model, expanding on the progress made during my UROP project. Both options would mean working under the supervision of Matt and collaboratively with the Nuclear Engineering Group, something which I am keen to do. \\
-
-Looking ahead to postgraduate opportunities, I'm contemplating two main paths for my career in Nuclear Engineering. One option is pursuing a PhD in Reactor Physics within this research group. Doing so would enable me to delve deeper into advanced research, contribute to field advancements, and become an expert in my chosen domain while honing my personal skills.\\
-
-On the other hand, I'm also open to exploring a direct entry into the industry. As I've mentioned, my aspiration lies in Nuclear Engineering, whether I enter the industry right after graduation or after completing a PhD to enhance my research contributions. Ultimately, my decision will be guided by my personal preferences and the enjoyment I find in conducting research. So far, I've immensely enjoyed the work I've undertaken, which makes the prospect of staying to do a PhD an appealing one.
-
-\subsection*{Thank You Slide}
-
-Thank you for your attention, and I'm happy to answer any questions you may have.
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/Reactor.png}
+    \caption{Model of the Core with Drums at the Critical Position (90 degrees)}
+    \label{fig:Figure 1}
+\end{figure}
 
 \end{document}
