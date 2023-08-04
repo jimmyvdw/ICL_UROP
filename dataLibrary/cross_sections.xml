@@ -1,39 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <cross_sections>
-  <library materials="Al27" path="Al27/Al27.h5" type="neutron"/>
-  <library materials="B10" path="B10/B10.h5" type="neutron"/>
-  <library materials="B11" path="B11/B11.h5" type="neutron"/>
-  <library materials="C0" path="C0/C0.h5" type="neutron"/>
-  <library materials="Co58" path="Co58/Co58.h5" type="neutron"/>
-  <library materials="Co59" path="Co59/Co59.h5" type="neutron"/>
-  <library materials="Co58_m1" path="Co158m/Co158m.h5" type="neutron"/>
-  <library materials="Cr0" path="Cr0/Cr0.h5" type="neutron"/>
-  <library materials="Cu0" path="Cu0/Cu0.h5" type="neutron"/>
-  <library materials="Fe0" path="Fe0/Fe0.h5" type="neutron"/>
-  <library materials="H1" path="H1/H1.h5" type="neutron"/>
-  <library materials="H2" path="H2/H2.h5" type="neutron"/>
-  <library materials="H3" path="H3/H3.h5" type="neutron"/>
-  <library materials="Mn55" path="Mn55/Mn55.h5" type="neutron"/>
-  <library materials="Mo0" path="Mo0/Mo0.h5" type="neutron"/>
-  <library materials="Nb93" path="Nb93/Nb93.h5" type="neutron"/>
-  <library materials="Nb94" path="Nb94/Nb94.h5" type="neutron"/>
-  <library materials="Nb95" path="Nb95/Nb95.h5" type="neutron"/>
-  <library materials="Ni0" path="Ni0/Ni0.h5" type="neutron"/>
-  <library materials="P31" path="P31/P31.h5" type="neutron"/>
-  <library materials="S0" path="S0/S0.h5" type="neutron"/>
-  <library materials="Si0" path="Si0/Si0.h5" type="neutron"/>
-  <library materials="Ti0" path="Ti0/Ti0.h5" type="neutron"/>
+  <library materials="H1" path="1001ENDF7.ace/1001ENDF7.ace.h5" type="neutron"/>
+  <library materials="H2" path="1002ENDF7.ace/1002ENDF7.ace.h5" type="neutron"/>
+  <library materials="H3" path="1003ENDF7.ace/1003ENDF7.ace.h5" type="neutron"/>
+  <library materials="He0" path="2000BRND22.ace/2000BRND22.ace.h5" type="neutron"/>
+  <library materials="He3" path="2003ENDF7.ace/2003ENDF7.ace.h5" type="neutron"/>
+  <library materials="He4" path="2004ENDF7.ace/2004ENDF7.ace.h5" type="neutron"/>
+  <library materials="Li6" path="3006ENDF7.ace/3006ENDF7.ace.h5" type="neutron"/>
+  <library materials="Li7" path="3007ENDF7.ace/3007ENDF7.ace.h5" type="neutron"/>
+  <library materials="Be7" path="4007ENDF7.ace/4007ENDF7.ace.h5" type="neutron"/>
+  <library materials="Be9" path="4009ENDF7.ace/4009ENDF7.ace.h5" type="neutron"/>
   <library materials="U235" path="U235/U235.h5" type="neutron"/>
   <library materials="U238" path="U238/U238.h5" type="neutron"/>
   <library materials="Zr0" path="Zr0/Zr0.h5" type="neutron"/>
-  <library materials="Zr90" path="Zr90/Zr90.h5" type="neutron"/>
-  <library materials="Zr91" path="Zr91/Zr91.h5" type="neutron"/>
-  <library materials="Zr92" path="Zr92/Zr92.h5" type="neutron"/>
-  <library materials="Zr93" path="Zr93/Zr93.h5" type="neutron"/>
-  <library materials="Zr94" path="Zr94/Zr94.h5" type="neutron"/>
-  <library materials="Zr95" path="Zr95/Zr95.h5" type="neutron"/>
-  <library materials="Zr96" path="Zr96/Zr96.h5" type="neutron"/>
-  <library materials="c_Al27" path="c_Al27/c_Al27.h5" type="thermal"/>
+  <library materials="C0" path="C0/C0.h5" type="neutron"/>
   <library materials="c_Graphite" path="c_Graphite/c_Graphite.h5" type="thermal"/>
   <library materials="c_para_H" path="c_para_H/c_para_H.h5" type="thermal"/>
 </cross_sections>
