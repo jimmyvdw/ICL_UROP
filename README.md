@@ -54,8 +54,8 @@ Optional (if you would like to edit and re-flash STM32 or Arduino code):
     │   ├── cross_sections.xsdir                   # Source Code for Serpent Data Library in .xsdir format
     │   └── dataLibrary.py                         # Source Code for Library Conversion from Serpent Data Library to OpenMC Data Library
     ├── LaTeX_Files/                                
-    │   ├── ICL_RR_MoD_Meeting_Script/             # Contains Custom Source Files for the LaTeX Script
-    │   └── SNRE_Configuration/                    # Contains Custom Source Files for the LaTeX Script
+    │   ├── ICL_RR_MoD_Meeting_Script/             # Contains Custom Source Files for the LaTeX Script on the ICL-RR-MoD Meeting
+    │   └── SNRE_Configuration/                    # Contains Custom Source Files for the LaTeX Script on the SNRE Configuration
     ├── SNREModelling_OpenMC/   
     │   ├── SNRE_2DFuelAssemblyModelling/          
     |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Assembly in 2D
