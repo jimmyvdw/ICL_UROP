@@ -99,17 +99,17 @@ The following figures show the geometry of the SNRE Fuel Pin in 2D:
 
 #### SNRE Fuel Element
 
-![SNRE Fuel Element](SNREModelling_OpenMC\SNRE_2DFuelAssemblyModelling\pics\Geometry\fuelElementCrossSection.png)
+![SNRE Fuel Element](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/fuelElementCrossSection.png)
 
 #### SNRE Support Element
 
-![SNRE Support Element](SNREModelling_OpenMC\SNRE_2DFuelAssemblyModelling\pics\Geometry\supportElementCrossSection.png)
+![SNRE Support Element](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/supportElementCrossSection.png)
 
 ### SNRE Fuel Assembly
 
 The following figures show the geometry of the SNRE Fuel Assembly in 2D:
 
-![SNRE Fuel Assembly](SNREModelling_OpenMC\SNRE_2DFuelAssemblyModelling\pics\Geometry\coreAssemblyCrossSection.png)
+![SNRE Fuel Assembly](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/coreAssemblyCrossSection.png)
 
 ## Acknowledgements
 
