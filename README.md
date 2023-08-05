@@ -45,12 +45,39 @@ Optional (if you would like to edit and re-flash STM32 or Arduino code):
 * Arduino IDE 
 
 
-### Installing the JavaScript UI 
+## Repository and Code Structure
+> File structure is not fully comphrehensive, only the most important folders and scripts are shown
 
-The first step to install the JavasScript UI is to install the package manager, yarn. 
-
-If on Windows, use Command Prompt, and on Mac use the terminal in VS Code:
-
-```
-npm install --global yarn
-```
+    .
+    ├── dataLibrary/                              
+    │   ├── cross_sections.xml                     # Source Code for OpenMC Data Library in .xml format
+    │   ├── cross_sections.xsdir                   # Source Code for Serpent Data Library in .xsdir format
+    │   └── dataLibrary.py                         # Source Code for Library Conversion from Serpent Data Library to OpenMC Data Library
+    ├── LaTeX_Files/                                
+    │   ├── ICL_RR_MoD_Meeting_Script/             # Contains Custom Source Files for the LaTeX Script
+    │   └── SNRE_Configuration/                    # Contains Custom Source Files for the LaTeX Script
+    ├── SNREModelling_OpenMC/   
+    │   ├── SNRE_2DFuelAssemblyModelling/          
+    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Assembly in 2D
+    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Assembly in 2D
+    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Assembly in 2D
+    |   │   └── SNRE_2DFuelAssemblyModelling.ipynb # Source Code for OpenMC Model of the SNRE Fuel Assembly in 2D
+    │   ├── SNRE_2DFuelPinModelling/               
+    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Pin in 2D
+    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Pin in 2D
+    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Pin in 2D
+    |   │   └── SNRE_2DFuelPinModelling.ipynb      # Source Code for OpenMC Model of the SNRE Fuel Pin in 2D
+    │   └── SNRE_3DFuelPinModelling/               
+    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Pin in 3D
+    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Pin in 3D
+    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Pin in 3D
+    |   │   └── SNRE_3DFuelPinModelling.ipynb      # Source Code for OpenMC Model of the SNRE Fuel Pin in 3D    
+    ├── SNREModelling_Serpent/   
+    │   ├── SNRE_2DFuelAssemblyModelling/          
+    |   │   ├── SNRE_2DAssemblyPinModelling            # Source Code for Serpent Model of the SNRE Fuel Assembly in 2D  
+    |   │   └── SNRE_2DAssemblyPinModelling_res.m      # Custom Data Files for the SNRE Fuel Assembly in 2D 
+    │   ├── SNRE_2DFuelPinModelling/               
+    |   │   ├── SNRE_2DFuelPinModelling            # Source Code for Serpent Model of the SNRE Fuel Pin in 2D  
+    |   │   └── SNRE_2DFuelPinModelling_res.m      # Custom Data Files for the SNRE Fuel Pin in 2D 
+    ├── .gitignore
+    └── README.md
