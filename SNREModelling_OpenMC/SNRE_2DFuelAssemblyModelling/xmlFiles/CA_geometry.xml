@@ -139,12 +139,12 @@
   <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="28" type="plane"/>
   <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="29" type="plane"/>
   <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="30" type="plane"/>
-  <surface boundary="reflective" coeffs="33.3375" id="31" type="y-plane"/>
-  <surface boundary="reflective" coeffs="-33.3375" id="32" type="y-plane"/>
-  <surface boundary="reflective" coeffs="1.7320508075688772 1.0 0.0 66.675" id="33" type="plane"/>
-  <surface boundary="reflective" coeffs="-1.7320508075688772 1.0 0.0 -66.675" id="34" type="plane"/>
-  <surface boundary="reflective" coeffs="1.7320508075688772 1.0 0.0 -66.675" id="35" type="plane"/>
-  <surface boundary="reflective" coeffs="-1.7320508075688772 1.0 0.0 66.675" id="36" type="plane"/>
+  <surface coeffs="33.3375" id="31" type="y-plane"/>
+  <surface coeffs="-33.3375" id="32" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 66.675" id="33" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -66.675" id="34" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -66.675" id="35" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 66.675" id="36" type="plane"/>
   <surface coeffs="0.0 0.0 0.11827" id="301" type="z-cylinder"/>
   <surface coeffs="0.0 0.0 0.12827" id="302" type="z-cylinder"/>
   <surface coeffs="0.0 0.0 0.20955" id="400" type="z-cylinder"/>

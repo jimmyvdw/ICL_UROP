@@ -162,7 +162,6 @@
     <nuclide name="Ni62" wo="0.004218304533835887"/>
     <nuclide name="Ni64" wo="0.0011089654569363368"/>
     <nuclide name="Nb93" wo="0.004"/>
-    <sab name="c_Fe56"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="13" name="RH_berylliumBarrel" temperature="300">
