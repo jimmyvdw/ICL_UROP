@@ -8,8 +8,8 @@ def newFolder(path, folderName):
     Creates a new folder inside the specified directory.
 
     Args:
-        directory_path (str): The path to the directory where the new folder will be created.
-        new_folder_name (str): The name of the new folder.
+        path (str): The path to the directory where the new folder will be created.
+        folderName (str): The name of the new folder.
 
     Returns:
         str: The path to the newly created folder.
@@ -28,6 +28,18 @@ def newFolder(path, folderName):
         return None
 
 def fileSeperate(df,path,fileName):
+
+    '''
+    Seperate the ace file into different files based on the temperature
+
+    Args:
+        df (dataframe): The dataframe of the ace file
+        path (str): The path to the directory where the new files will be created.
+        fileName (str): The name of the original file.
+    
+    Returns:
+        str: The name of the file
+    '''
 
     pattern = r'\.\d+[0-9]*c' 
 
