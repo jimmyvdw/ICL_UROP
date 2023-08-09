@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plots>
+  <!--3D-->
+  <plot color_by="material" id="1" type="voxel">
+    <pixels>1000 1000 1000</pixels>
+    <origin>0 0 -64.82</origin>
+    <width>98.5266 98.5266 -129.64</width>
+  </plot>
+</plots>

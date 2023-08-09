@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <tallies>
   <mesh id="1">
-    <dimension>1000 1000</dimension>
-    <lower_left>-49.2633 -49.2633</lower_left>
-    <upper_right>49.2633 49.2633</upper_right>
+    <dimension>50 50 50</dimension>
+    <lower_left>-49.2633 -49.2633 -129.64</lower_left>
+    <upper_right>49.2633 49.2633 0.0</upper_right>
   </mesh>
   <filter id="1" type="mesh">
     <bins>1</bins>
