@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <geometry>
-  <cell id="7" material="void" region="-27 28 -29 30 31 -32" universe="9"/>
-  <surface coeffs="0.9525000000000001" id="27" type="y-plane"/>
-  <surface coeffs="-0.9525000000000001" id="28" type="y-plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="29" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="30" type="plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="31" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="32" type="plane"/>
+  <cell id="7" material="void" region="-29 30 -31 32 33 -34" universe="9"/>
+  <surface coeffs="0.9525000000000001" id="29" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="30" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="31" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="32" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="33" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="34" type="plane"/>
 </geometry>
