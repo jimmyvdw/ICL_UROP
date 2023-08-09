@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
-  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
+  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/endfb-viii.0-hdf5/cross_sections.xml</cross_sections>
   <material depletable="true" id="1" name="FE_fuel" temperature="300">
     <density units="g/cm3" value="3.64"/>
     <nuclide name="U235" wo="0.558"/>
@@ -10,7 +10,8 @@
     <nuclide name="Zr92" wo="0.3127336364916697"/>
     <nuclide name="Zr94" wo="0.3238289885964158"/>
     <nuclide name="Zr96" wo="0.05328258509367026"/>
-    <nuclide name="C0" wo="1.23"/>
+    <nuclide name="C12" wo="1.2152484194553945"/>
+    <nuclide name="C13" wo="0.014751580544605573"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="2" name="FE_coolant" temperature="300">
@@ -26,7 +27,8 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="4" name="FE_claddingInner" temperature="300">
@@ -36,7 +38,8 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
 </materials>

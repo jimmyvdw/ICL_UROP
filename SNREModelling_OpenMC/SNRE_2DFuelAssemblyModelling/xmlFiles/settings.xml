@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <settings>
   <run_mode>eigenvalue</run_mode>
-  <particles>50000</particles>
-  <batches>100</batches>
-  <inactive>10</inactive>
-  <generations_per_batch>20</generations_per_batch>
+  <particles>500</particles>
+  <batches>20</batches>
+  <inactive>2</inactive>
+  <generations_per_batch>10</generations_per_batch>
 </settings>

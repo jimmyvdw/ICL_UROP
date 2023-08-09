@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
-  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
+  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/endfb-viii.0-hdf5/cross_sections.xml</cross_sections>
   <material depletable="true" id="1" name="FE_fuel" temperature="300">
     <density units="g/cm3" value="3.64"/>
     <nuclide name="U235" wo="0.558"/>
@@ -10,7 +10,8 @@
     <nuclide name="Zr92" wo="0.3127336364916697"/>
     <nuclide name="Zr94" wo="0.3238289885964158"/>
     <nuclide name="Zr96" wo="0.05328258509367026"/>
-    <nuclide name="C0" wo="1.23"/>
+    <nuclide name="C12" wo="1.2152484194553945"/>
+    <nuclide name="C13" wo="0.014751580544605573"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="2" name="FE_coolant" temperature="300">
@@ -26,7 +27,8 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="4" name="FE_claddingInner" temperature="300">
@@ -36,7 +38,8 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="5" name="SE_coolant" temperature="300">
@@ -55,7 +58,8 @@
     <density units="g/cm3" value="8.19"/>
     <nuclide name="B10" wo="9.17774793753663e-06"/>
     <nuclide name="B11" wo="4.0822252062463366e-05"/>
-    <nuclide name="C0" wo="0.00073"/>
+    <nuclide name="C12" wo="0.0007212449969125512"/>
+    <nuclide name="C13" wo="8.755003087448837e-06"/>
     <nuclide name="Al27" wo="0.005"/>
     <nuclide name="Si28" wo="0.002921577849594209"/>
     <nuclide name="Si29" wo="0.0001536496593106074"/>
@@ -97,6 +101,7 @@
     <nuclide name="Mo100" wo="0.0030945365985854843"/>
     <sab name="c_Graphite"/>
     <sab name="c_Al27"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>
@@ -116,12 +121,14 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="10" name="SE_supportSleeve" temperature="300">
     <density units="g/cm3" value="1.7"/>
-    <nuclide name="C0" wo="0.999999"/>
+    <nuclide name="C12" wo="0.9880058570788415"/>
+    <nuclide name="C13" wo="0.01199314292115856"/>
     <nuclide name="B10" wo="1.8355495875073257e-07"/>
     <nuclide name="B11" wo="8.164450412492672e-07"/>
     <sab name="c_Graphite"/>
@@ -133,12 +140,14 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="12" name="RH_steelWrapper" temperature="300">
     <density units="g/cm3" value="8.0"/>
-    <nuclide name="C0" wo="0.0008"/>
+    <nuclide name="C12" wo="0.0007904054760685493"/>
+    <nuclide name="C13" wo="9.59452393145078e-06"/>
     <nuclide name="Si28" wo="0.009187351728283676"/>
     <nuclide name="Si29" wo="0.0004831750292786396"/>
     <nuclide name="Si30" wo="0.00032947324243768423"/>
@@ -162,19 +171,25 @@
     <nuclide name="Ni62" wo="0.004218304533835887"/>
     <nuclide name="Ni64" wo="0.0011089654569363368"/>
     <nuclide name="Nb93" wo="0.004"/>
+    <nuclide name="Ta180" wo="4.777440012628658e-07"/>
+    <nuclide name="Ta181" wo="0.003999522255998737"/>
+    <sab name="c_Fe56"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="13" name="RH_berylliumBarrel" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
+    <sab name="c_Be"/>
   </material>
   <material id="14" name="RH_berylliumReflector" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
+    <sab name="c_Be"/>
   </material>
   <material id="15" name="RH_controlDrum" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
+    <sab name="c_Be"/>
   </material>
   <material id="16" name="RH_controlPlate" temperature="300">
     <density units="g/cm3" value="13.3"/>
@@ -193,6 +208,7 @@
     <nuclide name="Fe56" wo="0.3564860301359228"/>
     <nuclide name="Fe57" wo="0.008380069852443914"/>
     <nuclide name="Fe58" wo="0.0011347796657534522"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="18" name="RH_coreSupportPlate" temperature="300">
     <density units="g/cm3" value="1.005"/>
@@ -202,6 +218,8 @@
     <nuclide name="Fe56" wo="0.9216804321302318"/>
     <nuclide name="Fe57" wo="0.021666336826542926"/>
     <nuclide name="Fe58" wo="0.002933927627698214"/>
+    <sab name="c_Fe56"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="19" name="RH_upperTieTubePlenum" temperature="300">
     <density units="g/cm3" value="0.9718"/>
@@ -251,6 +269,7 @@
     <nuclide name="Fe58" wo="0.0008132733876758437"/>
     <nuclide name="Cu63" wo="0.10114377131813801"/>
     <nuclide name="Cu65" wo="0.046556228681861996"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="24" name="RH_brimShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
-  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
+  <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/endfb-viii.0-hdf5/cross_sections.xml</cross_sections>
   <material id="5" name="SE_coolant" temperature="300">
     <density units="atom/b-cm" value="0.00161317"/>
     <nuclide ao="0.99984426" name="H1"/>
@@ -17,7 +17,8 @@
     <density units="g/cm3" value="8.19"/>
     <nuclide name="B10" wo="9.17774793753663e-06"/>
     <nuclide name="B11" wo="4.0822252062463366e-05"/>
-    <nuclide name="C0" wo="0.00073"/>
+    <nuclide name="C12" wo="0.0007212449969125512"/>
+    <nuclide name="C13" wo="8.755003087448837e-06"/>
     <nuclide name="Al27" wo="0.005"/>
     <nuclide name="Si28" wo="0.002921577849594209"/>
     <nuclide name="Si29" wo="0.0001536496593106074"/>
@@ -59,6 +60,7 @@
     <nuclide name="Mo100" wo="0.0030945365985854843"/>
     <sab name="c_Graphite"/>
     <sab name="c_Al27"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>
@@ -78,12 +80,14 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="10" name="SE_supportSleeve" temperature="300">
     <density units="g/cm3" value="1.7"/>
-    <nuclide name="C0" wo="0.999999"/>
+    <nuclide name="C12" wo="0.9880058570788415"/>
+    <nuclide name="C13" wo="0.01199314292115856"/>
     <nuclide name="B10" wo="1.8355495875073257e-07"/>
     <nuclide name="B11" wo="8.164450412492672e-07"/>
     <sab name="c_Graphite"/>
@@ -95,7 +99,8 @@
     <nuclide name="Zr92" wo="0.15269522168481386"/>
     <nuclide name="Zr94" wo="0.15811263462545994"/>
     <nuclide name="Zr96" wo="0.026015737335100052"/>
-    <nuclide name="C0" wo="0.11625"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
     <sab name="c_Graphite"/>
   </material>
 </materials>
