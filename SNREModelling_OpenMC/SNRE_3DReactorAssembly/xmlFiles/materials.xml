@@ -221,8 +221,6 @@
     <nuclide name="Fe58" wo="0.002933927627698214"/>
     <sab name="c_Fe56"/>
     <sab name="c_para_H"/>
-    <sab name="c_Fe56"/>
-    <sab name="c_para_H"/>
   </material>
   <material id="19" name="RH_upperTieTubePlenum" temperature="300">
     <density units="g/cm3" value="0.9718"/>
@@ -232,6 +230,8 @@
     <nuclide name="Fe56" wo="0.8911691245754172"/>
     <nuclide name="Fe57" wo="0.02094909444680295"/>
     <nuclide name="Fe58" wo="0.0028368028921916025"/>
+    <sab name="c_Fe56"/>
+    <sab name="c_para_H"/>
   </material>
   <material id="20" name="RH_lowerInternalShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
@@ -246,13 +246,19 @@
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="21" name="RH_hydrogenPlenum" temperature="300">
+  <material id="21" name="RH_hydrogenInnerPlenum" temperature="300">
     <density units="g/cm3" value="0.0027"/>
     <nuclide name="H1" wo="0.002699159780650938"/>
     <nuclide name="H2" wo="8.40219349062324e-07"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="22" name="RH_upperInternalShield" temperature="300">
+  <material id="22" name="RH_hydrogenOuterPlenum" temperature="300">
+    <density units="g/cm3" value="0.0027"/>
+    <nuclide name="H1" wo="0.002699159780650938"/>
+    <nuclide name="H2" wo="8.40219349062324e-07"/>
+    <sab name="c_para_H"/>
+  </material>
+  <material id="23" name="RH_upperInternalShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
     <nuclide name="H1" wo="0.09137155701907247"/>
     <nuclide name="H2" wo="2.8442980927517185e-05"/>
@@ -265,7 +271,7 @@
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="23" name="RH_controlDrumActuatorZone" temperature="300">
+  <material id="24" name="RH_controlDrumActuatorZone" temperature="300">
     <density units="g/cm3" value="0.4279"/>
     <nuclide name="H1" wo="0.00219931537682669"/>
     <nuclide name="H2" wo="6.846231733100418e-07"/>
@@ -278,7 +284,7 @@
     <sab name="c_Fe56"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="24" name="RH_brimShield" temperature="300">
+  <material id="25" name="RH_brimShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
     <nuclide name="H1" wo="0.09137155701907247"/>
     <nuclide name="H2" wo="2.8442980927517185e-05"/>
@@ -291,7 +297,7 @@
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
   </material>
-  <material id="25" name="RH_pressureVessel" temperature="300">
+  <material id="26" name="RH_pressureVessel" temperature="300">
     <density units="g/cm3" value="2.7"/>
     <nuclide name="Al27" wo="1.0"/>
     <sab name="c_Al27"/>

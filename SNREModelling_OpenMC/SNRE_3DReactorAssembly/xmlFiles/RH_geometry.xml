@@ -73,15 +73,24 @@
   <cell fill="22" id="509" region="-95" rotation="0.0 0.0 195.0" translation="-7.535435452173536e-15 -41.021 0.0" universe="12"/>
   <cell fill="23" id="510" region="-100" rotation="0.0 0.0 225.0" translation="20.510500000000004 -35.525228088641455 0.0" universe="12"/>
   <cell fill="24" id="511" region="-105" rotation="0.0 0.0 255.0" translation="35.52522808864145 -20.510500000000018 0.0" universe="12"/>
-  <cell fill="10" id="610" region="-600" universe="26"/>
-  <cell id="611" material="void" region="600 -601" universe="26"/>
-  <cell id="612" material="12" region="601 -602" universe="26"/>
-  <cell id="613" material="void" region="602 -603" universe="26"/>
-  <cell id="614" material="13" region="603 -604" universe="26"/>
-  <cell id="615" material="void" region="604 -605" universe="26"/>
-  <cell fill="25" id="616" region="605 -606" universe="26"/>
-  <cell id="617" material="void" region="606 -607" universe="26"/>
-  <cell id="618" material="25" region="607 -608" universe="26"/>
+  <cell fill="10" id="650" region="-600 -620 621" universe="26"/>
+  <cell id="651" material="void" region="600 -601 -620 621" universe="26"/>
+  <cell id="652" material="12" region="601 -602 -620 621" universe="26"/>
+  <cell id="653" material="void" region="602 -603 -620 621" universe="26"/>
+  <cell id="654" material="13" region="603 -604 -620 621" universe="26"/>
+  <cell id="655" material="void" region="604 -605 -620 621" universe="26"/>
+  <cell fill="25" id="656" region="605 -606 -620 622" universe="26"/>
+  <cell id="657" material="void" region="606 -607 -620 623" universe="26"/>
+  <cell id="658" material="26" region="607 -608 -620 623" universe="26"/>
+  <cell id="659" material="17" region="-605 -621 624" universe="26"/>
+  <cell id="660" material="18" region="-605 -624 625" universe="26"/>
+  <cell id="661" material="19" region="-605 -625 626" universe="26"/>
+  <cell id="662" material="20" region="-605 -626 627" universe="26"/>
+  <cell id="663" material="21" region="-605 -627 628" universe="26"/>
+  <cell id="664" material="23" region="-605 -628 629" universe="26"/>
+  <cell id="665" material="24" region="-606 605 -622 626" universe="26"/>
+  <cell id="666" material="25" region="-606 605 -626 627" universe="26"/>
+  <cell id="667" material="22" region="-606 605 -627 629" universe="26"/>
   <hex_lattice id="5" n_rings="3" name="assembly" orientation="x">
     <pitch>0.40894</pitch>
     <outer>1</outer>
@@ -293,4 +302,14 @@
   <surface coeffs="0.0 0.0 48.387" id="606" type="z-cylinder"/>
   <surface coeffs="0.0 0.0 48.7045" id="607" type="z-cylinder"/>
   <surface boundary="reflective" coeffs="0.0 0.0 49.2633" id="608" type="z-cylinder"/>
+  <surface coeffs="0.0" id="620" type="z-plane"/>
+  <surface coeffs="-89.0" id="621" type="z-plane"/>
+  <surface coeffs="-89.1" id="622" type="z-plane"/>
+  <surface coeffs="-129.64" id="623" type="z-plane"/>
+  <surface coeffs="-96.62" id="624" type="z-plane"/>
+  <surface coeffs="-106.78" id="625" type="z-plane"/>
+  <surface coeffs="-111.86" id="626" type="z-plane"/>
+  <surface coeffs="-119.734" id="627" type="z-plane"/>
+  <surface coeffs="-121.766" id="628" type="z-plane"/>
+  <surface coeffs="-129.64" id="629" type="z-plane"/>
 </geometry>
