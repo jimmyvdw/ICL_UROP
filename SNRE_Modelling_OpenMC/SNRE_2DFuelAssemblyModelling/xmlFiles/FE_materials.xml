@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<materials>
+  <cross_sections>/home/jimmy/Documents/SNRE_UROP/openmc/data_libraries/endfb-viii.0-hdf5/cross_sections.xml</cross_sections>
+  <material depletable="true" id="1" name="FE_fuel" temperature="300">
+    <density units="g/cm3" value="3.64"/>
+    <nuclide name="U235" wo="0.558"/>
+    <nuclide name="U238" wo="0.042"/>
+    <nuclide name="Zr90" wo="0.9177807269171202"/>
+    <nuclide name="Zr91" wo="0.2023740629011242"/>
+    <nuclide name="Zr92" wo="0.3127336364916697"/>
+    <nuclide name="Zr94" wo="0.3238289885964158"/>
+    <nuclide name="Zr96" wo="0.05328258509367026"/>
+    <nuclide name="C12" wo="1.2152484194553945"/>
+    <nuclide name="C13" wo="0.014751580544605573"/>
+    <sab name="c_Graphite"/>
+  </material>
+  <material id="2" name="FE_coolant" temperature="300">
+    <density units="atom/b-cm" value="0.00161317"/>
+    <nuclide ao="0.99984426" name="H1"/>
+    <nuclide ao="0.00015574" name="H2"/>
+    <sab name="c_para_H"/>
+  </material>
+  <material id="3" name="FE_claddingOuter" temperature="300">
+    <density units="g/cm3" value="6.73"/>
+    <nuclide name="Zr90" wo="0.4481153134878481"/>
+    <nuclide name="Zr91" wo="0.09881109286677818"/>
+    <nuclide name="Zr92" wo="0.15269522168481386"/>
+    <nuclide name="Zr94" wo="0.15811263462545994"/>
+    <nuclide name="Zr96" wo="0.026015737335100052"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
+    <sab name="c_Graphite"/>
+  </material>
+  <material id="4" name="FE_claddingInner" temperature="300">
+    <density units="g/cm3" value="6.73"/>
+    <nuclide name="Zr90" wo="0.4481153134878481"/>
+    <nuclide name="Zr91" wo="0.09881109286677818"/>
+    <nuclide name="Zr92" wo="0.15269522168481386"/>
+    <nuclide name="Zr94" wo="0.15811263462545994"/>
+    <nuclide name="Zr96" wo="0.026015737335100052"/>
+    <nuclide name="C12" wo="0.11485579574121108"/>
+    <nuclide name="C13" wo="0.0013942042587889415"/>
+    <sab name="c_Graphite"/>
+  </material>
+</materials>
