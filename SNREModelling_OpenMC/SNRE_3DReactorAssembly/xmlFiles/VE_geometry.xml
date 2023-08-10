@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <geometry>
-  <cell id="7" material="void" region="-31 32 -33 34 35 -36 -29 30" universe="9"/>
+  <cell id="7" material="12" region="-31 32 -33 34 35 -36 -29 30" universe="9"/>
   <surface coeffs="0.0" id="29" type="z-plane"/>
   <surface coeffs="-89.0" id="30" type="z-plane"/>
   <surface coeffs="0.9525000000000001" id="31" type="y-plane"/>
