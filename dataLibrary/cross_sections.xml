@@ -435,4 +435,7 @@
   <library materials="c_Fe56" path="c_Fe56/c_Fe56.h5" type="thermal"/>
   <library materials="c_Graphite" path="c_Graphite/c_Graphite.h5" type="thermal"/>
   <library materials="c_para_H" path="c_para_H/c_para_H.h5" type="thermal"/>
+  <library materials="c_H_in_ZrH" path="c_H_in_ZrH/c_H_in_ZrH.h5" type="thermal"/>
+  <library materials="c_Zr_in_ZrH" path="c_Zr_in_ZrH/c_Zr_in_ZrH.h5" type="thermal"/>
+  <library materials="c_Be" path="c_Be/c_Be.h5" type="thermal"/>
 </cross_sections>

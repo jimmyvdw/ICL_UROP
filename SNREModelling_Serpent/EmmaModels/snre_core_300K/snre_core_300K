@@ -507,7 +507,7 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t % ENDFB7u thermal scattering at 300K, 10t sp
 %set acelib "/home/emmajstewart/serpent/xsdata/endfb68/sss_endfb68u.xsdata"
 %set acelib "/home/emmajstewart/serpent/serpent2.2.0/xsdata/endfb60/endf60/sss_endfb60.xsdata"
 %set acelib "/rds/general/user/es2517/home/serpent/serpent2.2.0/xsdata/endf60/sss_endfb60.xsdata"
-set acelib "/rds/general/user/es2517/home/serpent/serpent2.2.0/xsdata/endfb7u/endfb7/sss_endfb7u.xsdata"
+%set acelib "/rds/general/user/es2517/home/serpent/serpent2.2.0/xsdata/endfb7u/endfb7/sss_endfb7u.xsdata"
 %set pdatadir DIR
 
 set bc 1
@@ -515,15 +515,15 @@ set power 367.0E+06
 set gcu  0 
 set ures 1
 set mcvol 50000000
-set pop 100000 300 20
+set pop 500 200 20
 %set fum defaultmg 2 1
 
 src 1 n sm fuel
 
 % --- Geometry and mesh plots:
 
-%plot 1 800 800
-%plot 2 800 800
+plot 1 800 800
+plot 2 800 800
 plot 3 800 800 40.0
 %plot 3 800 800 91.0
 %plot 3 800 800 100.0
