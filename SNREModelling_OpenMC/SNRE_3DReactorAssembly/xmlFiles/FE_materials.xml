@@ -12,7 +12,6 @@
   <material id="2" name="FE_coolant" temperature="300">
     <density units="atom/b-cm" value="0.00161317"/>
     <nuclide ao="0.00161317" name="H1"/>
-    <sab name="c_para_H"/>
   </material>
   <material id="3" name="FE_claddingOuter" temperature="300">
     <density units="g/cm3" value="6.73"/>

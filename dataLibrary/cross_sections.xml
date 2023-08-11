@@ -67,9 +67,9 @@
   <library materials="Cr53" path="24053ENDF7.ace/24053ENDF7.ace.h5" type="neutron"/>
   <library materials="Cr54" path="24054ENDF7.ace/24054ENDF7.ace.h5" type="neutron"/>
   <library materials="Mn55" path="25055ENDF7.ace/25055ENDF7.ace.h5" type="neutron"/>
-  <library materials="Fe0" path="/home/jimmy/Documents/SNRE_UROP/openmc/data_libraries/endfb-vii.1-hdf5/neutron/Fe56.h5" type="neutron"/>
+  <library materials="Fe0" path="26000JNDL32.ace/26000JNDL32.ace.h5" type="neutron"/>
   <library materials="Fe54" path="26054ENDF7.ace/26054ENDF7.ace.h5" type="neutron"/>
-  <library materials="Fe56" path="/home/jimmy/Documents/SNRE_UROP/openmc/data_libraries/endfb-vii.1-hdf5/neutron/Fe56.h5" type="neutron"/>
+  <library materials="Fe56" path="26056ENDF7.ace/26056ENDF7.ace.h5" type="neutron"/>
   <library materials="Fe57" path="26057ENDF7.ace/26057ENDF7.ace.h5" type="neutron"/>
   <library materials="Fe58" path="26058ENDF7.ace/26058ENDF7.ace.h5" type="neutron"/>
   <library materials="Co58" path="27058ENDF7.ace/27058ENDF7.ace.h5" type="neutron"/>
