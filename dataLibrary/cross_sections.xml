@@ -432,7 +432,10 @@
   <library materials="Es255" path="99255ENDF7.ace/99255ENDF7.ace.h5" type="neutron"/>
   <library materials="Fm255" path="100255ENDF7.ace/100255ENDF7.ace.h5" type="neutron"/>
   <library materials="c_Al27" path="c_Al27/c_Al27.h5" type="thermal"/>
-  <library materials="c_Fe56" path="c_Fe56/c_Fe56.h5" type="thermal"/>
+  <library materials="c_Fe56" path="/home/jimmy/Documents/SNRE_UROP/openmc/data_libraries/endfb-vii.1-hdf5/neutron/c_Fe56.h5" type="thermal"/>
   <library materials="c_Graphite" path="c_Graphite/c_Graphite.h5" type="thermal"/>
   <library materials="c_para_H" path="c_para_H/c_para_H.h5" type="thermal"/>
+  <library materials="c_H_in_ZrH" path="c_H_in_ZrH/c_H_in_ZrH.h5" type="thermal"/>
+  <library materials="c_Zr_in_ZrH" path="c_Zr_in_ZrH/c_Zr_in_ZrH.h5" type="thermal"/>
+  <library materials="c_Be" path="c_Be/c_Be.h5" type="thermal"/>
 </cross_sections>
