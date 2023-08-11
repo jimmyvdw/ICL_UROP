@@ -4,10 +4,12 @@
   <material id="5" name="SE_coolant" temperature="300">
     <density units="atom/b-cm" value="0.00161317"/>
     <nuclide ao="0.00161317" name="H1"/>
+    <sab name="c_para_H"/>
   </material>
   <material id="6" name="SE_coolantStagnant" temperature="300">
-    <density units="atom/b-cm" value="0.0019127"/>
+    <density units="g/cm3" value="0.0019127"/>
     <nuclide ao="0.0019127" name="H1"/>
+    <sab name="c_para_H"/>
   </material>
   <material id="7" name="SE_inconel718" temperature="300">
     <density units="g/cm3" value="8.19"/>
@@ -54,6 +56,8 @@
     <nuclide name="Mo98" wo="0.0616648032"/>
     <nuclide name="Mo100" wo="0.025154684099999998"/>
     <sab name="c_Graphite"/>
+    <sab name="c_Al27"/>
+    <sab name="c_Fe56"/>
   </material>
   <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>

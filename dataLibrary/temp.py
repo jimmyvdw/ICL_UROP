@@ -18,4 +18,7 @@ import os
 #     c_h_in_zrh.add_temperature_from_ace('./dataLibrary/c_H_in_ZrH/hzrh.{}t'.format(suffix))
 # c_h_in_zrh.export_to_hdf5('./dataLibrary/c_H_in_ZrH/c_H_in_ZrH.h5')
 
-print()
+c_fe56 = openmc.data.ThermalScattering.from_ace('./dataLibrary/c_Fe56/fe56.12t')
+for suffix in ['10', '11', '12', '13', '14', '15']:
+    c_fe56.add_temperature_from_ace('./dataLibrary/c_Fe56/fe56.{}t'.format(suffix))
+c_fe56.export_to_hdf5('./dataLibrary/c_Fe56/c_Fe56.h5')
