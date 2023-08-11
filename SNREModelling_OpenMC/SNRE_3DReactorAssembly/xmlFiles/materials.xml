@@ -50,8 +50,8 @@
   </material>
   <material id="6" name="SE_coolantStagnant" temperature="300">
     <density units="atom/b-cm" value="0.0019127"/>
-    <nuclide ao="0.99984426" name="H1"/>
-    <nuclide ao="0.00015574" name="H2"/>
+    <nuclide name="H1" wo="0.9996888076484954"/>
+    <nuclide name="H2" wo="0.0003111923515045644"/>
     <sab name="c_para_H"/>
   </material>
   <material id="7" name="SE_inconel718" temperature="300">
@@ -113,6 +113,7 @@
     <nuclide name="Zr94" wo="0.17576399816961594"/>
     <nuclide name="Zr96" wo="0.028920079791089834"/>
     <sab name="c_para_H"/>
+    <sab name="c_Zr_in_ZrH"/>
   </material>
   <material id="9" name="SE_insulator" temperature="300">
     <density units="g/cm3" value="3.365"/>
@@ -146,8 +147,8 @@
   </material>
   <material id="12" name="VE_gasStagnant" temperature="300">
     <density units="atom/b-cm" value="0.0019127"/>
-    <nuclide ao="0.99984426" name="H1"/>
-    <nuclide ao="0.00015574" name="H2"/>
+    <nuclide name="H1" wo="0.9996888076484954"/>
+    <nuclide name="H2" wo="0.0003111923515045644"/>
     <sab name="c_para_H"/>
   </material>
   <material id="13" name="RH_steelWrapper" temperature="300">
@@ -251,6 +252,7 @@
     <nuclide name="Zr94" wo="0.776205561892569"/>
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
+    <sab name="c_Zr_in_ZrH"/>
   </material>
   <material id="22" name="RH_hydrogenInnerPlenum" temperature="300">
     <density units="g/cm3" value="0.0027"/>
@@ -276,6 +278,7 @@
     <nuclide name="Zr94" wo="0.776205561892569"/>
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
+    <sab name="c_Zr_in_ZrH"/>
   </material>
   <material id="25" name="RH_controlDrumActuatorZone" temperature="300">
     <density units="g/cm3" value="0.4279"/>
@@ -302,6 +305,7 @@
     <nuclide name="Zr94" wo="0.776205561892569"/>
     <nuclide name="Zr96" wo="0.12771629581706542"/>
     <sab name="c_para_H"/>
+    <sab name="c_Zr_in_ZrH"/>
   </material>
   <material id="27" name="RH_pressureVessel" temperature="300">
     <density units="g/cm3" value="2.7"/>
