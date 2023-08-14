@@ -1,37 +1,37 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <geometry>
-  <cell fill="5" id="1" region="-3 4 -5 6 7 -8 -1 2" universe="3"/>
-  <cell id="2" material="3" region="~(-3 4 -5 6 7 -8) (-9 10 -11 12 13 -14) -1 2" universe="3"/>
-  <cell id="3" material="void" region="~(-9 10 -11 12 13 -14) -1 2" universe="3"/>
-  <cell id="300" material="1" universe="1"/>
-  <cell id="311" material="2" region="-301" universe="4"/>
-  <cell id="312" material="4" region="301 -302" universe="4"/>
-  <cell id="313" material="1" region="302" universe="4"/>
-  <hex_lattice id="5" n_rings="3" name="assembly" orientation="x">
+  <cell fill="83" id="178" region="-320 321 -322 323 324 -325 -318 319" universe="81"/>
+  <cell id="179" material="3" region="~(-320 321 -322 323 324 -325) (-326 327 -328 329 330 -331) -318 319" universe="81"/>
+  <cell id="180" material="void" region="~(-326 327 -328 329 330 -331) -318 319" universe="81"/>
+  <cell id="300" material="1" universe="79"/>
+  <cell id="311" material="2" region="-301" universe="82"/>
+  <cell id="312" material="4" region="301 -302" universe="82"/>
+  <cell id="313" material="1" region="302" universe="82"/>
+  <hex_lattice id="83" n_rings="3" name="assembly" orientation="x">
     <pitch>0.40894</pitch>
-    <outer>1</outer>
+    <outer>79</outer>
     <center>0.0 0.0</center>
     <universes>
-  4 4 4
- 4 4 4 4
-4 4 4 4 4
- 4 4 4 4
-  4 4 4</universes>
+    82  82  82
+  82  82  82  82
+82  82  82  82  82
+  82  82  82  82
+    82  82  82</universes>
   </hex_lattice>
-  <surface coeffs="0.0" id="1" type="z-plane"/>
-  <surface coeffs="-89.0" id="2" type="z-plane"/>
-  <surface coeffs="0.9475" id="3" type="y-plane"/>
-  <surface coeffs="-0.9475" id="4" type="y-plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="5" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="6" type="plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="7" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="8" type="plane"/>
-  <surface coeffs="0.9525000000000001" id="9" type="y-plane"/>
-  <surface coeffs="-0.9525000000000001" id="10" type="y-plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="11" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="12" type="plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="13" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="14" type="plane"/>
   <surface coeffs="0.0 0.0 0.11827" id="301" type="z-cylinder"/>
   <surface coeffs="0.0 0.0 0.12827" id="302" type="z-cylinder"/>
+  <surface coeffs="0.0" id="318" type="z-plane"/>
+  <surface coeffs="-89.0" id="319" type="z-plane"/>
+  <surface coeffs="0.9475" id="320" type="y-plane"/>
+  <surface coeffs="-0.9475" id="321" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="322" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="323" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="324" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="325" type="plane"/>
+  <surface coeffs="0.9525000000000001" id="326" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="327" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="328" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="329" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="330" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="331" type="plane"/>
 </geometry>
