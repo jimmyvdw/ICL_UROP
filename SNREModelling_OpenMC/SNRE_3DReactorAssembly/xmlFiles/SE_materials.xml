@@ -2,88 +2,93 @@
 <materials>
   <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
   <material id="5" name="SE_coolant" temperature="300">
-    <density units="atom/b-cm" value="0.00161317"/>
-    <nuclide ao="0.00161317" name="H1"/>
-    <sab name="c_para_H"/>
+    <density units="g/cm3" value="0.0027002"/>
+    <nuclide name="H1" wo="0.99977"/>
+    <nuclide name="H2" wo="0.0002298"/>
   </material>
   <material id="6" name="SE_coolantStagnant" temperature="300">
     <density units="g/cm3" value="0.0019127"/>
-    <nuclide ao="0.0019127" name="H1"/>
-    <sab name="c_para_H"/>
+    <nuclide name="H1" wo="0.99977"/>
+    <nuclide name="H2" wo="0.0002298"/>
   </material>
   <material id="7" name="SE_inconel718" temperature="300">
     <density units="g/cm3" value="8.19"/>
-    <nuclide name="B10" wo="7.547469929999999e-05"/>
-    <nuclide name="B11" wo="0.000334025055"/>
-    <nuclide name="C0" wo="0.005978699999999999"/>
-    <nuclide name="Al27" wo="0.04095"/>
-    <nuclide name="Si28" wo="0.0239258565"/>
-    <nuclide name="Si29" wo="0.00125887671"/>
-    <nuclide name="Si30" wo="0.0008594258399999999"/>
-    <nuclide name="P31" wo="0.0011465999999999998"/>
-    <nuclide name="S32" wo="0.00108600219"/>
-    <nuclide name="S33" wo="8.842661099999999e-06"/>
-    <nuclide name="S34" wo="5.1622716599999996e-05"/>
-    <nuclide name="S36" wo="1.2861412199999998e-07"/>
-    <nuclide name="Ti46" wo="0.00583790571"/>
-    <nuclide name="Ti47" wo="0.005379192"/>
-    <nuclide name="Ti48" wo="0.05443114949999999"/>
-    <nuclide name="Ti49" wo="0.004077776429999999"/>
-    <nuclide name="Ti50" wo="0.00398393541"/>
-    <nuclide name="Cr50" wo="0.0649467"/>
-    <nuclide name="Cr52" wo="1.30244751"/>
-    <nuclide name="Cr53" wo="0.150530562"/>
-    <nuclide name="Cr54" wo="0.03817678409999999"/>
-    <nuclide name="Mn55" wo="0.0260442"/>
-    <nuclide name="Fe54" wo="0.0786031155"/>
-    <nuclide name="Fe56" wo="1.27954827"/>
-    <nuclide name="Fe57" wo="0.0300788397"/>
-    <nuclide name="Fe58" wo="0.00407309175"/>
-    <nuclide name="Co59" wo="0.074529"/>
-    <nuclide name="Ni58" wo="2.8893337199999998"/>
-    <nuclide name="Ni60" wo="1.15130106"/>
-    <nuclide name="Ni61" wo="0.0508815216"/>
-    <nuclide name="Ni62" wo="0.16488763199999998"/>
-    <nuclide name="Ni64" wo="0.0433479501"/>
-    <nuclide name="Cu63" wo="0.015311041199999998"/>
-    <nuclide name="Cu65" wo="0.00704764242"/>
-    <nuclide name="Nb93" wo="0.41973749999999993"/>
-    <nuclide name="Mo92" wo="0.0353446002"/>
-    <nuclide name="Mo94" wo="0.0225676269"/>
-    <nuclide name="Mo95" wo="0.039290296499999995"/>
-    <nuclide name="Mo96" wo="0.041651473499999994"/>
-    <nuclide name="Mo97" wo="0.0241214337"/>
-    <nuclide name="Mo98" wo="0.0616648032"/>
-    <nuclide name="Mo100" wo="0.025154684099999998"/>
-    <sab name="c_Graphite"/>
-    <sab name="c_Al27"/>
-    <sab name="c_Fe56"/>
+    <nuclide name="B10" wo="9.2155e-06"/>
+    <nuclide name="B11" wo="4.0785e-05"/>
+    <nuclide name="C0" wo="0.00073"/>
+    <nuclide name="Al27" wo="0.005"/>
+    <nuclide name="Si28" wo="0.0029214"/>
+    <nuclide name="Si29" wo="0.00015371"/>
+    <nuclide name="Si30" wo="0.00010494"/>
+    <nuclide name="P31" wo="0.00014"/>
+    <nuclide name="S32" wo="0.0001326"/>
+    <nuclide name="S33" wo="1.0797e-06"/>
+    <nuclide name="S34" wo="6.3031e-06"/>
+    <nuclide name="S36" wo="1.5704e-08"/>
+    <nuclide name="Ti46" wo="0.00071281"/>
+    <nuclide name="Ti47" wo="0.0006568"/>
+    <nuclide name="Ti48" wo="0.0066461"/>
+    <nuclide name="Ti49" wo="0.0004979"/>
+    <nuclide name="Ti50" wo="0.00048644"/>
+    <nuclide name="Cr50" wo="0.00793"/>
+    <nuclide name="Cr52" wo="0.15903"/>
+    <nuclide name="Cr53" wo="0.01838"/>
+    <nuclide name="Cr54" wo="0.0046614"/>
+    <nuclide name="Mn55" wo="0.00318"/>
+    <nuclide name="Fe54" wo="0.0095975"/>
+    <nuclide name="Fe56" wo="0.15623"/>
+    <nuclide name="Fe57" wo="0.0036726"/>
+    <nuclide name="Fe58" wo="0.00049733"/>
+    <nuclide name="Co59" wo="0.0091"/>
+    <nuclide name="Ni58" wo="0.35279"/>
+    <nuclide name="Ni60" wo="0.14057"/>
+    <nuclide name="Ni61" wo="0.0062126"/>
+    <nuclide name="Ni62" wo="0.020133"/>
+    <nuclide name="Ni64" wo="0.0052928"/>
+    <nuclide name="Cu63" wo="0.0018695"/>
+    <nuclide name="Cu65" wo="0.00086052"/>
+    <nuclide name="Nb93" wo="0.05125"/>
+    <nuclide name="Mo92" wo="0.0043156"/>
+    <nuclide name="Mo94" wo="0.0027555"/>
+    <nuclide name="Mo95" wo="0.0047974"/>
+    <nuclide name="Mo96" wo="0.0050857"/>
+    <nuclide name="Mo97" wo="0.0029452"/>
+    <nuclide name="Mo98" wo="0.0075293"/>
+    <nuclide name="Mo100" wo="0.0030714"/>
   </material>
   <material id="8" name="SE_moderator" temperature="300">
     <density units="g/cm3" value="5.61"/>
-    <nuclide name="H1" wo="0.09863502"/>
-    <nuclide name="H2" wo="2.2671132000000005e-05"/>
-    <nuclide name="Zr0" wo="5.511320100000001"/>
+    <nuclide name="H1" wo="0.017584"/>
+    <nuclide name="H2" wo="4.0416e-06"/>
+    <nuclide name="Zr90" wo="0.98241"/>
     <sab name="c_H_in_ZrH"/>
     <sab name="c_Zr_in_ZrH"/>
   </material>
   <material id="9" name="SE_insulator" temperature="300">
     <density units="g/cm3" value="3.365"/>
-    <nuclide name="Zr0" wo="2.9738187500000004"/>
-    <nuclide name="C0" wo="0.39118125000000004"/>
+    <nuclide name="Zr90" wo="0.44811"/>
+    <nuclide name="Zr91" wo="0.098811"/>
+    <nuclide name="Zr92" wo="0.15269"/>
+    <nuclide name="Zr94" wo="0.15811"/>
+    <nuclide name="Zr96" wo="0.026016"/>
+    <nuclide name="C0" wo="0.11625"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="10" name="SE_supportSleeve" temperature="300">
     <density units="g/cm3" value="1.7"/>
-    <nuclide name="C0" wo="1.6999982999999999"/>
-    <nuclide name="B10" wo="3.133253e-07"/>
-    <nuclide name="B11" wo="1.3866747000000001e-06"/>
+    <nuclide name="C0" wo="1.0"/>
+    <nuclide name="B10" wo="1.8431e-07"/>
+    <nuclide name="B11" wo="8.1569e-07"/>
     <sab name="c_Graphite"/>
   </material>
   <material id="11" name="SE_supportCoating" temperature="300">
     <density units="g/cm3" value="6.73"/>
-    <nuclide name="Zr0" wo="5.947637500000001"/>
-    <nuclide name="C0" wo="0.7823625000000001"/>
+    <nuclide name="Zr90" wo="0.44811"/>
+    <nuclide name="Zr91" wo="0.098811"/>
+    <nuclide name="Zr92" wo="0.15269"/>
+    <nuclide name="Zr94" wo="0.15811"/>
+    <nuclide name="Zr96" wo="0.026016"/>
+    <nuclide name="C0" wo="0.026016"/>
     <sab name="c_Graphite"/>
   </material>
 </materials>
