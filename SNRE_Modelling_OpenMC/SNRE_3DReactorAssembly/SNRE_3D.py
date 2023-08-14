@@ -136,7 +136,7 @@ SE_supportCoating.add_nuclide('C0', 2.6016E-02, 'wo')
 SE_supportCoating.add_s_alpha_beta('c_Graphite')
 
 SE_materials = openmc.Materials([SE_coolant, SE_coolantStagnant, SE_inconel718, SE_moderator, SE_insulator, SE_supportSleeve, SE_supportCoating])
-SE_materials.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/SE_materials.xml')
+SE_materials.export_to_xml('./xmlFiles/SE_materials.xml')
 
 BE_coreFiller = openmc.Material(name='BE_coreFiller', temperature=300)
 BE_coreFiller.set_density('g/cm3', 1.848)
@@ -288,7 +288,7 @@ RH_gapCoolant.add_nuclide('H1', 9.9977E-01, 'wo')
 RH_gapCoolant.add_nuclide('H2', 2.2980E-04, 'wo')
 
 RH_materials = openmc.Materials([RH_steelWrapper, RH_berylliumBarrel, RH_berylliumReflector, RH_controlDrum, RH_controlPlate, RH_lowerTieTubePlenum, RH_coreSupportPlate, RH_upperTieTubePlenum, RH_lowerInternalShield, RH_hydrogenInnerPlenum, RH_hydrogenOuterPlenum, RH_upperInternalShield, RH_controlDrumActuatorZone, RH_brimShield, RH_pressureVessel])
-RH_materials.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/RH_materials.xml')
+RH_materials.export_to_xml('./xmlFiles/RH_materials.xml')
 
 # Materials .xml
 materials = openmc.Materials([FE_fuel,
@@ -319,7 +319,7 @@ materials = openmc.Materials([FE_fuel,
                               RH_brimShield,
                               RH_pressureVessel,
                               RH_gapCoolant])
-materials.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/materials.xml')
+materials.export_to_xml('./xmlFiles/materials.xml')
 
 ##############################################################################################################
 ##############################################################################################################
@@ -454,21 +454,21 @@ FE_assemblyCell.fill = FE_lattice
 
 FE_rootUni.add_cells([FE_assemblyCell, FE_cladOuterCell, FE_voidCell])
 FE_geom=openmc.Geometry(FE_rootUni)
-FE_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/FE_geometry.xml')
+FE_geom.export_to_xml('./xmlFiles/FE_geometry.xml')
 
 # Plotting the fuel pin geometry
-FE_rootUni.plot(basis='xy',
-                origin=(0,0,0),
-                width=(2.2,2.2),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black'
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xy/fuelElementCrossSection_xy.png', dpi=300)
-plt.show()
+# FE_rootUni.plot(basis='xy',
+#                 origin=(0,0,0),
+#                 width=(2.2,2.2),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black'
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xy/fuelElementCrossSection_xy.png', dpi=300)
+# plt.show()
 
 #############################################################################################################
 #############################################################################################################
@@ -537,24 +537,24 @@ SE_assemblyCell.fill = SE_channelUni
 
 SE_rootUni.add_cells([SE_assemblyCell, SE_cladOuterCell, SE_voidCell])
 SE_geom=openmc.Geometry(SE_rootUni)
-SE_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/SE_geometry.xml')
+SE_geom.export_to_xml('./xmlFiles/SE_geometry.xml')
 
 # Plotting the fuel pin geometry
-SE_rootUni.plot(basis='xy',
-                origin=(0,0,0),
-                width=(2.2,2.2),
-                color_by='material',
-                colors={SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black'
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xy/supportElementCrossSection_xy.png', dpi=300)
-plt.show()
+# SE_rootUni.plot(basis='xy',
+#                 origin=(0,0,0),
+#                 width=(2.2,2.2),
+#                 color_by='material',
+#                 colors={SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black'
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xy/supportElementCrossSection_xy.png', dpi=300)
+# plt.show()
 
 #############################################################################################################
 #############################################################################################################
@@ -577,7 +577,7 @@ BE_subassemblyCoreFillerCell.fill = BE_coreFiller
 BE_rootUni = openmc.Universe(cells=[BE_subassemblyCoreFillerCell])
 
 BE_geom=openmc.Geometry(BE_rootUni)
-BE_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/BE_geometry.xml')
+BE_geom.export_to_xml('./xmlFiles/BE_geometry.xml')
 
 ##############################################################################################################
 ##############################################################################################################
@@ -631,71 +631,71 @@ CA_assemblyCell.fill = CA_lattice
 
 CA_rootUni.add_cells([CA_assemblyCell, CA_voidCell])
 CA_geom=openmc.Geometry(CA_rootUni)
-CA_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/CA_geometry.xml')
+CA_geom.export_to_xml('./xmlFiles/CA_geometry.xml')
 
 # Plotting the fuel pin geometry
-CA_rootUni.plot(basis='xy',
-                origin=(0,0,0),
-                width=(30*2.2,30*2.2),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'white',
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xy/coreAssemblyCrossSection_xy.png', dpi=300)
-plt.show()
+# CA_rootUni.plot(basis='xy',
+#                 origin=(0,0,0),
+#                 width=(30*2.2,30*2.2),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'white',
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xy/coreAssemblyCrossSection_xy.png', dpi=300)
+# plt.show()
 
-CA_rootUni.plot(basis='xz',
-                origin=(0,0,RH_coreBottomBoundary/2),
-                width=(30*2.2,RH_coreBottomBoundary),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'white',
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xz/coreAssemblyAxial_xz.png', dpi=300)
-plt.show()
+# CA_rootUni.plot(basis='xz',
+#                 origin=(0,0,RH_coreBottomBoundary/2),
+#                 width=(30*2.2,RH_coreBottomBoundary),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'white',
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xz/coreAssemblyAxial_xz.png', dpi=300)
+# plt.show()
 
-CA_rootUni.plot(basis='yz',
-                origin=(0,0,RH_coreBottomBoundary/2),
-                width=(30*2.2,RH_coreBottomBoundary),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'white',
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/yz/coreAssemblyAxial_yz.png', dpi=300)
-plt.show()
+# CA_rootUni.plot(basis='yz',
+#                 origin=(0,0,RH_coreBottomBoundary/2),
+#                 width=(30*2.2,RH_coreBottomBoundary),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'white',
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/yz/coreAssemblyAxial_yz.png', dpi=300)
+# plt.show()
 
 ##############################################################################################################
 ##############################################################################################################
@@ -737,7 +737,7 @@ CD_bundleAssemblyCell = openmc.Cell(fill=CD_controlDrumPinBundleUniverse)
 
 CD_rootUni = openmc.Universe(cells=[CD_bundleAssemblyCell])
 CD_geom=openmc.Geometry(CD_rootUni)
-CD_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/CD_geometry.xml')
+CD_geom.export_to_xml('./xmlFiles/CD_geometry.xml')
 
 ##############################################################################################################
 ##############################################################################################################
@@ -809,119 +809,119 @@ RH_rootUni.add_cells((RH_coreCell,
                       RH_brimShieldCell,
                       RH_hydrogenOuterPlenumCell))
 RH_geom=openmc.Geometry(RH_rootUni)
-RH_geom.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/geometry.xml')
+RH_geom.export_to_xml('./xmlFiles/geometry.xml')
 
 # Plotting the fuel pin geometry
-RH_rootUni.plot(basis='xy',
-                origin=(0,0,0),
-                width=(RH_pressureVesselRadius*2,RH_pressureVesselRadius*2),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'darkslateblue',
-                        RH_gapCoolant: 'paleturquoise',
-                        RH_steelWrapper: 'dimgray',
-                        RH_berylliumBarrel: 'midnightblue',
-                        RH_berylliumReflector: 'darkslateblue',
-                        RH_pressureVessel: 'black',
-                        RH_controlPlate: 'black',
-                        RH_controlDrum: 'dimgray',
-                        RH_lowerTieTubePlenum: 'paleturquoise',
-                        RH_coreSupportPlate: 'midnightblue',
-                        RH_upperTieTubePlenum: 'paleturquoise',
-                        RH_lowerInternalShield: 'slateblue',
-                        RH_hydrogenInnerPlenum: 'paleturquoise',
-                        RH_upperInternalShield: 'slateblue',
-                        RH_controlDrumActuatorZone: 'slateblue',
-                        RH_brimShield: 'darkslategray',
-                        RH_hydrogenOuterPlenum: 'paleturquoise'
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xy/reactorHousingCrossSection_xy.png', dpi=300)
-plt.show()
+# RH_rootUni.plot(basis='xy',
+#                 origin=(0,0,0),
+#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselRadius*2),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'darkslateblue',
+#                         RH_gapCoolant: 'paleturquoise',
+#                         RH_steelWrapper: 'dimgray',
+#                         RH_berylliumBarrel: 'midnightblue',
+#                         RH_berylliumReflector: 'darkslateblue',
+#                         RH_pressureVessel: 'black',
+#                         RH_controlPlate: 'black',
+#                         RH_controlDrum: 'dimgray',
+#                         RH_lowerTieTubePlenum: 'paleturquoise',
+#                         RH_coreSupportPlate: 'midnightblue',
+#                         RH_upperTieTubePlenum: 'paleturquoise',
+#                         RH_lowerInternalShield: 'slateblue',
+#                         RH_hydrogenInnerPlenum: 'paleturquoise',
+#                         RH_upperInternalShield: 'slateblue',
+#                         RH_controlDrumActuatorZone: 'slateblue',
+#                         RH_brimShield: 'darkslategray',
+#                         RH_hydrogenOuterPlenum: 'paleturquoise'
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xy/reactorHousingCrossSection_xy.png', dpi=300)
+# plt.show()
 
-RH_rootUni.plot(basis='xz',
-                origin=(0,0,RH_pressureVesselBottomBoundary/2),
-                width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'darkslateblue',
-                        RH_gapCoolant: 'paleturquoise',
-                        RH_steelWrapper: 'dimgray',
-                        RH_berylliumBarrel: 'midnightblue',
-                        RH_berylliumReflector: 'darkslateblue',
-                        RH_pressureVessel: 'black',
-                        RH_controlPlate: 'black',
-                        RH_controlDrum: 'dimgray',
-                        RH_lowerTieTubePlenum: 'paleturquoise',
-                        RH_coreSupportPlate: 'darkslateblue',
-                        RH_upperTieTubePlenum: 'paleturquoise',
-                        RH_lowerInternalShield: 'slateblue',
-                        RH_hydrogenInnerPlenum: 'paleturquoise',
-                        RH_upperInternalShield: 'slateblue',
-                        RH_controlDrumActuatorZone: 'darkslategray',
-                        RH_brimShield: 'midnightblue',
-                        RH_hydrogenOuterPlenum: 'paleturquoise'
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/xz/reactorHousingAxial_xz.png', dpi=300)
-plt.show()
+# RH_rootUni.plot(basis='xz',
+#                 origin=(0,0,RH_pressureVesselBottomBoundary/2),
+#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'darkslateblue',
+#                         RH_gapCoolant: 'paleturquoise',
+#                         RH_steelWrapper: 'dimgray',
+#                         RH_berylliumBarrel: 'midnightblue',
+#                         RH_berylliumReflector: 'darkslateblue',
+#                         RH_pressureVessel: 'black',
+#                         RH_controlPlate: 'black',
+#                         RH_controlDrum: 'dimgray',
+#                         RH_lowerTieTubePlenum: 'paleturquoise',
+#                         RH_coreSupportPlate: 'darkslateblue',
+#                         RH_upperTieTubePlenum: 'paleturquoise',
+#                         RH_lowerInternalShield: 'slateblue',
+#                         RH_hydrogenInnerPlenum: 'paleturquoise',
+#                         RH_upperInternalShield: 'slateblue',
+#                         RH_controlDrumActuatorZone: 'darkslategray',
+#                         RH_brimShield: 'midnightblue',
+#                         RH_hydrogenOuterPlenum: 'paleturquoise'
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/xz/reactorHousingAxial_xz.png', dpi=300)
+# plt.show()
 
-RH_rootUni.plot(basis='yz',
-                origin=(0,0,RH_pressureVesselBottomBoundary/2),
-                width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
-                color_by='material',
-                colors={FE_coolant: 'paleturquoise',
-                        FE_claddingInner:'black',
-                        FE_fuel: 'dimgray',
-                        FE_claddingOuter: 'black',
-                        SE_coolant: 'paleturquoise',
-                        SE_inconel718: 'darkslategray',
-                        SE_coolantStagnant: 'paleturquoise',
-                        SE_moderator: 'midnightblue',
-                        SE_insulator: 'slateblue',
-                        SE_supportSleeve: 'dimgray',
-                        SE_supportCoating: 'black',
-                        BE_coreFiller: 'darkslateblue',
-                        RH_gapCoolant: 'paleturquoise',
-                        RH_steelWrapper: 'dimgray',
-                        RH_berylliumBarrel: 'midnightblue',
-                        RH_berylliumReflector: 'darkslateblue',
-                        RH_pressureVessel: 'black',
-                        RH_controlPlate: 'black',
-                        RH_controlDrum: 'dimgray',
-                        RH_lowerTieTubePlenum: 'paleturquoise',
-                        RH_coreSupportPlate: 'darkslateblue',
-                        RH_upperTieTubePlenum: 'paleturquoise',
-                        RH_lowerInternalShield: 'slateblue',
-                        RH_hydrogenInnerPlenum: 'paleturquoise',
-                        RH_upperInternalShield: 'slateblue',
-                        RH_controlDrumActuatorZone: 'darkslategray',
-                        RH_brimShield: 'midnightblue',
-                        RH_hydrogenOuterPlenum: 'paleturquoise'
-                        },
-                pixels=[1000,1000])
-plt.savefig('SNREModelling_OpenMC/SNRE_3DReactorAssembly/pics/Geometry/yz/reactorHousingAxial_yz.png', dpi=300)
-plt.show()
+# RH_rootUni.plot(basis='yz',
+#                 origin=(0,0,RH_pressureVesselBottomBoundary/2),
+#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
+#                 color_by='material',
+#                 colors={FE_coolant: 'paleturquoise',
+#                         FE_claddingInner:'black',
+#                         FE_fuel: 'dimgray',
+#                         FE_claddingOuter: 'black',
+#                         SE_coolant: 'paleturquoise',
+#                         SE_inconel718: 'darkslategray',
+#                         SE_coolantStagnant: 'paleturquoise',
+#                         SE_moderator: 'midnightblue',
+#                         SE_insulator: 'slateblue',
+#                         SE_supportSleeve: 'dimgray',
+#                         SE_supportCoating: 'black',
+#                         BE_coreFiller: 'darkslateblue',
+#                         RH_gapCoolant: 'paleturquoise',
+#                         RH_steelWrapper: 'dimgray',
+#                         RH_berylliumBarrel: 'midnightblue',
+#                         RH_berylliumReflector: 'darkslateblue',
+#                         RH_pressureVessel: 'black',
+#                         RH_controlPlate: 'black',
+#                         RH_controlDrum: 'dimgray',
+#                         RH_lowerTieTubePlenum: 'paleturquoise',
+#                         RH_coreSupportPlate: 'darkslateblue',
+#                         RH_upperTieTubePlenum: 'paleturquoise',
+#                         RH_lowerInternalShield: 'slateblue',
+#                         RH_hydrogenInnerPlenum: 'paleturquoise',
+#                         RH_upperInternalShield: 'slateblue',
+#                         RH_controlDrumActuatorZone: 'darkslategray',
+#                         RH_brimShield: 'midnightblue',
+#                         RH_hydrogenOuterPlenum: 'paleturquoise'
+#                         },
+#                 pixels=[1000,1000])
+# plt.savefig('./pics/Geometry/yz/reactorHousingAxial_yz.png', dpi=300)
+# plt.show()
 
 ############################################################################################################
 ############################################################################################################
@@ -943,14 +943,14 @@ settings.run_mode = 'eigenvalue'
 
 settings.source = source
 
-settings.particles = 10000
+settings.particles = 2000
 settings.generations_per_batch = 20
 settings.batches = 40
 settings.inactive = 20
 # settings.trace = (20,10,500)
 # settings.track = [(20,10,500)]
 # settings.statepoint = {'batches':[10]}
-settings.export_to_xml()
+settings.export_to_xml('./xmlFiles/')
 
 mesh = openmc.RegularMesh()
 mesh.dimension = [200, 200, 100]
@@ -974,6 +974,6 @@ fuelFastTally.filters = [openmc.MeshFilter(mesh), openmc.EnergyFilter([0.1,1e6])
 fuelFastTally.scores = ['flux', 'nu-fission', 'absorption', 'elastic', 'total']
 tallies.append(fuelFastTally)
 
-tallies.export_to_xml('SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/')
+tallies.export_to_xml('./xmlFiles/')
 
-openmc.run(path_input='SNREModelling_OpenMC/SNRE_3DReactorAssembly/xmlFiles/')
+openmc.run(path_input='./xmlFiles/')
