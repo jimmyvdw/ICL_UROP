@@ -1,0 +1,12 @@
+
+***** Tue Aug 15 18:09:52 2023
+
+Input error in parameter "mat" on line 233 in file "snre_2d_mat.inp":
+
+Duplicate definition on line 255 in file "snre_2d_mat.inp"
+
+
+Simulation aborted.
+------------------------------------------------------------
+Tue Aug 15 18:09:52 2023  (errors: 1, warnings: 0, notes: 0)
+
