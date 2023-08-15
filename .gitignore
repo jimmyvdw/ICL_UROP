@@ -6,6 +6,7 @@
 *.h5
 # *.xml
 *.out
+*.pyc
 
 # LaTeX Files #
 ###############

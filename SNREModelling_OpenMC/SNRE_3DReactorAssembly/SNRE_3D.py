@@ -955,7 +955,7 @@ settings.inactive = 20
 settings.export_to_xml('./xmlFiles/')
 
 mesh = openmc.RegularMesh()
-mesh.dimension = [150, 150, 75]
+mesh.dimension = [200, 200, 100]
 mesh.lower_left = [-49.2633, -49.2633, -129.64]
 mesh.upper_right = [49.2633, 49.2633, 0.0]
 
