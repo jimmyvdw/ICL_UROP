@@ -8,8 +8,6 @@ from SNRE_3DMaterials import *
 
 class SNRE_3DGeometry:
 
-    openmc.Materials.cross_sections = "/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml"
-
     def __init__(self, CD_drumAngularPos):
         print("Loading: SNRE_3DGeometry.py")
         self.materials = SNRE_3DMaterials()

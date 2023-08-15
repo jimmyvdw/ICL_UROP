@@ -5,8 +5,6 @@ from SNRE_3DGeometry import *
 
 def SNRE_3DMain():
 
-    openmc.Materials.cross_sections = "/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml"
-
     #############################################################################################################
     # Control Drum Angular Position
     CD_drumAngularPos = 90.0 # 0.0 = Fully Subcritical, 90.0 = Critical, 180.0 = Fully Withdrawn
