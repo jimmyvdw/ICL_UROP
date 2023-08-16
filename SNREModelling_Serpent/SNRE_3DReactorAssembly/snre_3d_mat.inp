@@ -1,3 +1,12 @@
+% --- Core material Specification ---------------------------------------------
+
+% --- Naming Convention:
+
+    % FE_xx - Fuel Element
+    % SE_xx - Support Element
+    % BE_xx - Beryllium Core Periphery Filler
+    % RH_xx - Reactor Housing
+
 % -----------------------------------------------------------------------------
 
 % --- Fuel Element Materials Definitions:
@@ -115,7 +124,7 @@ mat SE_inconel718 -8.1900E+00 rgb 47 79 79
 
 % --- Moderator: ZrH1.62
 
-mat SE_moderator -5.6100E+00 moder hzrh 1001 moder zrzrh 6000 rgb 25 25 112
+mat SE_moderator -5.6100E+00 moder hzrh 1001 moder zrzrh 40090 rgb 25 25 112
 
  1001.03c  -1.7582E-02
  1002.03c  -4.0412E-06
@@ -213,13 +222,13 @@ mat RH_berylliumReflector -1.8480E+00 rgb 72 61 139
 
 % --- Beryllium Control Drum:
 
-mat RH_controlDrum -1.8480E+00 rbg 50 50 50
+mat RH_controlDrum -1.8480E+00 rgb 50 50 50
 
  4009.03c    -1.0000E+00
 
 % --- Hafnium Control Plate:
 
-mat RH_controlPlate -1.3300E+01 rbg 0 0 0
+mat RH_controlPlate -1.3300E+01 rgb 10 10 10
 
 72174.03c    -2.0000E-03
 72176.03c    -5.2000E-02
@@ -241,7 +250,7 @@ mat RH_lowerTieTubePlenum -3.9080E-01 rgb 175 238 238
 
 % --- Core Support Plate:
 
-mat RH_coreSupportPlate-1.0050E+00 rgb 25 25 112
+mat RH_coreSupportPlate -1.0050E+00 rgb 25 25 112
 
  1001.03c    -2.0891E-03
  1002.03c    -4.8017E-07
@@ -252,7 +261,7 @@ mat RH_coreSupportPlate-1.0050E+00 rgb 25 25 112
 
 % --- Upper Tie Tube Plenum:
 
-mat RH_lowerTieTubePlenum -1.0050E+00 rgb 175 238 238
+mat RH_upperTieTubePlenum -1.0050E+00 rgb 175 238 238
 
  1001.03c    -2.1604E-03
  1002.03c    -4.9658E-07
@@ -332,7 +341,7 @@ mat RH_brimShield -4.4519E+00 rgb 47 79 79
 
 % --- Pressure Vessell:
 
-mat RH_pressureVessell -2.7000E+00 rgb 0 0 0
+mat RH_pressureVessel -2.7000E+00 rgb 50 50 50
 
 13027.03c    -1.0000E+00
 
