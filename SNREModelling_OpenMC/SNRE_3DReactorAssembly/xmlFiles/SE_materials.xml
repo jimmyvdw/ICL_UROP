@@ -60,7 +60,7 @@
     <density units="g/cm3" value="5.61"/>
     <nuclide name="H1" wo="0.017584"/>
     <nuclide name="H2" wo="4.0416e-06"/>
-    <nuclide name="Zr90" wo="0.98241"/>
+    <nuclide name="Zr0" wo="0.98241"/>
     <sab name="c_H_in_ZrH"/>
     <sab name="c_Zr_in_ZrH"/>
   </material>

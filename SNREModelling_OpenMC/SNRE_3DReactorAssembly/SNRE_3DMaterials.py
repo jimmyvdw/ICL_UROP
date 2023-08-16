@@ -104,7 +104,7 @@ class SNRE_3DMaterials:
     SE_moderator.set_density('g/cm3', 5.61)
     SE_moderator.add_nuclide('H1', 1.7584E-02, 'wo')
     SE_moderator.add_nuclide('H2', 4.0416E-06, 'wo')
-    SE_moderator.add_nuclide('Zr90', 9.8241E-01, 'wo')
+    SE_moderator.add_nuclide('Zr0', 9.8241E-01, 'wo')
     SE_moderator.add_s_alpha_beta('c_H_in_ZrH')
     SE_moderator.add_s_alpha_beta('c_Zr_in_ZrH')
 

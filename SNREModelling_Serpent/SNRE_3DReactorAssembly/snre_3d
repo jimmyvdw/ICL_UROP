@@ -33,18 +33,18 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t
     % 90.000  - Critical Position
     % 180.000 - Super-critical Position, i.e. Fully Withdrawn
 
-utrans CDu0  rot   0.0000 41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
-utrans CDu1  rot  20.5105 35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
-utrans CDu2  rot  35.5252 20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  3 (NEE) Rotation
-utrans CDu3  rot  41.0210  0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum  4 (E) Rotation
-utrans CDu4  rot  35.525 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  5 (SEE) Rotation
-utrans CDu5  rot  20.5105 -35.525  0.0  0.0  0.0  -1.0  90.000           % Control Drum  6 (SSE) Rotation
-utrans CDu6  rot   0.0000 -41.021  0.0  0.0  0.0  -1.0  90.000           % Control Drum  7 (S) Rotation
-utrans CDu7  rot -20.5105 -35.525  0.0  0.0  0.0  -1.0  90.000           % Control Drum  8 (SSW) Rotation
-utrans CDu8  rot -35.525 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  9 (SWW) Rotation
-utrans CDu9  rot -41.0210 -0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum 10 (W) Rotation
-utrans CDu10 rot -35.5252 20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum 11 (NWW) Rotation
-utrans CDu11 rot -20.5105 35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum 12 (NNW) Rotation
+utrans CDu0  rot   0.0000  41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
+utrans CDu1  rot  20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
+utrans CDu2  rot  35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  3 (NEE) Rotation
+utrans CDu3  rot  41.0210   0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum  4 (E) Rotation
+utrans CDu4  rot  35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  5 (SEE) Rotation
+utrans CDu5  rot  20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  6 (SSE) Rotation
+utrans CDu6  rot   0.0000 -41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  7 (S) Rotation
+utrans CDu7  rot -20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  8 (SSW) Rotation
+utrans CDu8  rot -35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  9 (SWW) Rotation
+utrans CDu9  rot -41.0210  -0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum 10 (W) Rotation
+utrans CDu10 rot -35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum 11 (NWW) Rotation
+utrans CDu11 rot -20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum 12 (NNW) Rotation
 
 % -----------------------------------------------------------------------------
 
@@ -62,5 +62,9 @@ set pop 2000 800 20
 
 % --- Geometry and mesh plots:
 
+plot 1 1000 1000
+plot 2 1000 1000
 plot 3 1000 1000
+mesh 1 1000 1000
+mesh 2 1000 1000
 mesh 3 1000 1000

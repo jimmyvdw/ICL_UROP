@@ -63,14 +63,14 @@ mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 0 0 0
 
 % --- Hydrogen Coolant:
 
-mat SE_coolant -2.7002E-03 rgb 175 238 238
+mat SE_coolant -2.7002E-03 rgb 174 238 238
 
  1001.03c    -9.9977E-01
  1002.03c    -2.2980E-04
 
 % --- Stagnant Hydrogen Coolant:
 
-mat SE_coolantStagnant -2.7002E-03 rgb 175 238 238
+mat SE_coolantStagnant -2.7002E-03 rgb 176 238 238
 
  1001.03c    -9.9977E-01
  1002.03c    -2.2980E-04
@@ -124,11 +124,11 @@ mat SE_inconel718 -8.1900E+00 rgb 47 79 79
 
 % --- Moderator: ZrH1.62
 
-mat SE_moderator -5.6100E+00 moder hzrh 1001 moder zrzrh 40090 rgb 25 25 112
+mat SE_moderator -5.6100E+00 moder hzrh 1001 moder zrzrh 40000 rgb 25 25 112
 
  1001.03c  -1.7582E-02
  1002.03c  -4.0412E-06
-40090.03c  -9.8241E-01
+40000.03c  -9.8241E-01
 
 % --- Insulator:
 
@@ -314,7 +314,7 @@ mat RH_upperInternalShield -4.4519E+00 rgb 106 90 205
 
 % --- Control Drum Actuator Zone:
 
-mat RH_controlDrumActuatorZone -4.2790E-01 rgb 106 90 205
+mat RH_controlDrumActuator -4.2790E-01 rgb 106 90 205
 
  1001.03c    -5.1402E-03
  1002.03c    -1.1815E-06
