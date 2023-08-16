@@ -24,9 +24,9 @@ def SNRE_3DMain():
 
     settings.source = source
 
-    settings.particles = 10000
+    settings.particles = 50000
     settings.generations_per_batch = 20
-    batches = settings.batches = 40
+    batches = settings.batches = 100
     settings.inactive = 20
     # settings.trace = (20,10,500)
     # settings.track = [(20,10,500)]
