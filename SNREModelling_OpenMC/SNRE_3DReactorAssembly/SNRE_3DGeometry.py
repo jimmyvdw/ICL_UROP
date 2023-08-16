@@ -36,7 +36,7 @@ class SNRE_3DGeometry:
         SE_midHGapRadius = 0.70485
         SE_insulatorRadius = 0.80645
         SE_outerHGapRadius = 0.81280
-        SE_subassemblyDuctOuter = 1.89484
+        SE_subassemblyDuctOuter = 1.905
         SE_subassemblyDuctThickness = 0.00508
         SE_subassemblyDuctInner = SE_subassemblyDuctOuter - 2*SE_subassemblyDuctThickness
 

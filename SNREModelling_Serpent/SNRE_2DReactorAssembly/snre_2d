@@ -15,7 +15,7 @@ set acelib "/home/jimmy/Documents/SNRE_UROP/Serpent/data_libraries/Serpent_2_xsd
 
 % --- Thermal scattering data for Moderators:
 
-therm hyd 20 hpara.10t hpara.10t
+% therm hyd 20 hpara.10t hpara.10t
 therm grph 300 gre7.00t gre7.04t
 therm hzrh 300 hzrh.10t hzrh.11t
 therm zrzrh 300 zrzrh.10t zrzrh.11t 

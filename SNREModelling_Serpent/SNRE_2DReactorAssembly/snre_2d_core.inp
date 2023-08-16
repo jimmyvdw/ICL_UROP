@@ -27,8 +27,8 @@ include "snre_2d_mat.inp"
 % --- Fuel Element Pin:
 
 pin FEp0
-FE_coolant         0.11827
-FE_claddingInner   0.12827
+FE_coolant          0.11827
+FE_claddingInner    0.12827
 FE_fuel   
 
 % --- Empty lattice position:
@@ -38,7 +38,7 @@ FE_fuel
 
 % --- Fuel Element Lattice:
 
-lat FEl0  2  0.0 0.0 7 7 0.40894
+lat  FEl0  2  0.0  0.0  7  7  0.40894
 FEp1 FEp1 FEp1 FEp1 FEp1 FEp1 FEp1
  FEp1 FEp1 FEp1 FEp0 FEp0 FEp0 FEp1
   FEp1 FEp1 FEp0 FEp0 FEp0 FEp0 FEp1
@@ -49,13 +49,13 @@ FEp1 FEp1 FEp1 FEp1 FEp1 FEp1 FEp1
 
 % --- Surfaces (assembly pitch = 1.905 cm):
 
-surf FEs0  hexyc    0.0  0.0  0.9475               % Cladding Inner radius
-surf FEs1  hexyc    0.0  0.0  0.9525               % Cladding Outer boundary/radius
+surf  FEs0  hexyc    0.0  0.0  0.9475                  % Cladding Inner radius
+surf  FEs1  hexyc    0.0  0.0  0.9525                  % Cladding Outer boundary/radius
 
 % --- Cells:
 
-cell  FEc0  FEu0  fill FEl0         -FEs0           % Pin lattice                 
-cell  FEc1  FEu0  FE_claddingOuter  FEs0    -FEs1  % Clad Coating tube                
+cell  FEc0  FEu0  fill FEl0                   -FEs0    % Inner Pin Hex                 
+cell  FEc1  FEu0  FE_claddingOuter      FEs0  -FEs1    % Outer Cladding Hex                
 
 % -----------------------------------------------------------------------------
 
@@ -66,26 +66,26 @@ cell  FEc1  FEu0  FE_claddingOuter  FEs0    -FEs1  % Clad Coating tube
 % --- Support Element Pin:
 
 pin SEp0
-SE_coolant 0.20955
-SE_inconel718 0.26035
-SE_coolantStagnant 0.2667
-SE_moderator 0.5842
-SE_coolant 0.67818
-SE_inconel718 0.6985
-SE_coolantStagnant 0.70485
-SE_insulator 0.80645
-SE_coolantStagnant 0.8128
+SE_coolant          0.20955
+SE_inconel718       0.26035
+SE_coolantStagnant  0.2667
+SE_moderator        0.5842
+SE_coolant          0.67818
+SE_inconel718       0.6985
+SE_coolantStagnant  0.70485
+SE_insulator        0.80645
+SE_coolantStagnant  0.8128
 SE_supportSleeve
 
 % --- Surfaces (assembly pitch = 1.905 cm):
 
-surf SEs0  hexyc    0.0  0.0  0.9474                % Cladding Inner radius
-surf SEs1  hexyc    0.0  0.0  0.9525                % Cladding Outer boundary/radius
+surf  SEs0  hexyc    0.0  0.0  0.94742                 % Cladding Inner Radius
+surf  SEs1  hexyc    0.0  0.0  0.95250                 % Cladding Outer Boundary/Radius
 
 % --- Cells:
 
-cell  SEc0  SEu0  fill SEp0         -SEs0           % Pin lattice                 
-cell  SEc1  SEu0  SE_supportCoating  SEs0    -SEs1  % Clad Coating tube
+cell  SEc0  SEu0  fill SEp0                   -SEs0    % Inner Pin Hex                 
+cell  SEc1  SEu0  SE_supportCoating     SEs0  -SEs1    % Outer Cladding Hex
 
 % -----------------------------------------------------------------------------
 
@@ -93,9 +93,9 @@ cell  SEc1  SEu0  SE_supportCoating  SEs0    -SEs1  % Clad Coating tube
 
 % -----------------------------------------------------------------------------
 
-cell  BEc0  BEu0  BE_coreFiller     -BEs0           % Core Filler
+cell  BEc0  BEu0  BE_coreFiller               -BEs0    % Core Filler
 
-surf BEs0 inf
+surf  BEs0  inf
 
 % -----------------------------------------------------------------------------
 
@@ -105,7 +105,7 @@ surf BEs0 inf
 
 % --- Core Assembly Element Lattice:
 
-lat CAl0 3 0.0 0.0 37 37 1.905
+lat  CAl0  3  0.0  0.0  37  37  1.905
     BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
      BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu0 FEu0 FEu0 FEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu0 FEu0 FEu0 FEu0 FEu0 SEu0 FEu0 FEu0 FEu0 FEu0 FEu0 BEu0 BEu0 BEu0 BEu0 BEu0
@@ -146,7 +146,38 @@ lat CAl0 3 0.0 0.0 37 37 1.905
 
 % Rotate lattice by 30 degrees to align with control drums
 
-surf CAs0  cylz     0.0  0.0  29.5275               % Core Assembly Radius
+surf  CAs0  cylz     0.0  0.0  29.5275                 % Core Assembly Radius
 
-cell  CAc0  0  fill CAl0          -CAs0          % Core Assembly
-cell  CAc1  0  outside             CAs0          % Outside World
+% -----------------------------------------------------------------------------
+
+% --- Control Drum Geometry:
+
+% -----------------------------------------------------------------------------
+
+
+
+% -----------------------------------------------------------------------------
+
+% --- Reactor Housing Geometry:
+
+% -----------------------------------------------------------------------------
+
+surf  RHs0  cylz     0.0  0.0  29.8450                 % Gap Inner Radius
+surf  RHs1  cylz     0.0  0.0  30.1625                 % Steel Wrapper Radius
+surf  RHs2  cylz     0.0  0.0  30.4800                 % Gap Mid1 Radius
+surf  RHs3  cylz     0.0  0.0  33.3375                 % Beryllium Barrel Radius
+surf  RHs4  cylz     0.0  0.0  33.6550                 % Gap Mid2 Radius
+surf  RHs5  cylz     0.0  0.0  48.3870                 % Beryllium Reflector Radius
+surf  RHs6  cylz     0.0  0.0  48.7045                 % Gap Outer Radius
+surf  RHs7  cylz     0.0  0.0  49.2633                 % Pressure Vessel Radius
+
+cell  RHc0  0     fill CAl0                   -CAs0    % Core Assembly
+cell  RHc1  0     RH_coolant            CAs0  -RHs0    % Gap Inner
+cell  RHc2  0     RH_steelWrapper       RHs0  -RHs1    % Steel Wrapper
+cell  RHc3  0     RH_coolant            RHs1  -RHs2    % Gap Mid1
+cell  RHc4  0     RH_berylliumBarrel    RHs2  -RHs3    % Beryllium Barrel
+cell  RHc5  0     RH_coolant            RHs3  -RHs4    % Gap Mid2
+cell  RHc6  0     RH_berylliumReflector RHs4  -RHs5    % Beryllium Reflector
+cell  RHc7  0     RH_coolant            RHs5  -RHs6    % Gap Outer
+cell  RHc8  0     RH_pressureVessel     RHs6  -RHs7    % Pressure Vessel
+cell  RHc9  0     outside               RHs7           % Outside World
