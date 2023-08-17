@@ -35,7 +35,7 @@ mat FE_coolant -2.7002E-03 rgb 175 238 238
 
 % --- Zr-C Inner Cladding:
 
-mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 0 0 0
+mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 5 5 5
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02
@@ -46,7 +46,7 @@ mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 0 0 0
 
  % --- Zr-C Outer Cladding:
 
-mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 0 0 0
+mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 5 5 5
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02
@@ -239,7 +239,7 @@ mat RH_controlPlate -1.3300E+01 rgb 10 10 10
 
 % --- Lower Tie Tube Plenum:
 
-mat RH_lowerTieTubePlenum -3.9080E-01 rgb 175 238 238
+mat RH_lowerTieTubePlenum -3.9080E-01 rgb 123 104 238
 
  1001.03c    -7.4207E-03
  1002.03c    -1.7052E-06
@@ -250,7 +250,7 @@ mat RH_lowerTieTubePlenum -3.9080E-01 rgb 175 238 238
 
 % --- Core Support Plate:
 
-mat RH_coreSupportPlate -1.0050E+00 rgb 25 25 112
+mat RH_coreSupportPlate -1.0050E+00 rgb 72 61 139
 
  1001.03c    -2.0891E-03
  1002.03c    -4.8017E-07
@@ -261,7 +261,7 @@ mat RH_coreSupportPlate -1.0050E+00 rgb 25 25 112
 
 % --- Upper Tie Tube Plenum:
 
-mat RH_upperTieTubePlenum -1.0050E+00 rgb 175 238 238
+mat RH_upperTieTubePlenum -1.0050E+00 rgb 123 104 238
 
  1001.03c    -2.1604E-03
  1002.03c    -4.9658E-07
@@ -314,7 +314,7 @@ mat RH_upperInternalShield -4.4519E+00 rgb 106 90 205
 
 % --- Control Drum Actuator Zone:
 
-mat RH_controlDrumActuator -4.2790E-01 rgb 106 90 205
+mat RH_controlDrumActuator -4.2790E-01 rgb 46 79 79
 
  1001.03c    -5.1402E-03
  1002.03c    -1.1815E-06
@@ -327,7 +327,7 @@ mat RH_controlDrumActuator -4.2790E-01 rgb 106 90 205
 
 % --- Brim Shield:
 
-mat RH_brimShield -4.4519E+00 rgb 47 79 79
+mat RH_brimShield -4.4519E+00 rgb 25 25 111
 
  1001.03c    -2.0526E-02
  1002.03c    -4.7179E-06
