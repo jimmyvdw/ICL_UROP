@@ -70,7 +70,7 @@ mat SE_coolant -2.7002E-03 rgb 174 238 238
 
 % --- Stagnant Hydrogen Coolant:
 
-mat SE_coolantStagnant -2.7002E-03 rgb 176 238 238
+mat SE_coolantStagnant -1.9127E-03 rgb 176 238 238
 
  1001.03c    -9.9977E-01
  1002.03c    -2.2980E-04
