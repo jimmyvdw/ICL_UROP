@@ -29,9 +29,9 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t
 
     % The Control Drums Rotate Independently of Each Other in the Clockwise Direction through a Specified Angle (in degrees).
 
-    % 0.000   - Subcritical Position, i.e. Fully Inserted
-    % 90.000  - Critical Position
-    % 180.000 - Super-critical Position, i.e. Fully Withdrawn
+    % 0   - Subcritical Position, i.e. Fully Inserted
+    % 90  - Critical Position
+    % 180 - Super-critical Position, i.e. Fully Withdrawn
 
 utrans CDu0  rot   0.0000  41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
 utrans CDu1  rot  20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
