@@ -7,7 +7,7 @@ def SNRE_3DMain():
 
     #############################################################################################################
     # Control Drum Angular Position
-    CD_drumAngularPos = 0.0 # 0.0 = Fully Subcritical, 90.0 = Critical, 180.0 = Fully Withdrawn
+    CD_drumAngularPos = 90.0 # 0.0 = Fully Subcritical, 90.0 = Critical, 180.0 = Fully Withdrawn
     # Note: This is clockwise rotation
     #############################################################################################################
 
@@ -26,7 +26,7 @@ def SNRE_3DMain():
 
     settings.particles = 100000
     settings.generations_per_batch = 20
-    batches = settings.batches = 40
+    batches = settings.batches = 100
     settings.inactive = 20
     # settings.trace = (20,10,500)
     # settings.track = [(20,10,500)]
