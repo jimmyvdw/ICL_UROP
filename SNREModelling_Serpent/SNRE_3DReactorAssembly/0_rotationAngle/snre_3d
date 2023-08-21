@@ -1,0 +1,70 @@
+% -----------------------------------------------------------------------------
+
+% --- Geometry and Material Data:
+
+% -----------------------------------------------------------------------------
+
+% --- Read core data:
+
+include "snre_3d_core.inp"
+
+% --- Cross section library:
+
+set acelib "/home/jimmy/Documents/SNRE_UROP/Serpent/data_libraries/Serpent_2_xsdata/endfb7u/endfb7/sss_endfb7u.xsdata"
+
+% --- Thermal scattering data for Moderators:
+
+% therm hyd 20 hpara.10t hpara.10t
+therm grph 300 gre7.00t gre7.04t
+therm hzrh 300 hzrh.10t hzrh.11t
+therm zrzrh 300 zrzrh.10t zrzrh.11t 
+
+% -----------------------------------------------------------------------------
+
+% --- Set Control Drum Angular Positions:
+
+% -----------------------------------------------------------------------------
+
+% --- Angular Ppositions of Control Drums:
+
+    % The Control Drums Rotate Independently of Each Other in the Clockwise Direction through a Specified Angle (in degrees).
+
+    % 0   - Subcritical Position, i.e. Fully Inserted
+    % 90  - Critical Position
+    % 180 - Super-critical Position, i.e. Fully Withdrawn
+
+% utrans CDu0  rot   0.0000  41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
+% utrans CDu1  rot  20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
+% utrans CDu2  rot  35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  3 (NEE) Rotation
+% utrans CDu3  rot  41.0210   0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum  4 (E) Rotation
+% utrans CDu4  rot  35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  5 (SEE) Rotation
+% utrans CDu5  rot  20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  6 (SSE) Rotation
+% utrans CDu6  rot   0.0000 -41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  7 (S) Rotation
+% utrans CDu7  rot -20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  8 (SSW) Rotation
+% utrans CDu8  rot -35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  9 (SWW) Rotation
+% utrans CDu9  rot -41.0210  -0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum 10 (W) Rotation
+% utrans CDu10 rot -35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum 11 (NWW) Rotation
+% utrans CDu11 rot -20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum 12 (NNW) Rotation
+
+% -----------------------------------------------------------------------------
+
+% Calculation parameters
+
+% -----------------------------------------------------------------------------
+
+% --- Reflective boundary condition:
+
+set bc 1
+
+% --- Neutron population and criticality cycles:
+
+set pop 100000 800 50
+
+% --- Geometry and mesh plots:
+
+plot 1 1000 1000
+plot 2 1000 1000
+plot 3 1000 1000
+mesh 1 1000 1000
+mesh 2 1000 1000
+mesh 3 1000 1000

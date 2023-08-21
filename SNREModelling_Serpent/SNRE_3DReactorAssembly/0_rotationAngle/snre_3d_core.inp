@@ -1,0 +1,295 @@
+% --- Core Geometry -----------------------------------------------------------
+
+% --- Read material data:
+
+include "snre_3d_mat.inp"
+
+% --- Naming Convention:
+
+    % FExx - Fuel Element
+    % SExx - Support Element
+    % BExx - Beryllium Core Periphery Filler
+    % CAxx - Core Assembly
+    % CDxx - Control Drum
+    % CBxx - Control Drum Bundle
+    % RHxx - Reactor Housing
+
+    % xlx - Lattice
+    % xsx - Surfaces
+    % xcx - Cells
+    % xux - Universe
+
+% -----------------------------------------------------------------------------
+
+% --- Fuel Element Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Fuel Element Surfaces:
+
+surf   FEs0  cylz     0.0     0.0     0.11827                                                                                         % Coolant Outer Radius
+surf   FEs1  cylz     0.0     0.0     0.12827                                                                                         % Inner Cladding Outer Radius
+surf   FEs2  hexyc    0.0     0.0     0.94750                                                                                         % Outer Cladding Inner Radius
+surf   FEs3  hexyc    0.0     0.0     0.95250                                                                                         % Outer Cladding Outer Boundary/Radius
+surf   FEs4  inf                                                                                                                      % All Remaining Space
+
+% --- Fuel Element Lattice:
+
+lat    FEl0  2  0.0  0.0  7  7  0.40894
+FEu2 FEu2 FEu2 FEu2 FEu2 FEu2 FEu2
+ FEu2 FEu2 FEu2 FEu0 FEu0 FEu0 FEu2
+  FEu2 FEu2 FEu0 FEu0 FEu0 FEu0 FEu2
+   FEu2 FEu0 FEu0 FEu0 FEu0 FEu0 FEu2
+    FEu2 FEu0 FEu0 FEu0 FEu0 FEu2 FEu2
+     FEu2 FEu0 FEu0 FEu0 FEu2 FEu2 FEu2
+      FEu2 FEu2 FEu2 FEu2 FEu2 FEu2 FEu2
+
+% --- Fuel Element Cells:
+
+cell   FEc0  FEu0  FE_coolant             -FEs0                                                                                       % Coolant Channel
+cell   FEc1  FEu0  FE_claddingInner       -FEs1   FEs0                                                                                % Inner Cladding
+cell   FEc2  FEu0  FE_fuel                        FEs1                                                                                % Fuel
+cell   FEc3  FEu1  fill FEl0              -FEs2                                                                                       % Inner Pin Hex                 
+cell   FEc4  FEu1  FE_claddingOuter       -FEs3   FEs2                                                                                % Outer Cladding Hex  
+cell   FEc5  FEu2  FE_fuel                -FEs4                                                                                       % Fuel              
+
+% -----------------------------------------------------------------------------
+
+% --- Support Element Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Support Element Surfaces:
+
+surf   SEs0  cylz     0.0     0.0     0.20955                                                                                         % Coolant Outer Radius
+surf   SEs1  cylz     0.0     0.0     0.26035                                                                                         % Inconel 718 Outer Radius
+surf   SEs2  cylz     0.0     0.0     0.26670                                                                                         % Coolant Stagnant Outer Radius
+surf   SEs3  cylz     0.0     0.0     0.58420                                                                                         % Moderator Outer Radius
+surf   SEs4  cylz     0.0     0.0     0.67818                                                                                         % Coolant Outer Radius
+surf   SEs5  cylz     0.0     0.0     0.69850                                                                                         % Inconel 718 Outer Radius
+surf   SEs6  cylz     0.0     0.0     0.70485                                                                                         % Coolant Stagnant Outer Radius
+surf   SEs7  cylz     0.0     0.0     0.80645                                                                                         % Insulator Outer Radius
+surf   SEs8  cylz     0.0     0.0     0.81280                                                                                         % Coolant Stagnant Outer Radius
+surf   SEs9  hexyc    0.0     0.0     0.94742                                                                                         % Cladding Inner Radius
+
+% --- Support Element Cells:
+
+cell   SEc0  SEu0  SE_coolant             -SEs0                                                                                       % Coolant Channel
+cell   SEc1  SEu0  SE_inconel718          -SEs1   SEs0                                                                                % Inconel 718
+cell   SEc2  SEu0  SE_coolantStagnant     -SEs2   SEs1                                                                                % Coolant Stagnant
+cell   SEc3  SEu0  SE_moderator           -SEs3   SEs2                                                                                % Moderator
+cell   SEc4  SEu0  SE_coolant             -SEs4   SEs3                                                                                % Coolant Channel
+cell   SEc5  SEu0  SE_inconel718          -SEs5   SEs4                                                                                % Inconel 718
+cell   SEc6  SEu0  SE_coolantStagnant     -SEs6   SEs5                                                                                % Coolant Stagnant
+cell   SEc7  SEu0  SE_insulator           -SEs7   SEs6                                                                                % Insulator
+cell   SEc8  SEu0  SE_coolantStagnant     -SEs8   SEs7                                                                                % Coolant Stagnant
+cell   SEc9  SEu0  SE_supportSleeve       -SEs9   SEs8                                                                                % Support Sleeve
+cell   SEc10 SEu0  SE_supportCoating              SEs9                                                                                % Inner Pin Hex
+
+% -----------------------------------------------------------------------------
+
+% --- Core Assembly Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Beryllium Core Periphery Filler Surfaces and Cells:
+
+surf   BEs0  inf                                                                                                                      % Core Filler Remaining Space
+
+% --- Beryllium Core Periphery Filler Cells:                                                                      
+
+cell   BEc0  BEu0  BE_coreFiller         -BEs0                                                                                        % Core Filler
+
+% --- Core Assembly Surfaces:
+
+surf   CAs0  cylz      0.0      0.0      29.5275    0.0000  89.0000                                                                   % Core Assembly Radius
+
+% --- Core Assembly Element Lattice:
+
+lat    CAl0  3  0.0  0.0  37  37  1.905
+    BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+     BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+      BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
+       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0
+        BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0
+         BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0
+          BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
+           BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0
+            BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0
+             BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0
+              BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0
+               BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0
+                BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
+                 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0
+                  BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0
+                   BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
+                    BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0
+                     BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0
+                      BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0
+                       BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0
+                        BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
+                         BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
+                          BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                           BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                            BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                             BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                              BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                               BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                  BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                   BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                    BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                     BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                      BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                        BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+
+% -----------------------------------------------------------------------------
+
+% --- Control Drum Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Control Drum Surfaces:
+
+surf   CDs0  cylz      0.0000  41.0210  6.03250                                                                                       % Control Drum 1 Radius
+surf   CDs1  pad       0.0000  41.0210  5.39750  6.03250   30  150                                                                    % Control Drum 1 Pad
+surf   CDs2  cylz     20.5105  35.5252  6.03250                                                                                       % Control Drum 2 Radius
+surf   CDs3  pad      20.5105  35.5252  5.39750  6.03250   60  180                                                                    % Control Drum 2 Pad
+surf   CDs4  cylz     35.5252  20.5105  6.03250                                                                                       % Control Drum 3 Radius
+surf   CDs5  pad      35.5252  20.5105  5.39750  6.03250   90  210                                                                    % Control Drum 3 Pad
+surf   CDs6  cylz     41.0210   0.0000  6.03250                                                                                       % Control Drum 4 Radius
+surf   CDs7  pad      41.0210   0.0000  5.39750  6.03250  120  240                                                                    % Control Drum 4 Pad
+surf   CDs8  cylz     35.5252 -20.5105  6.03250                                                                                       % Control Drum 5 Radius
+surf   CDs9  pad      35.5252 -20.5105  5.39750  6.03250  150  270                                                                    % Control Drum 5 Pad
+surf   CDs10 cylz     20.5105 -35.5252  6.03250                                                                                       % Control Drum 6 Radius
+surf   CDs11 pad      20.5105 -35.5252  5.39750  6.03250  180  300                                                                    % Control Drum 6 Pad
+surf   CDs12 cylz      0.0000 -41.0210  6.03250                                                                                       % Control Drum 7 Radius
+surf   CDs13 pad       0.0000 -41.0210  5.39750  6.03250  210  330                                                                    % Control Drum 7 Pad
+surf   CDs14 cylz    -20.5105 -35.5252  6.03250                                                                                       % Control Drum 8 Radius
+surf   CDs15 pad     -20.5105 -35.5252  5.39750  6.03250  240    0                                                                    % Control Drum 8 Pad
+surf   CDs16 cylz    -35.5252 -20.5105  6.03250                                                                                       % Control Drum 9 Radius
+surf   CDs17 pad     -35.5252 -20.5105  5.39750  6.03250  270   30                                                                    % Control Drum 9 Pad
+surf   CDs18 cylz    -41.0210 -0.0000   6.03250                                                                                       % Control Drum 10 Radius
+surf   CDs19 pad     -41.0210 -0.0000   5.39750  6.03250  300   60                                                                    % Control Drum 10 Pad
+surf   CDs20 cylz    -35.5252  20.5105  6.03250                                                                                       % Control Drum 11 Radius
+surf   CDs21 pad     -35.5252  20.5105  5.39750  6.03250  330   90                                                                    % Control Drum 11 Pad
+surf   CDs22 cylz    -20.5105  35.5252  6.03250                                                                                       % Control Drum 12 Radius
+surf   CDs23 pad     -20.5105  35.5252  5.39750  6.03250    0  120                                                                    % Control Drum 12 Pad
+ 
+% --- Control Drum Cells:
+ 
+cell   CDc0  CDu0  RH_controlDrum         -CDs0   CDs1                                                                                % Control Drum 1
+cell   CDc1  CDu0  RH_controlPlate        -CDs1                                                                                       % Control Plate 1
+cell   CDc2  CDu1  RH_controlDrum         -CDs2   CDs3                                                                                % Control Drum 2
+cell   CDc3  CDu1  RH_controlPlate        -CDs3                                                                                       % Control Plate 2
+cell   CDc4  CDu2  RH_controlDrum         -CDs4   CDs5                                                                                % Control Drum 3
+cell   CDc5  CDu2  RH_controlPlate        -CDs5                                                                                       % Control Plate 3
+cell   CDc6  CDu3  RH_controlDrum         -CDs6   CDs7                                                                                % Control Drum 4
+cell   CDc7  CDu3  RH_controlPlate        -CDs7                                                                                       % Control Plate 4
+cell   CDc8  CDu4  RH_controlDrum         -CDs8   CDs9                                                                                % Control Drum 5
+cell   CDc9  CDu4  RH_controlPlate        -CDs9                                                                                       % Control Plate 5
+cell   CDc10 CDu5  RH_controlDrum         -CDs10  CDs11                                                                               % Control Drum 6
+cell   CDc11 CDu5  RH_controlPlate        -CDs11                                                                                      % Control Plate 6
+cell   CDc12 CDu6  RH_controlDrum         -CDs12  CDs13                                                                               % Control Drum 7
+cell   CDc13 CDu6  RH_controlPlate        -CDs13                                                                                      % Control Plate 7
+cell   CDc14 CDu7  RH_controlDrum         -CDs14  CDs15                                                                               % Control Drum 8
+cell   CDc15 CDu7  RH_controlPlate        -CDs15                                                                                      % Control Plate 8
+cell   CDc16 CDu8  RH_controlDrum         -CDs16  CDs17                                                                               % Control Drum 9
+cell   CDc17 CDu8  RH_controlPlate        -CDs17                                                                                      % Control Plate 9
+cell   CDc18 CDu9  RH_controlDrum         -CDs18  CDs19                                                                               % Control Drum 10
+cell   CDc19 CDu9  RH_controlPlate        -CDs19                                                                                      % Control Plate 10
+cell   CDc20 CDu10 RH_controlDrum         -CDs20  CDs21                                                                               % Control Drum 11
+cell   CDc21 CDu10 RH_controlPlate        -CDs21                                                                                      % Control Plate 11
+cell   CDc22 CDu11 RH_controlDrum         -CDs22  CDs23                                                                               % Control Drum 12
+cell   CDc23 CDu11 RH_controlPlate        -CDs23                                                                                      % Control Plate 12
+ 
+% -----------------------------------------------------------------------------
+
+% --- Control Drum Bundle Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Control Drum Bundle Surfaces:
+ 
+surf   CBs0  cylz      0.0000  41.0210  6.03250    0.0000  89.1000                                                                    % Control Drum 1 Radius
+surf   CBs1  cylz     20.5105  35.5252  6.03250    0.0000  89.1000                                                                    % Control Drum 2 Radius
+surf   CBs2  cylz     35.5252  20.5105  6.03250    0.0000  89.1000                                                                    % Control Drum 3 Radius
+surf   CBs3  cylz     41.0210   0.0000  6.03250    0.0000  89.1000                                                                    % Control Drum 4 Radius
+surf   CBs4  cylz     35.5252 -20.5105  6.03250    0.0000  89.1000                                                                    % Control Drum 5 Radius
+surf   CBs5  cylz     20.5105 -35.5252  6.03250    0.0000  89.1000                                                                    % Control Drum 6 Radius
+surf   CBs6  cylz      0.0000 -41.0210  6.03250    0.0000  89.1000                                                                    % Control Drum 7 Radius
+surf   CBs7  cylz    -20.5105 -35.5252  6.03250    0.0000  89.1000                                                                    % Control Drum 8 Radius
+surf   CBs8  cylz    -35.5252 -20.5105  6.03250    0.0000  89.1000                                                                    % Control Drum 9 Radius
+surf   CBs9  cylz    -41.0210  -0.0000  6.03250    0.0000  89.1000                                                                    % Control Drum 10 Radius
+surf   CBs10 cylz    -35.5252  20.5105  6.03250    0.0000  89.1000                                                                    % Control Drum 11 Radius
+surf   CBs11 cylz    -20.5105  35.5252  6.03250    0.0000  89.1000                                                                    % Control Drum 12 Radius
+surf   CBs12 inf                                                                                                                      % Beryllium Reflector Remaining Space
+
+% --- Control Drum Bundle Cells:
+
+cell   CBc0  CBu0  fill CDu0              -CBs0                                                                                       % Control Drum 1
+cell   CBc1  CBu0  fill CDu1              -CBs1                                                                                       % Control Drum 2
+cell   CBc2  CBu0  fill CDu2              -CBs2                                                                                       % Control Drum 3
+cell   CBc3  CBu0  fill CDu3              -CBs3                                                                                       % Control Drum 4
+cell   CBc4  CBu0  fill CDu4              -CBs4                                                                                       % Control Drum 5
+cell   CBc5  CBu0  fill CDu5              -CBs5                                                                                       % Control Drum 6
+cell   CBc6  CBu0  fill CDu6              -CBs6                                                                                       % Control Drum 7
+cell   CBc7  CBu0  fill CDu7              -CBs7                                                                                       % Control Drum 8
+cell   CBc8  CBu0  fill CDu8              -CBs8                                                                                       % Control Drum 9
+cell   CBc9  CBu0  fill CDu9              -CBs9                                                                                       % Control Drum 10
+cell   CBc10 CBu0  fill CDu10             -CBs10                                                                                      % Control Drum 11
+cell   CBc11 CBu0  fill CDu11             -CBs11                                                                                      % Control Drum 12
+cell   CBc12 CBu0  RH_berylliumReflector  -CBs12  CBs0   CBs1   CBs2   CBs3   CBs4   CBs5   CBs6   CBs7   CBs8   CBs9  CBs10  CBs11   % Beryllium Reflector with Control Drums 
+
+% utrans CBu0  rot  0.0  0.0  0.0  0.0  0.0  1.0  0.000                                                                               % Control Drum Bundle Rotation
+
+% -----------------------------------------------------------------------------
+
+% --- Reactor Housing Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Reactor Housing Surfaces:
+
+surf  RHs0  cylz      0.0      0.0      29.8450    0.0000  89.0000                                                                    % Gap Inner 
+surf  RHs1  cylz      0.0      0.0      30.1625    0.0000  89.0000                                                                    % Steel Wrapper Volume
+surf  RHs2  cylz      0.0      0.0      30.4800    0.0000  89.0000                                                                    % Gap Mid1 Volume
+surf  RHs3  cylz      0.0      0.0      33.3375    0.0000  89.0000                                                                    % Beryllium Barrel Volume
+surf  RHs4  cylz      0.0      0.0      33.6550    0.0000  89.0000                                                                    % Gap Mid2 Volume
+surf  RHs5  cylz      0.0      0.0      48.3870    0.0000  89.1000                                                                    % Beryllium Reflector Volume
+surf  RHs6  cylz      0.0      0.0      48.7045    0.0000 129.6400                                                                    % Gap Outer Volume
+surf  RHs7  cylz      0.0      0.0      49.2633    0.0000 129.6400                                                                    % Pressure Vessel Volume
+surf  RHs8  cylz      0.0      0.0      33.6550   89.0000  96.6200                                                                    % Lower Tie Tube Plenum Volume
+surf  RHs9  cylz      0.0      0.0      33.6550   96.6200 106.7800                                                                    % Core Support Plate Volume
+surf  RHs10 cylz      0.0      0.0      33.6550  106.7800 111.8600                                                                    % Upper Tie Tube Plenum Volume
+surf  RHs11 cylz      0.0      0.0      33.6550  111.8600 119.7340                                                                    % Lower Internal Shield Volume
+surf  RHs12 cylz      0.0      0.0      33.6550  119.7340 121.7660                                                                    % Inner Hydrogen Plenum Volume
+surf  RHs13 cylz      0.0      0.0      33.6550  121.7660 129.6400                                                                    % Upper Internal Shield Volume
+surf  RHs14 cylz      0.0      0.0      48.3870   89.1000 111.8600                                                                    % Control Drum Actuator Volume
+surf  RHs15 cylz      0.0      0.0      48.3870  111.8600 119.7340                                                                    % Brim Shield Volume
+surf  RHs16 cylz      0.0      0.0      48.3870  119.7340 129.6400                                                                    % Outer Hydrogen Plenum Volume
+
+% --- Reactor Housing Cells:
+ 
+cell  RHc0  0     fill CAl0               -CAs0                                                                                       % Core Assembly
+cell  RHc1  0     RH_coolant              -RHs0   CAs0                                                                                % Gap Inner
+cell  RHc2  0     RH_steelWrapper         -RHs1   RHs0                                                                                % Steel Wrapper
+cell  RHc3  0     RH_coolant              -RHs2   RHs1                                                                                % Gap Mid1
+cell  RHc4  0     RH_berylliumBarrel      -RHs3   RHs2                                                                                % Beryllium Barrel 
+cell  RHc5  0     RH_coolant              -RHs4   RHs3                                                                                % Gap Mid2
+cell  RHc6  0     fill CBu0               -RHs5   RHs4   RHs8                                                                         % Beryllium Reflector
+cell  RHc7  0     RH_coolant              -RHs6   RHs5   RHs14  RHs15  RHs16                                                          % Gap Outer
+cell  RHc8  0     RH_pressureVessel       -RHs7   RHs6                                                                                % Pressure Vessel
+cell  RHc9  0     RH_lowerTieTubePlenum   -RHs8                                                                                       % Lower Tie Tube Plenum
+cell  RHc10 0     RH_coreSupportPlate     -RHs9                                                                                       % Core Support Plate
+cell  RHc11 0     RH_upperTieTubePlenum   -RHs10                                                                                      % Upper Tie Tube Plenum
+cell  RHc12 0     RH_lowerInternalShield  -RHs11                                                                                      % Lower Internal Shield
+cell  RHc13 0     RH_hydrogenInnerPlenum  -RHs12                                                                                      % Inner Hydrogen Plenum
+cell  RHc14 0     RH_upperInternalShield  -RHs13                                                                                      % Upper Internal Shield
+cell  RHc15 0     RH_controlDrumActuator  -RHs14  RHs8   RHs9   RHs10                                                                 % Control Drum Actuator
+cell  RHc16 0     RH_brimShield           -RHs15  RHs11                                                                               % Brim Shield
+cell  RHc17 0     RH_hydrogenOuterPlenum  -RHs16  RHs12  RHs13                                                                        % Outer Hydrogen Plenum
+
+cell  RHc99 0     outside                         RHs7                                                                                % Outside World

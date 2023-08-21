@@ -1,0 +1,11 @@
+
+***** Fri Aug 18 17:26:15 2023 (seed = 1692375959599)
+Warning message from function CheckNuclideData:
+
+Stable nuclide 40096.03c has 1 decay modes
+
+
+Simulation completed.
+------------------------------------------------------------
+Sat Aug 19 03:19:06 2023  (errors: 0, warnings: 1, notes: 0)
+
