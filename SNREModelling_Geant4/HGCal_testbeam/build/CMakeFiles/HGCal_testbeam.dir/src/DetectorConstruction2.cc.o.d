@@ -1,7 +1,7 @@
 CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction2.cc.o: \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/src/DetectorConstruction2.cc \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/src/DetectorConstruction2.cc \
  /usr/include/stdc-predef.h \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/include/DetectorConstruction2.hh \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/include/DetectorConstruction2.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4Types.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4GlobalConfig.hh \
  /usr/include/c++/11/complex \

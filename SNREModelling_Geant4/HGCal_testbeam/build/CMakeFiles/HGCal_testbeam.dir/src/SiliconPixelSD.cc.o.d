@@ -1,7 +1,7 @@
 CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelSD.cc.o: \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/src/SiliconPixelSD.cc \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/src/SiliconPixelSD.cc \
  /usr/include/stdc-predef.h \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/include/SiliconPixelSD.hh \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/include/SiliconPixelSD.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4VHit.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/globals.hh \
@@ -372,7 +372,7 @@ CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelSD.cc.o: \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4TouchableHistory.icc \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4CollectionNameVector.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4VSDFilter.hh \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/include/SiliconPixelHit.hh \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/include/SiliconPixelHit.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4THitsCollection.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4VHit.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4Types.hh \

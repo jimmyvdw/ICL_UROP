@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam
+CMAKE_SOURCE_DIR = /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/build
+CMAKE_BINARY_DIR = /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/build/CMakeFiles /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/build/CMakeFiles /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

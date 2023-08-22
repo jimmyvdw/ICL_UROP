@@ -1,7 +1,7 @@
 CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction1.cc.o: \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/src/DetectorConstruction1.cc \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/src/DetectorConstruction1.cc \
  /usr/include/stdc-predef.h \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/include/DetectorConstruction1.hh \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/include/DetectorConstruction1.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4String.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4Types.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4GlobalConfig.hh \
@@ -206,5 +206,5 @@ CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction1.cc.o: \
  /usr/include/c++/11/iostream \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4String.icc \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/G4Types.hh \
- /home/jimmy/Documents/SNRE_UROP/SNRE/SNRE_Geant4/HGCal_testbeam/include/DetectorConstruction0.hh \
+ /home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/HGCal_testbeam/include/DetectorConstruction0.hh \
  /home/jimmy/Documents/SNRE_UROP/Geant4/geant4-v11.1.2-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
