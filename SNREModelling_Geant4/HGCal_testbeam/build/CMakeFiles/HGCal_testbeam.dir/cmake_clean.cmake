@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/HGCal_testbeam.dir/hgcal_testbeam.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/hgcal_testbeam.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/ActionInitialization.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/ActionInitialization.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/CMSHadronPhysicsFTFP_BERT.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/CMSHadronPhysicsFTFP_BERT.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction0.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction0.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction1.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction1.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction2.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/DetectorConstruction2.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/EventAction.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/EventAction.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/FTFPCMS_BERT_EMM.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/FTFPCMS_BERT_EMM.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/HGCalTBMaterials.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/HGCalTBMaterials.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/PrimaryGeneratorAction.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/PrimaryGeneratorAction.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/PrimaryGeneratorMessenger.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/PrimaryGeneratorMessenger.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/RunAction.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/RunAction.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiPMHit.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiPMHit.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiPMSD.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiPMSD.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelHit.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelHit.cc.o.d"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelSD.cc.o"
+  "CMakeFiles/HGCal_testbeam.dir/src/SiliconPixelSD.cc.o.d"
+  "HGCal_testbeam"
+  "HGCal_testbeam.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/HGCal_testbeam.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
