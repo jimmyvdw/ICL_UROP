@@ -261,7 +261,7 @@ mat RH_coreSupportPlate -1.0050E+00 rgb 72 61 139
 
 % --- Upper Tie Tube Plenum:
 
-mat RH_upperTieTubePlenum -1.0050E+00 rgb 123 104 238
+mat RH_upperTieTubePlenum -9.7180E-01 rgb 123 104 238
 
  1001.03c    -2.1604E-03
  1002.03c    -4.9658E-07
