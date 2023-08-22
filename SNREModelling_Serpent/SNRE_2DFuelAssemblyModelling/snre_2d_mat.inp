@@ -26,7 +26,7 @@ mat FE_coolant -2.7002E-03 rgb 175 238 238
 
 % --- Zr-C Inner Cladding:
 
-mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 0 0 0
+mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 1 1 1
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02
@@ -37,7 +37,7 @@ mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 0 0 0
 
  % --- Zr-C Outer Cladding:
 
-mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 0 0 0
+mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 1 1 0
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02
@@ -142,7 +142,7 @@ mat SE_supportSleeve -1.7000E+00 moder grph 6000 rgb 105 105 105
 
 % --- Support Coating:
 
-mat SE_supportCoating -6.7300E+00 moder grph 6000 rgb 0 0 0
+mat SE_supportCoating -6.7300E+00 moder grph 6000 rgb 0 1 0
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02

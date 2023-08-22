@@ -36,7 +36,7 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t
 
 % --- Reflective boundary condition:
 
-set bc 1
+set bc 2
 
 % --- Neutron population and criticality cycles:
 
@@ -44,6 +44,6 @@ set pop 1000 500 5
 
 % --- Geometry and mesh plots:
 
-plot 3 500 500
-mesh 3 500 500
+plot 3 500 866
+mesh 3 500 866
 

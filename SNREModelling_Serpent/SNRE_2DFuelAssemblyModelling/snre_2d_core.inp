@@ -148,5 +148,16 @@ lat CAl0 3 0.0 0.0 37 37 1.905
 
 surf CAs0  cylz     0.0  0.0  29.5275               % Core Assembly Radius
 
-cell  CAc0  0  fill CAl0          -CAs0          % Core Assembly
-cell  CAc1  0  outside             CAs0          % Outside World
+cell  CAc0  CAu0  fill CAl0          -CAs0          % Core Assembly
+cell  CAc1  CAu0  outside             CAs0          % Outside World
+
+% -----------------------------------------------------------------------------
+
+% --- Core Assembly Periphery Geometry:
+
+% -----------------------------------------------------------------------------
+
+surf CAs1  rect     0.0000  1.6498 0.0000  2.8575 % Core Assembly Periphery
+
+cell  CAc2  0  fill CAu0          -CAs1          % Core Assembly
+cell  CAc3  0  outside             CAs1          % Outside World
