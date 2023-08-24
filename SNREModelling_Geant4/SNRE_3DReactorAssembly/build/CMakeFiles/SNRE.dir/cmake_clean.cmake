@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/SNRE.dir/hgcal_testbeam.cc.o"
+  "CMakeFiles/SNRE.dir/hgcal_testbeam.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/ActionInitialization.cc.o"
+  "CMakeFiles/SNRE.dir/src/ActionInitialization.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/CMSHadronPhysicsFTFP_BERT.cc.o"
+  "CMakeFiles/SNRE.dir/src/CMSHadronPhysicsFTFP_BERT.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction.cc.o"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction0.cc.o"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction0.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction1.cc.o"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction1.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction2.cc.o"
+  "CMakeFiles/SNRE.dir/src/DetectorConstruction2.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/EventAction.cc.o"
+  "CMakeFiles/SNRE.dir/src/EventAction.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/FTFPCMS_BERT_EMM.cc.o"
+  "CMakeFiles/SNRE.dir/src/FTFPCMS_BERT_EMM.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/HGCalTBMaterials.cc.o"
+  "CMakeFiles/SNRE.dir/src/HGCalTBMaterials.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/PrimaryGeneratorAction.cc.o"
+  "CMakeFiles/SNRE.dir/src/PrimaryGeneratorAction.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/PrimaryGeneratorMessenger.cc.o"
+  "CMakeFiles/SNRE.dir/src/PrimaryGeneratorMessenger.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/RunAction.cc.o"
+  "CMakeFiles/SNRE.dir/src/RunAction.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/SiPMHit.cc.o"
+  "CMakeFiles/SNRE.dir/src/SiPMHit.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/SiPMSD.cc.o"
+  "CMakeFiles/SNRE.dir/src/SiPMSD.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/SiliconPixelHit.cc.o"
+  "CMakeFiles/SNRE.dir/src/SiliconPixelHit.cc.o.d"
+  "CMakeFiles/SNRE.dir/src/SiliconPixelSD.cc.o"
+  "CMakeFiles/SNRE.dir/src/SiliconPixelSD.cc.o.d"
+  "SNRE"
+  "SNRE.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/SNRE.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

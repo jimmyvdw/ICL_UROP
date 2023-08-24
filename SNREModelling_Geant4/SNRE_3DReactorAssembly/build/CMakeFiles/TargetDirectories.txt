@@ -1,0 +1,7 @@
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/SNRE.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/edit_cache.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/rebuild_cache.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/list_install_components.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/install.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/install/local.dir
+/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/SNREModelling_Geant4/SNRE_3DReactorAssembly/build/CMakeFiles/install/strip.dir
