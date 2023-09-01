@@ -26,18 +26,7 @@ mat FE_coolant -2.7002E-03 rgb 175 238 238
 
 % --- Zr-C Inner Cladding:
 
-mat FE_claddingInner -6.7300E+00 moder grph 6000 rgb 1 1 1
-
-40090.03c    -4.4811E-01
-40091.03c    -9.8811E-02
-40092.03c    -1.5269E-01
-40094.03c    -1.5811E-01
-40096.03c    -2.6016E-02
- 6000.03c    -1.1625E-01
-
- % --- Zr-C Outer Cladding:
-
-mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 1 1 0
+mat FE_cladding -6.7300E+00 moder grph 6000 rgb 1 1 1
 
 40090.03c    -4.4811E-01
 40091.03c    -9.8811E-02
@@ -51,13 +40,6 @@ mat FE_claddingOuter -6.7300E+00 moder grph 6000 rgb 1 1 0
 % --- Support Element Materials Definitions:
 
 % -----------------------------------------------------------------------------
-
-% --- Hydrogen Coolant:
-
-mat SE_coolant -2.7002E-03 rgb 175 238 238
-
- 1001.03c    -9.9977E-01
- 1002.03c    -2.2980E-04
 
 % --- Stagnant Hydrogen Coolant:
 
@@ -139,17 +121,6 @@ mat SE_supportSleeve -1.7000E+00 moder grph 6000 rgb 105 105 105
  5010.03c    -1.8431E-07
  5011.03c    -8.1569E-07
  6000.03c    -1.0000E+00
-
-% --- Support Coating:
-
-mat SE_supportCoating -6.7300E+00 moder grph 6000 rgb 0 1 0
-
-40090.03c    -4.4811E-01
-40091.03c    -9.8811E-02
-40092.03c    -1.5269E-01
-40094.03c    -1.5811E-01
-40096.03c    -2.6016E-02
- 6000.03c    -1.1625E-01
 
 % -----------------------------------------------------------------------------
 

@@ -1,0 +1,59 @@
+% --- Core Geometry -----------------------------------------------------------
+
+% --- Read material data:
+
+include "snre_2d_mat.inp"
+
+% --- Naming Convention:
+    % FExx - Fuel Element
+    % SExx - Support Element
+    % BExx - Beryllium Core Periphery Filler
+    % CAxx - Core Assembly
+    % CDxx - Control Drum
+    % RHxx - Reactor Housing
+
+    % xpx - Pin
+    % xlx - Lattice
+    % xsx - Surfaces
+    % xcx - Cells
+    % xux - Universe
+
+% -----------------------------------------------------------------------------
+
+% --- Fuel Element Geometry:
+
+% -----------------------------------------------------------------------------
+
+% --- Fuel Element Pin:
+
+pin FEp0
+FE_coolant         0.11827
+FE_cladding   0.12827
+FE_fuel   
+
+% --- Empty lattice position:
+
+pin FEp1
+FE_fuel   
+
+% --- Fuel Element Lattice:
+
+lat FEl0  2  0.0 0.0 7 7 0.40894
+FEp1 FEp1 FEp1 FEp1 FEp1 FEp1 FEp1
+ FEp1 FEp1 FEp1 FEp0 FEp0 FEp0 FEp1
+  FEp1 FEp1 FEp0 FEp0 FEp0 FEp0 FEp1
+   FEp1 FEp0 FEp0 FEp0 FEp0 FEp0 FEp1
+    FEp1 FEp0 FEp0 FEp0 FEp0 FEp1 FEp1
+     FEp1 FEp0 FEp0 FEp0 FEp1 FEp1 FEp1
+      FEp1 FEp1 FEp1 FEp1 FEp1 FEp1 FEp1
+
+% --- Surfaces (assembly pitch = 1.905 cm):
+
+surf FEs0  hexyc    0.0  0.0  0.9475               % Cladding Inner radius
+surf FEs1  hexyc    0.0  0.0  0.9525               % Cladding Outer boundary/radius
+
+% --- Cells:
+
+cell  FEc0  0  fill FEl0         -FEs0           % Pin lattice                 
+cell  FEc1  0  FE_cladding        FEs0    -FEs1  % Clad Coating tube
+cell  FEc2  0  outside            FEs1           % Outside

@@ -28,7 +28,7 @@ include "snre_2d_mat.inp"
 
 pin FEp0
 FE_coolant         0.11827
-FE_claddingInner   0.12827
+FE_cladding   0.12827
 FE_fuel   
 
 % --- Empty lattice position:
@@ -55,7 +55,7 @@ surf FEs1  hexyc    0.0  0.0  0.9525               % Cladding Outer boundary/rad
 % --- Cells:
 
 cell  FEc0  FEu0  fill FEl0         -FEs0           % Pin lattice                 
-cell  FEc1  FEu0  FE_claddingOuter  FEs0    -FEs1  % Clad Coating tube                
+cell  FEc1  FEu0  FE_cladding  FEs0          -FEs1  % Clad Coating tube                
 
 % -----------------------------------------------------------------------------
 
@@ -66,11 +66,11 @@ cell  FEc1  FEu0  FE_claddingOuter  FEs0    -FEs1  % Clad Coating tube
 % --- Support Element Pin:
 
 pin SEp0
-SE_coolant 0.20955
+FE_coolant 0.20955
 SE_inconel718 0.26035
 SE_coolantStagnant 0.2667
 SE_moderator 0.5842
-SE_coolant 0.67818
+FE_coolant 0.67818
 SE_inconel718 0.6985
 SE_coolantStagnant 0.70485
 SE_insulator 0.80645
@@ -85,7 +85,7 @@ surf SEs1  hexyc    0.0  0.0  0.9525                % Cladding Outer boundary/ra
 % --- Cells:
 
 cell  SEc0  SEu0  fill SEp0         -SEs0           % Pin lattice                 
-cell  SEc1  SEu0  SE_supportCoating  SEs0    -SEs1  % Clad Coating tube
+cell  SEc1  SEu0  FE_cladding        SEs0    -SEs1  % Clad Coating tube
 
 % -----------------------------------------------------------------------------
 
