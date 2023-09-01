@@ -1,29 +1,97 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <tallies>
-  <mesh id="2">
-    <dimension>1000 1000</dimension>
-    <lower_left>-49.2633 -49.2633</lower_left>
-    <upper_right>49.2633 49.2633</upper_right>
-  </mesh>
-  <filter id="6" type="mesh">
+  <filter id="1" type="energy">
+    <bins>0.0 0.625</bins>
+  </filter>
+  <filter id="2" type="material">
+    <bins>1</bins>
+  </filter>
+  <filter id="3" type="energy">
+    <bins>0.625 19640300.0</bins>
+  </filter>
+  <filter id="6" type="material">
     <bins>2</bins>
   </filter>
-  <filter id="8" type="energy">
-    <bins>0.0 0.1</bins>
+  <filter id="10" type="material">
+    <bins>3</bins>
   </filter>
-  <filter id="10" type="energy">
-    <bins>0.1 1000000.0</bins>
+  <filter id="14" type="material">
+    <bins>5</bins>
+  </filter>
+  <filter id="18" type="material">
+    <bins>4</bins>
+  </filter>
+  <filter id="22" type="material">
+    <bins>6</bins>
+  </filter>
+  <filter id="26" type="material">
+    <bins>7</bins>
+  </filter>
+  <filter id="30" type="material">
+    <bins>8</bins>
   </filter>
   <tally id="1">
-    <filters>6</filters>
-    <scores>flux nu-fission absorption elastic total</scores>
+    <filters>1 2</filters>
+    <scores>absorption fission</scores>
   </tally>
   <tally id="2">
-    <filters>6 8</filters>
-    <scores>flux nu-fission absorption elastic total</scores>
+    <filters>3 2</filters>
+    <scores>absorption fission</scores>
   </tally>
   <tally id="3">
-    <filters>6 10</filters>
-    <scores>flux nu-fission absorption elastic total</scores>
+    <filters>1 6</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="4">
+    <filters>3 6</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="5">
+    <filters>1 10</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="6">
+    <filters>3 10</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="7">
+    <filters>1 14</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="8">
+    <filters>3 14</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="9">
+    <filters>1 18</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="10">
+    <filters>3 18</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="11">
+    <filters>1 22</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="12">
+    <filters>3 22</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="13">
+    <filters>1 26</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="14">
+    <filters>3 26</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="15">
+    <filters>1 30</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="16">
+    <filters>3 30</filters>
+    <scores>absorption</scores>
   </tally>
 </tallies>

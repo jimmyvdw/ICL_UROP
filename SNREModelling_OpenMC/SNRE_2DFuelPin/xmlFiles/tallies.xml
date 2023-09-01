@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tallies>
+  <filter id="1" type="energy">
+    <bins>0.0 0.625</bins>
+  </filter>
+  <filter id="2" type="material">
+    <bins>1</bins>
+  </filter>
+  <filter id="3" type="energy">
+    <bins>0.625 19640300.0</bins>
+  </filter>
+  <filter id="6" type="material">
+    <bins>2</bins>
+  </filter>
+  <filter id="10" type="material">
+    <bins>3</bins>
+  </filter>
+  <tally id="1">
+    <filters>1 2</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="4">
+    <filters>3 2</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="2">
+    <filters>1 6</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="5">
+    <filters>3 6</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="3">
+    <filters>1 10</filters>
+    <scores>absorption</scores>
+  </tally>
+  <tally id="6">
+    <filters>3 10</filters>
+    <scores>absorption</scores>
+  </tally>
+</tallies>

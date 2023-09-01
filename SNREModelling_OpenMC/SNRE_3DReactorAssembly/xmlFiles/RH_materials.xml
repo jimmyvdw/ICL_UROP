@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
   <cross_sections>/home/jimmy/Documents/SNRE_UROP/SNRE/ICL_UROP/dataLibrary/cross_sections.xml</cross_sections>
-  <material id="13" name="RH_steelWrapper" temperature="300">
+  <material id="10" name="RH_steelWrapper" temperature="300">
     <density units="g/cm3" value="8.0"/>
     <nuclide name="C0" wo="0.0008"/>
     <nuclide name="Si28" wo="0.0091867"/>
@@ -29,19 +29,19 @@
     <nuclide name="Nb93" wo="0.004"/>
     <nuclide name="Ta181" wo="0.0039995"/>
   </material>
-  <material id="14" name="RH_berylliumBarrel" temperature="300">
+  <material id="11" name="RH_berylliumBarrel" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
   </material>
-  <material id="15" name="RH_berylliumReflector" temperature="300">
+  <material id="12" name="RH_berylliumReflector" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
   </material>
-  <material id="16" name="RH_controlDrum" temperature="300">
+  <material id="13" name="RH_controlDrum" temperature="300">
     <density units="g/cm3" value="1.848"/>
     <nuclide name="Be9" wo="1.0"/>
   </material>
-  <material id="17" name="RH_controlPlate" temperature="300">
+  <material id="14" name="RH_controlPlate" temperature="300">
     <density units="g/cm3" value="13.3"/>
     <nuclide name="Hf174" wo="0.002"/>
     <nuclide name="Hf176" wo="0.052"/>
@@ -50,7 +50,7 @@
     <nuclide name="Hf179" wo="0.137"/>
     <nuclide name="Hf180" wo="0.352"/>
   </material>
-  <material id="18" name="RH_lowerTieTubePlenum" temperature="300">
+  <material id="15" name="RH_lowerTieTubePlenum" temperature="300">
     <density units="g/cm3" value="0.3908"/>
     <nuclide name="H1" wo="0.0074207"/>
     <nuclide name="H2" wo="1.7052e-06"/>
@@ -59,7 +59,7 @@
     <nuclide name="Fe57" wo="0.021443"/>
     <nuclide name="Fe58" wo="0.0029037"/>
   </material>
-  <material id="19" name="RH_coreSupportPlate" temperature="300">
+  <material id="16" name="RH_coreSupportPlate" temperature="300">
     <density units="g/cm3" value="1.005"/>
     <nuclide name="H1" wo="0.0020891"/>
     <nuclide name="H2" wo="4.8017e-07"/>
@@ -68,7 +68,7 @@
     <nuclide name="Fe57" wo="0.021559"/>
     <nuclide name="Fe58" wo="0.0029193"/>
   </material>
-  <material id="20" name="RH_upperTieTubePlenum" temperature="300">
+  <material id="17" name="RH_upperTieTubePlenum" temperature="300">
     <density units="g/cm3" value="0.9718"/>
     <nuclide name="H1" wo="0.0021604"/>
     <nuclide name="H2" wo="4.9658e-07"/>
@@ -77,7 +77,7 @@
     <nuclide name="Fe57" wo="0.021557"/>
     <nuclide name="Fe58" wo="0.0029191"/>
   </material>
-  <material id="21" name="RH_lowerInternalShield" temperature="300">
+  <material id="18" name="RH_lowerInternalShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
     <nuclide name="H1" wo="0.020526"/>
     <nuclide name="H2" wo="4.7179e-06"/>
@@ -89,17 +89,17 @@
     <nuclide name="Zr94" wo="0.17435"/>
     <nuclide name="Zr96" wo="0.028688"/>
   </material>
-  <material id="22" name="RH_hydrogenInnerPlenum" temperature="300">
+  <material id="19" name="RH_hydrogenInnerPlenum" temperature="300">
     <density units="g/cm3" value="0.0027"/>
     <nuclide name="H1" wo="0.99977"/>
     <nuclide name="H2" wo="0.0002298"/>
   </material>
-  <material id="23" name="RH_hydrogenOuterPlenum" temperature="300">
+  <material id="20" name="RH_hydrogenOuterPlenum" temperature="300">
     <density units="g/cm3" value="0.0027"/>
     <nuclide name="H1" wo="0.99977"/>
     <nuclide name="H2" wo="0.0002298"/>
   </material>
-  <material id="24" name="RH_upperInternalShield" temperature="300">
+  <material id="21" name="RH_upperInternalShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
     <nuclide name="H1" wo="0.020526"/>
     <nuclide name="H2" wo="4.7179e-06"/>
@@ -111,7 +111,7 @@
     <nuclide name="Zr94" wo="0.17435"/>
     <nuclide name="Zr96" wo="0.028688"/>
   </material>
-  <material id="25" name="RH_controlDrumActuatorZone" temperature="300">
+  <material id="22" name="RH_controlDrumActuatorZone" temperature="300">
     <density units="g/cm3" value="0.4279"/>
     <nuclide name="H1" wo="0.0051402"/>
     <nuclide name="H2" wo="1.1815e-06"/>
@@ -122,7 +122,7 @@
     <nuclide name="Cu63" wo="0.23637"/>
     <nuclide name="Cu65" wo="0.1088"/>
   </material>
-  <material id="26" name="RH_brimShield" temperature="300">
+  <material id="23" name="RH_brimShield" temperature="300">
     <density units="g/cm3" value="4.4519"/>
     <nuclide name="H1" wo="0.020526"/>
     <nuclide name="H2" wo="4.7179e-06"/>
@@ -134,7 +134,7 @@
     <nuclide name="Zr94" wo="0.17435"/>
     <nuclide name="Zr96" wo="0.028688"/>
   </material>
-  <material id="27" name="RH_pressureVessel" temperature="300">
+  <material id="24" name="RH_pressureVessel" temperature="300">
     <density units="g/cm3" value="2.7"/>
     <nuclide name="Al27" wo="1.0"/>
   </material>

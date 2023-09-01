@@ -1,0 +1,8 @@
+Fuel Thermal Absorption: 4.419700e-03± 6.533480e-04
+Fuel Thermal Fission: 3.753291e-03± 5.526319e-04
+Fuel Fast Absorption: 9.865363e-01± 7.673126e-03
+Fuel Fast Fission: 6.567051e-01± 4.733910e-03
+Coolant Thermal Absorption: 1.318437e-06± 1.976693e-07
+Coolant Fast Absorption: 5.443382e-05± 7.576320e-07
+Cladding Thermal Absorption: 3.522598e-06± 5.055068e-07
+Cladding Fast Absorption: 1.373784e-02± 1.842025e-04

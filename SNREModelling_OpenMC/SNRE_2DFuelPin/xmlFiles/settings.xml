@@ -6,8 +6,8 @@
   <inactive>20</inactive>
   <generations_per_batch>20</generations_per_batch>
   <source particle="neutron" strength="367000000.0" type="independent">
-    <space type="fission">
-      <parameters>0.0 0.0 0.0 1.6497783942093556 2.8575 0.0</parameters>
+    <space type="point">
+      <parameters>0.0 0.0 0.0</parameters>
     </space>
   </source>
 </settings>

@@ -25,30 +25,18 @@ FE_coolant.set_density('g/cm3', 2.7002E-03)
 FE_coolant.add_nuclide('H1', 9.9977E-01, 'wo')
 FE_coolant.add_nuclide('H2', 2.2980E-04, 'wo')
 
-FE_claddingOuter = openmc.Material(name='FE_claddingOuter', temperature=300)
-FE_claddingOuter.set_density('g/cm3', 6.73)
-FE_claddingOuter.add_nuclide('Zr90', 4.4811E-01, 'wo')
-FE_claddingOuter.add_nuclide('Zr91', 9.8811E-02, 'wo')
-FE_claddingOuter.add_nuclide('Zr92', 1.5269E-01, 'wo')
-FE_claddingOuter.add_nuclide('Zr94', 1.5811E-01, 'wo')
-FE_claddingOuter.add_nuclide('Zr96', 2.6016E-02, 'wo')
-FE_claddingOuter.add_nuclide('C0', 1.1625E-01, 'wo')
-FE_claddingOuter.add_s_alpha_beta('c_Graphite')
+FE_cladding = openmc.Material(name='FE_claddingInner', temperature=300)
+FE_cladding.set_density('g/cm3', 6.73)
+FE_cladding.add_nuclide('Zr90', 4.4811E-01, 'wo')
+FE_cladding.add_nuclide('Zr91', 9.8811E-02, 'wo')
+FE_cladding.add_nuclide('Zr92', 1.5269E-01, 'wo')
+FE_cladding.add_nuclide('Zr94', 1.5811E-01, 'wo')
+FE_cladding.add_nuclide('Zr96', 2.6016E-02, 'wo')
+FE_cladding.add_nuclide('C0', 1.1625E-01, 'wo')
+FE_cladding.add_s_alpha_beta('c_Graphite')
 
-FE_claddingInner = openmc.Material(name='FE_claddingInner', temperature=300)
-FE_claddingInner.set_density('g/cm3', 6.73)
-FE_claddingInner.add_nuclide('Zr90', 4.4811E-01, 'wo')
-FE_claddingInner.add_nuclide('Zr91', 9.8811E-02, 'wo')
-FE_claddingInner.add_nuclide('Zr92', 1.5269E-01, 'wo')
-FE_claddingInner.add_nuclide('Zr94', 1.5811E-01, 'wo')
-FE_claddingInner.add_nuclide('Zr96', 2.6016E-02, 'wo')
-FE_claddingInner.add_nuclide('C0', 1.1625E-01, 'wo')
-FE_claddingInner.add_s_alpha_beta('c_Graphite')
-
-SE_coolant = openmc.Material(name='SE_coolant', temperature=300)
-SE_coolant.set_density('g/cm3', 2.7002E-03)
-SE_coolant.add_nuclide('H1', 9.9977E-01, 'wo')
-SE_coolant.add_nuclide('H2', 2.2980E-04, 'wo')
+FE_materials = openmc.Materials([FE_fuel, FE_coolant, FE_cladding])
+FE_materials.export_to_xml('./xmlFiles/SE_materials.xml')
 
 SE_coolantStagnant = openmc.Material(name='SE_coolantStagnant', temperature=300)
 SE_coolantStagnant.set_density('g/cm3', 1.9127E-03)
@@ -125,17 +113,7 @@ SE_supportSleeve.add_nuclide('B10', 1.8431E-07, 'wo')
 SE_supportSleeve.add_nuclide('B11', 8.1569E-07, 'wo')
 SE_supportSleeve.add_s_alpha_beta('c_Graphite')
 
-SE_supportCoating = openmc.Material(name='SE_supportCoating', temperature=300)
-SE_supportCoating.set_density('g/cm3', 6.73)
-SE_supportCoating.add_nuclide('Zr90', 4.4811E-01, 'wo')
-SE_supportCoating.add_nuclide('Zr91', 9.8811E-02, 'wo')
-SE_supportCoating.add_nuclide('Zr92', 1.5269E-01, 'wo')
-SE_supportCoating.add_nuclide('Zr94', 1.5811E-01, 'wo')
-SE_supportCoating.add_nuclide('Zr96', 2.6016E-02, 'wo')
-SE_supportCoating.add_nuclide('C0', 2.6016E-02, 'wo')
-SE_supportCoating.add_s_alpha_beta('c_Graphite')
-
-SE_materials = openmc.Materials([SE_coolant, SE_coolantStagnant, SE_inconel718, SE_moderator, SE_insulator, SE_supportSleeve, SE_supportCoating])
+SE_materials = openmc.Materials([SE_coolantStagnant, SE_inconel718, SE_moderator, SE_insulator, SE_supportSleeve])
 SE_materials.export_to_xml('./xmlFiles/SE_materials.xml')
 
 BE_coreFiller = openmc.Material(name='BE_coreFiller', temperature=300)
@@ -293,15 +271,12 @@ RH_materials.export_to_xml('./xmlFiles/RH_materials.xml')
 # Materials .xml
 materials = openmc.Materials([FE_fuel,
                               FE_coolant,
-                              FE_claddingOuter,
-                              FE_claddingInner,
-                              SE_coolant,
+                              FE_cladding,
                               SE_coolantStagnant,
                               SE_inconel718,
                               SE_moderator,
                               SE_insulator,
                               SE_supportSleeve,
-                              SE_supportCoating,
                               BE_coreFiller,
                               RH_steelWrapper,
                               RH_berylliumBarrel,
@@ -426,7 +401,7 @@ FE_voidCell = openmc.Cell()
 FE_assemblyCell.region = FE_assemblyHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
 FE_cladOuterCell.region = ~FE_assemblyHex & FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
 FE_voidCell.region = ~FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
-FE_cladOuterCell.fill = FE_claddingOuter
+FE_cladOuterCell.fill = FE_cladding
 
 # Create universes
 FE_fuelOutUni = openmc.Universe(cells=(FE_fuelOut,))
@@ -437,7 +412,7 @@ FE_coolantChannelOuter = openmc.ZCylinder(surface_id=301, r=FE_channelRadius)
 FE_cladChannelOuter = openmc.ZCylinder(surface_id=302, r=FE_cladOuterRadius)
 
 FE_coolantChannelCell  = openmc.Cell(cell_id=311, fill=FE_coolant, region=-FE_coolantChannelOuter)
-FE_cladChannelCell  = openmc.Cell(cell_id=312, fill=FE_claddingInner, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
+FE_cladChannelCell  = openmc.Cell(cell_id=312, fill=FE_cladding, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
 FE_fuelChannelCell = openmc.Cell(cell_id=313, fill=FE_fuel, region=+FE_cladChannelOuter)
 
 FE_channelUni = openmc.Universe(cells=[FE_fuelChannelCell, FE_cladChannelCell, FE_coolantChannelCell])
@@ -459,18 +434,76 @@ FE_geom=openmc.Geometry(FE_rootUni)
 FE_geom.export_to_xml('./xmlFiles/FE_geometry.xml')
 
 # Plotting the fuel pin geometry
-# FE_rootUni.plot(basis='xy',
-#                 origin=(0,0,0),
-#                 width=(2.2,2.2),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black'
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xy/fuelElementCrossSection_xy.png', dpi=300)
-# plt.show()
+FE_rootUni.plot(basis='xy',
+                origin=(0,0,0),
+                width=(2.2,2.2),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_fuel: 'dimgray',
+                        FE_cladding: 'black'
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xy/fuelElementCrossSection_xy.png', dpi=300)
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+    
+# ANALYSE Fuel Element Geometry
+
+# Boudaries and outer universe
+FE_fuelOutANALYSE = openmc.Cell(cell_id=350, fill=FE_fuel)
+
+# Top and Bottom Boundary
+FE_topBoundaryPlaneANALYSE = openmc.ZPlane(z0=RH_coreTopBoundary)
+FE_bottomBoundaryPlaneANALYSE = openmc.ZPlane(z0=RH_coreBottomBoundary)
+
+# Inner Hexagon
+FE_assemblyHexANALYSE = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctInner / np.sqrt(3.),
+                                        orientation='x')
+
+# Outer Hexagon
+FE_cladOuterHexANALYSE = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctOuter / np.sqrt(3.),
+                                        orientation='x')
+
+FE_assemblyCellANALYSE = openmc.Cell()
+FE_cladOuterCellANALYSE = openmc.Cell()
+FE_voidCellANALYSE = openmc.Cell()
+
+FE_assemblyCellANALYSE.region = FE_assemblyHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
+FE_cladOuterCellANALYSE.region = ~FE_assemblyHex & FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
+FE_voidCellANALYSE.region = ~FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
+FE_cladOuterCellANALYSE.fill = FE_cladding
+
+# Create universes
+FE_fuelOutUniANALYSE = openmc.Universe(cells=(FE_fuelOut,))
+FE_cladOuterUniANALYSE = openmc.Universe(cells=[FE_cladOuterCell])
+FE_rootUniANALYSE = openmc.Universe(universe_id=999)
+
+FE_coolantChannelOuterANALYSE = openmc.ZCylinder(surface_id=351, r=FE_channelRadius)
+FE_cladChannelOuterANALYSE = openmc.ZCylinder(surface_id=352, r=FE_cladOuterRadius)
+
+FE_coolantChannelCellANALYSE  = openmc.Cell(cell_id=351, fill=FE_coolant, region=-FE_coolantChannelOuter)
+FE_cladChannelCellANALYSE  = openmc.Cell(cell_id=352, fill=FE_cladding, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
+FE_fuelChannelCellANALYSE = openmc.Cell(cell_id=353, fill=FE_fuel, region=+FE_cladChannelOuter)
+
+FE_channelUniANALYSE = openmc.Universe(cells=[FE_fuelChannelCell, FE_cladChannelCell, FE_coolantChannelCell])
+
+# Creating the hexagonal lattice
+FE_latticeANALYSE=openmc.HexLattice(name='assembly')
+FE_latticeANALYSE.center = (0., 0.)
+FE_latticeANALYSE.pitch = (FE_pinPitch,)
+FE_latticeANALYSE.outer = FE_fuelOutUni
+FE_ring2ANALYSE=[FE_channelUni]*12
+FE_ring1ANALYSE=[FE_channelUni]*6
+FE_ring0ANALYSE=[FE_channelUni]
+FE_latticeANALYSE.universes = [FE_ring2, FE_ring1, FE_ring0]
+FE_latticeANALYSE.orientation='x'
+FE_assemblyCellANALYSE.fill = FE_lattice
+
+FE_rootUniANALYSE.add_cells([FE_assemblyCellANALYSE, FE_cladOuterCellANALYSE, FE_voidCellANALYSE])
+FE_geomANALYSE=openmc.Geometry(FE_rootUniANALYSE)
+FE_geomANALYSE.export_to_xml('./xmlFiles/FE_geometryANALYSE.xml')
 
 #############################################################################################################
 #############################################################################################################
@@ -497,7 +530,7 @@ SE_voidCell = openmc.Cell()
 SE_assemblyCell.region = SE_cladInnerHex & -SE_topBoundaryPlane & +SE_bottomBoundaryPlane
 SE_cladOuterCell.region = ~SE_cladInnerHex & SE_cladOuterHex & -SE_topBoundaryPlane & +SE_bottomBoundaryPlane
 SE_voidCell.region = ~SE_cladOuterHex & -SE_topBoundaryPlane & +SE_bottomBoundaryPlane
-SE_cladOuterCell.fill = SE_supportCoating
+SE_cladOuterCell.fill = FE_cladding
 
 # Create universes
 SE_cladOuterUni = openmc.Universe(cells=[SE_cladOuterCell])
@@ -514,11 +547,11 @@ SE_insulatorOuter = openmc.ZCylinder(surface_id=407, r=SE_insulatorRadius)
 SE_outerHGapOuter = openmc.ZCylinder(surface_id=408, r=SE_outerHGapRadius)
 
 # Boudaries and outer universe
-SE_centralChannelCell = openmc.Cell(cell_id=410, fill=SE_coolant, region=-SE_centralChannelOuter)
+SE_centralChannelCell = openmc.Cell(cell_id=410, fill=FE_coolant, region=-SE_centralChannelOuter)
 SE_tieTubeInnerCell = openmc.Cell(cell_id=411, fill=SE_inconel718, region=+SE_centralChannelOuter & -SE_tieTubeInnerOuter)
 SE_innerHGapCell = openmc.Cell(cell_id=412, fill=SE_coolantStagnant, region=+SE_tieTubeInnerOuter & -SE_innerHGapOuter)
 SE_moderatorCell = openmc.Cell(cell_id=413, fill=SE_moderator, region=+SE_innerHGapOuter & -SE_moderatorOuter)
-SE_outerCoolantChannelCell = openmc.Cell(cell_id=414, fill=SE_coolant, region=+SE_moderatorOuter & -SE_outerCoolantChannelOuter)
+SE_outerCoolantChannelCell = openmc.Cell(cell_id=414, fill=FE_coolant, region=+SE_moderatorOuter & -SE_outerCoolantChannelOuter)
 SE_tieTubeOuterCell = openmc.Cell(cell_id=415, fill=SE_inconel718, region=+SE_outerCoolantChannelOuter & -SE_tieTubeOuterOuter)
 SE_midHGapCell = openmc.Cell(cell_id=416, fill=SE_coolantStagnant, region=+SE_tieTubeOuterOuter & -SE_midHGapOuter)
 SE_insulatorCell = openmc.Cell(cell_id=417, fill=SE_insulator, region=+SE_midHGapOuter & -SE_insulatorOuter)
@@ -542,21 +575,20 @@ SE_geom=openmc.Geometry(SE_rootUni)
 SE_geom.export_to_xml('./xmlFiles/SE_geometry.xml')
 
 # Plotting the fuel pin geometry
-# SE_rootUni.plot(basis='xy',
-#                 origin=(0,0,0),
-#                 width=(2.2,2.2),
-#                 color_by='material',
-#                 colors={SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black'
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xy/supportElementCrossSection_xy.png', dpi=300)
-# plt.show()
+SE_rootUni.plot(basis='xy',
+                origin=(0,0,0),
+                width=(2.2,2.2),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        FE_cladding: 'black'
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xy/supportElementCrossSection_xy.png', dpi=300)
 
 #############################################################################################################
 #############################################################################################################
@@ -612,20 +644,20 @@ CA_lattice.outer = BE_rootUni
 CA_ring17=([BE_rootUni] + ([BE_rootUni] + [BE_rootUni]*2)*2 + [FE_rootUni] + [FE_rootUni]*2+ [FE_rootUni] + ([BE_rootUni] + [BE_rootUni]*2)*2)*6
 CA_ring16=([BE_rootUni]*2 + [BE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [BE_rootUni] + [BE_rootUni]*3 + [BE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [BE_rootUni] + [BE_rootUni])*3
 CA_ring15=([BE_rootUni] + [FE_rootUni]*2 + ([SE_rootUni] + [FE_rootUni]*2)*4)*6
-CA_ring14=([FE_rootUni] + ([SE_rootUni] + [FE_rootUni]*2)*4 + [SE_rootUni])*6
-CA_ring13=([FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*3 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
+CA_ring14=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*4 + [SE_rootUni])*6
+CA_ring13=([FE_rootUniANALYSE] + [FE_rootUni] +  [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
 CA_ring12=([SE_rootUni] + [FE_rootUni]*2 + ([SE_rootUni] + [FE_rootUni]*2)*3)*6
-CA_ring11=([FE_rootUni] + ([SE_rootUni] + [FE_rootUni]*2)*3 + [SE_rootUni])*6
-CA_ring10=([FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*3 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
+CA_ring11=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*3 + [SE_rootUni])*6
+CA_ring10=([FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
 CA_ring9=([SE_rootUni] + [FE_rootUni]*2)*18
-CA_ring8=([FE_rootUni] + ([SE_rootUni] + [FE_rootUni]*2)*2 + [SE_rootUni])*6
-CA_ring7=([FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*3 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
+CA_ring8=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*2 + [SE_rootUni])*6
+CA_ring7=([FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
 CA_ring6=([SE_rootUni] + [FE_rootUni]*2)*12
-CA_ring5=([FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni])*3
-CA_ring4=[FE_rootUni]*2 + ([SE_rootUni] + [FE_rootUni]*3)*5 + [SE_rootUni] + [FE_rootUni]
+CA_ring5=([FE_rootUniANALYSE] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUniANALYSE] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni])*3
+CA_ring4=[FE_rootUniANALYSE] + [FE_rootUni] + ([SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni])*5 + [SE_rootUni] + [FE_rootUni]
 CA_ring3=([SE_rootUni] + [FE_rootUni]*2)*6
-CA_ring2=([FE_rootUni] + [SE_rootUni])*6
-CA_ring1=[FE_rootUni]*6
+CA_ring2=([FE_rootUniANALYSE] + [SE_rootUni])*6
+CA_ring1=[FE_rootUniANALYSE]*6
 CA_ring0=[SE_rootUni]
 CA_lattice.universes = [CA_ring17, CA_ring16, CA_ring15, CA_ring14, CA_ring13, CA_ring12, CA_ring11, CA_ring10, CA_ring9, CA_ring8, CA_ring7, CA_ring6, CA_ring5, CA_ring4, CA_ring3, CA_ring2, CA_ring1, CA_ring0]
 CA_lattice.orientation='y'
@@ -636,68 +668,56 @@ CA_geom=openmc.Geometry(CA_rootUni)
 CA_geom.export_to_xml('./xmlFiles/CA_geometry.xml')
 
 # Plotting the fuel pin geometry
-# CA_rootUni.plot(basis='xy',
-#                 origin=(0,0,0),
-#                 width=(30*2.2,30*2.2),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'white',
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xy/coreAssemblyCrossSection_xy.png', dpi=300)
-# plt.show()
+CA_rootUni.plot(basis='xy',
+                origin=(0,0,0),
+                width=(30*2.2,30*2.2),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'white',
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xy/coreAssemblyCrossSection_xy.png', dpi=300)
 
-# CA_rootUni.plot(basis='xz',
-#                 origin=(0,0,RH_coreBottomBoundary/2),
-#                 width=(30*2.2,RH_coreBottomBoundary),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'white',
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xz/coreAssemblyAxial_xz.png', dpi=300)
-# plt.show()
+CA_rootUni.plot(basis='xz',
+                origin=(0,0,RH_coreBottomBoundary/2),
+                width=(30*2.2,RH_coreBottomBoundary),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'white',
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xz/coreAssemblyAxial_xz.png', dpi=300)
 
-# CA_rootUni.plot(basis='yz',
-#                 origin=(0,0,RH_coreBottomBoundary/2),
-#                 width=(30*2.2,RH_coreBottomBoundary),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'white',
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/yz/coreAssemblyAxial_yz.png', dpi=300)
-# plt.show()
+CA_rootUni.plot(basis='yz',
+                origin=(0,0,RH_coreBottomBoundary/2),
+                width=(30*2.2,RH_coreBottomBoundary),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'white',
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/yz/coreAssemblyAxial_yz.png', dpi=300)
 
 ##############################################################################################################
 ##############################################################################################################
@@ -814,116 +834,104 @@ RH_geom=openmc.Geometry(RH_rootUni)
 RH_geom.export_to_xml('./xmlFiles/geometry.xml')
 
 # Plotting the fuel pin geometry
-# RH_rootUni.plot(basis='xy',
-#                 origin=(0,0,0),
-#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselRadius*2),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'darkslateblue',
-#                         RH_gapCoolant: 'paleturquoise',
-#                         RH_steelWrapper: 'dimgray',
-#                         RH_berylliumBarrel: 'midnightblue',
-#                         RH_berylliumReflector: 'darkslateblue',
-#                         RH_pressureVessel: 'black',
-#                         RH_controlPlate: 'black',
-#                         RH_controlDrum: 'dimgray',
-#                         RH_lowerTieTubePlenum: 'paleturquoise',
-#                         RH_coreSupportPlate: 'midnightblue',
-#                         RH_upperTieTubePlenum: 'paleturquoise',
-#                         RH_lowerInternalShield: 'slateblue',
-#                         RH_hydrogenInnerPlenum: 'paleturquoise',
-#                         RH_upperInternalShield: 'slateblue',
-#                         RH_controlDrumActuatorZone: 'slateblue',
-#                         RH_brimShield: 'darkslategray',
-#                         RH_hydrogenOuterPlenum: 'paleturquoise'
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xy/reactorHousingCrossSection_xy{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.show()
+RH_rootUni.plot(basis='xy',
+                origin=(0,0,0),
+                width=(RH_pressureVesselRadius*2,RH_pressureVesselRadius*2),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'darkslateblue',
+                        RH_gapCoolant: 'paleturquoise',
+                        RH_steelWrapper: 'dimgray',
+                        RH_berylliumBarrel: 'midnightblue',
+                        RH_berylliumReflector: 'darkslateblue',
+                        RH_pressureVessel: 'black',
+                        RH_controlPlate: 'black',
+                        RH_controlDrum: 'dimgray',
+                        RH_lowerTieTubePlenum: 'paleturquoise',
+                        RH_coreSupportPlate: 'midnightblue',
+                        RH_upperTieTubePlenum: 'paleturquoise',
+                        RH_lowerInternalShield: 'slateblue',
+                        RH_hydrogenInnerPlenum: 'paleturquoise',
+                        RH_upperInternalShield: 'slateblue',
+                        RH_controlDrumActuatorZone: 'slateblue',
+                        RH_brimShield: 'darkslategray',
+                        RH_hydrogenOuterPlenum: 'paleturquoise'
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xy/reactorHousingCrossSection_xy{}.png'.format(int(CD_drumAngularPos)), dpi=300)
 
-# RH_rootUni.plot(basis='xz',
-#                 origin=(0,0,RH_pressureVesselBottomBoundary/2),
-#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'darkslateblue',
-#                         RH_gapCoolant: 'paleturquoise',
-#                         RH_steelWrapper: 'dimgray',
-#                         RH_berylliumBarrel: 'midnightblue',
-#                         RH_berylliumReflector: 'darkslateblue',
-#                         RH_pressureVessel: 'black',
-#                         RH_controlPlate: 'black',
-#                         RH_controlDrum: 'dimgray',
-#                         RH_lowerTieTubePlenum: 'paleturquoise',
-#                         RH_coreSupportPlate: 'darkslateblue',
-#                         RH_upperTieTubePlenum: 'paleturquoise',
-#                         RH_lowerInternalShield: 'slateblue',
-#                         RH_hydrogenInnerPlenum: 'paleturquoise',
-#                         RH_upperInternalShield: 'slateblue',
-#                         RH_controlDrumActuatorZone: 'darkslategray',
-#                         RH_brimShield: 'midnightblue',
-#                         RH_hydrogenOuterPlenum: 'paleturquoise'
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/xz/reactorHousingAxial_xz{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.show()
+RH_rootUni.plot(basis='xz',
+                origin=(0,0,RH_pressureVesselBottomBoundary/2),
+                width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'darkslateblue',
+                        RH_gapCoolant: 'paleturquoise',
+                        RH_steelWrapper: 'dimgray',
+                        RH_berylliumBarrel: 'midnightblue',
+                        RH_berylliumReflector: 'darkslateblue',
+                        RH_pressureVessel: 'black',
+                        RH_controlPlate: 'black',
+                        RH_controlDrum: 'dimgray',
+                        RH_lowerTieTubePlenum: 'paleturquoise',
+                        RH_coreSupportPlate: 'midnightblue',
+                        RH_upperTieTubePlenum: 'paleturquoise',
+                        RH_lowerInternalShield: 'slateblue',
+                        RH_hydrogenInnerPlenum: 'paleturquoise',
+                        RH_upperInternalShield: 'slateblue',
+                        RH_controlDrumActuatorZone: 'slateblue',
+                        RH_brimShield: 'darkslategray',
+                        RH_hydrogenOuterPlenum: 'paleturquoise'
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/xz/reactorHousingAxial_xz{}.png'.format(int(CD_drumAngularPos)), dpi=300)
 
-# RH_rootUni.plot(basis='yz',
-#                 origin=(0,0,RH_pressureVesselBottomBoundary/2),
-#                 width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
-#                 color_by='material',
-#                 colors={FE_coolant: 'paleturquoise',
-#                         FE_claddingInner:'black',
-#                         FE_fuel: 'dimgray',
-#                         FE_claddingOuter: 'black',
-#                         SE_coolant: 'paleturquoise',
-#                         SE_inconel718: 'darkslategray',
-#                         SE_coolantStagnant: 'paleturquoise',
-#                         SE_moderator: 'midnightblue',
-#                         SE_insulator: 'slateblue',
-#                         SE_supportSleeve: 'dimgray',
-#                         SE_supportCoating: 'black',
-#                         BE_coreFiller: 'darkslateblue',
-#                         RH_gapCoolant: 'paleturquoise',
-#                         RH_steelWrapper: 'dimgray',
-#                         RH_berylliumBarrel: 'midnightblue',
-#                         RH_berylliumReflector: 'darkslateblue',
-#                         RH_pressureVessel: 'black',
-#                         RH_controlPlate: 'black',
-#                         RH_controlDrum: 'dimgray',
-#                         RH_lowerTieTubePlenum: 'paleturquoise',
-#                         RH_coreSupportPlate: 'darkslateblue',
-#                         RH_upperTieTubePlenum: 'paleturquoise',
-#                         RH_lowerInternalShield: 'slateblue',
-#                         RH_hydrogenInnerPlenum: 'paleturquoise',
-#                         RH_upperInternalShield: 'slateblue',
-#                         RH_controlDrumActuatorZone: 'darkslategray',
-#                         RH_brimShield: 'midnightblue',
-#                         RH_hydrogenOuterPlenum: 'paleturquoise'
-#                         },
-#                 pixels=[1000,1000])
-# plt.savefig('./pics/Geometry/yz/reactorHousingAxial_yz{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.show()
+RH_rootUni.plot(basis='yz',
+                origin=(0,0,RH_pressureVesselBottomBoundary/2),
+                width=(RH_pressureVesselRadius*2,RH_pressureVesselBottomBoundary),
+                color_by='material',
+                colors={FE_coolant: 'paleturquoise',
+                        FE_cladding:'black',
+                        FE_fuel: 'dimgray',
+                        SE_inconel718: 'darkslategray',
+                        SE_coolantStagnant: 'paleturquoise',
+                        SE_moderator: 'midnightblue',
+                        SE_insulator: 'slateblue',
+                        SE_supportSleeve: 'dimgray',
+                        BE_coreFiller: 'darkslateblue',
+                        RH_gapCoolant: 'paleturquoise',
+                        RH_steelWrapper: 'dimgray',
+                        RH_berylliumBarrel: 'midnightblue',
+                        RH_berylliumReflector: 'darkslateblue',
+                        RH_pressureVessel: 'black',
+                        RH_controlPlate: 'black',
+                        RH_controlDrum: 'dimgray',
+                        RH_lowerTieTubePlenum: 'paleturquoise',
+                        RH_coreSupportPlate: 'midnightblue',
+                        RH_upperTieTubePlenum: 'paleturquoise',
+                        RH_lowerInternalShield: 'slateblue',
+                        RH_hydrogenInnerPlenum: 'paleturquoise',
+                        RH_upperInternalShield: 'slateblue',
+                        RH_controlDrumActuatorZone: 'slateblue',
+                        RH_brimShield: 'darkslategray',
+                        RH_hydrogenOuterPlenum: 'paleturquoise'
+                        },
+                pixels=[1000,1000])
+plt.savefig('./pics/Geometry/yz/reactorHousingAxial_yz{}.png'.format(int(CD_drumAngularPos)), dpi=300)
 
 ############################################################################################################
 ############################################################################################################
@@ -934,914 +942,46 @@ RH_geom.export_to_xml('./xmlFiles/geometry.xml')
 print(openmc.config)
 print(openmc.__version__)
 
-source = openmc.IndependentSource()
-source.space = openmc.stats.Box([-49.2633, -49.2633, -129.64],[49.2633, 49.2633, 0.0], only_fissionable=True)
-
 # source = openmc.IndependentSource()
 # source.space = openmc.stats.Point(xyz=(0.0, 0.0, RH_coreBottomBoundary/2))
 
 settings = openmc.Settings()
 settings.run_mode = 'eigenvalue'
 
+source = openmc.IndependentSource()
+source.space = openmc.stats.Box([-RH_pressureVesselRadius, -RH_pressureVesselRadius, RH_pressureVesselBottomBoundary],[RH_pressureVesselRadius, RH_pressureVesselRadius, 0.0], only_fissionable=True)
+source.strength = 367.0E+06
+
 settings.source = source
-
-settings.particles = 50000
+settings.particles = 50
 settings.generations_per_batch = 20
-settings.batches = 100
+settings.batches = 40
 settings.inactive = 20
-# settings.trace = (20,10,500)
-# settings.track = [(20,10,500)]
-# settings.statepoint = {'batches':[10]}
 settings.export_to_xml('./xmlFiles/')
-
-mesh = openmc.RegularMesh()
-mesh.dimension = [200, 200, 100]
-mesh.lower_left = [-49.2633, -49.2633, -129.64]
-mesh.upper_right = [49.2633, 49.2633, 0.0]
 
 tallies = openmc.Tallies()
 
-fuelAllTally = openmc.Tally(tally_id=1)
-fuelAllTally.filters = [openmc.MeshFilter(mesh)]
-fuelAllTally.scores = ['flux', 'nu-fission', 'absorption', 'elastic', 'total']
-tallies.append(fuelAllTally)
+FE_fuelThermalTally = openmc.Tally(tally_id=1)
+FE_fuelThermalTally.filters = [openmc.EnergyFilter([0,0.625]), openmc.UniverseFilter(999)]
+FE_fuelThermalTally.scores = ['absorption', 'fission']
+tallies.append(FE_fuelThermalTally)
 
-fuelThermalTally = openmc.Tally(tally_id=2)
-fuelThermalTally.filters = [openmc.MeshFilter(mesh), openmc.EnergyFilter([0,0.1])]
-fuelThermalTally.scores = ['flux', 'nu-fission', 'absorption', 'elastic', 'total']
-tallies.append(fuelThermalTally)
-
-fuelFastTally = openmc.Tally(tally_id=3)
-fuelFastTally.filters = [openmc.MeshFilter(mesh), openmc.EnergyFilter([0.1,1e6])]
-fuelFastTally.scores = ['flux', 'nu-fission', 'absorption', 'elastic', 'total']
-tallies.append(fuelFastTally)
+FE_fuelFastTally = openmc.Tally(tally_id=2)
+FE_fuelFastTally.filters = [openmc.EnergyFilter([0.625,19.6403e6]), openmc.UniverseFilter(999)]
+FE_fuelFastTally.scores = ['absorption', 'fission']
+tallies.append(FE_fuelFastTally)
 
 tallies.export_to_xml('./xmlFiles/')
 
 openmc.run(path_input='./xmlFiles/')
 
 with openmc.StatePoint('statepoint.{}.h5'.format(settings.batches)) as sp:
-    k_combined = sp.k_combined
+    keff = sp.keff
     k_generation = sp.k_generation
 
-    with open('./txtFiles/k_combined{}.txt'.format(int(CD_drumAngularPos)), 'w') as f:
-        f.write("{}\n".format(k_combined))
+    with open('./txtFiles/keff{}.txt'.format(int(CD_drumAngularPos)), 'w') as f:
+        f.write("{}\n".format(keff))
 
     with open('./txtFiles/k_generation{}.txt'.format(int(CD_drumAngularPos)), 'w') as f:
         for value in k_generation:
             f.write("{}\n".format(value))
-    # outputAllTally = sp.get_tally(id=1)
-    # dfAll = outputAllTally.get_pandas_dataframe()
-    # dfAllFlux = dfAll[dfAll['score'] == 'flux']
-    # dfAllFission = dfAll[dfAll['score'] == 'nu-fission']
-    # dfAllAbsorption = dfAll[dfAll['score'] == 'absorption']
-    # #dfAllElastic = dfAll[dfAll['score'] == '(n,elastic)']
-    # dfAllReactionRate = dfAll[dfAll['score'] == 'total']
-
-    # outputThermalTally = sp.get_tally(id=2)
-    # dfThermal = outputThermalTally.get_pandas_dataframe()
-    # dfThermalFlux = dfThermal[dfThermal['score'] == 'flux']
-    # dfThermalFission = dfThermal[dfThermal['score'] == 'nu-fission']
-    # dfThermalAbsorption = dfThermal[dfThermal['score'] == 'absorption']
-    # # dfThermalElastic = dfThermal[dfThermal['score'] == '(n,elastic)']
-    # dfThermalReactionRate = dfThermal[dfThermal['score'] == 'total']
-
-    # outputFastTally = sp.get_tally(id=3)
-    # dfFast = outputFastTally.get_pandas_dataframe()
-    # dfFastFlux = dfFast[dfFast['score'] == 'flux']
-    # dfFastFission = dfFast[dfFast['score'] == 'nu-fission']
-    # dfFastAbsorption = dfFast[dfFast['score'] == 'absorption']
-    # # dfFastElastic = dfFast[dfFast['score'] == '(n,elastic)']
-    # dfFastReactionRate = dfFast[dfFast['score'] == 'total']
-
-############################################################################################################
-############################################################################################################
-############################################################################################################
-
-# # x-y Plots
-
-# plt.rcParams['figure.figsize'] = (32, 24)
-
-# # All Plots
-
-# plt.subplot(4,2,1)
-# meanAllFlux = dfAllFlux['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanAllFlux, interpolation='spline16', cmap='turbo')
-# plt.title('All Flux')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanAllFluxAx = np.column_stack((np.arange(200), meanAllFlux[100]))
-# np.savetxt('./dataFiles/xy/meanAllFluxAx.csv', meanAllFluxAx, delimiter=',', fmt='%s')
-# meanAllFluxAxData, meanAllFluxAxPos = meanAllFluxAx[:,0], meanAllFluxAx[:,1]
-# plt.plot(meanAllFluxAxData,meanAllFluxAxPos)
-# plt.title('All Flux')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanAllFission = dfAllFission['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanAllFission, interpolation='spline16', cmap='turbo')
-# plt.title('All nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanAllFissionAx = np.column_stack((np.arange(200), meanAllFission[100]))
-# np.savetxt('./dataFiles/xy/meanAllFissionAx.csv', meanAllFissionAx, delimiter=',', fmt='%s')
-# meanAllFissionAxData, meanAllFissionAxPos = meanAllFissionAx[:,0], meanAllFissionAx[:,1]
-# plt.plot(meanAllFissionAxData,meanAllFissionAxPos)
-# plt.title('All nu-fission')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanAllAbsorption = dfAllAbsorption['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanAllAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('All Absorption')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanAllAbsorptionAx = np.column_stack((np.arange(200), meanAllAbsorption[100]))
-# np.savetxt('./dataFiles/xy/meanAllAbsorptionAx.csv', meanAllAbsorptionAx, delimiter=',', fmt='%s')
-# meanAllAbsorptionAxData, meanAllAbsorptionAxPos = meanAllAbsorptionAx[:,0], meanAllAbsorptionAx[:,1]
-# plt.plot(meanAllAbsorptionAxData,meanAllAbsorptionAxPos)
-# plt.title('All Absorption')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanAllElastic = dfAllElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanAllElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('All Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('y')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanAllReactionRate = dfAllReactionRate['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanAllReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('All Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanAllReactionRateAx = np.column_stack((np.arange(200), meanAllReactionRate[100]))
-# np.savetxt('./dataFiles/xy/meanAllReactionRateAx.csv', meanAllReactionRateAx, delimiter=',', fmt='%s')
-# meanAllReactionRateAxData, meanAllReactionRateAxPos = meanAllReactionRateAx[:,0], meanAllReactionRateAx[:,1]
-# plt.plot(meanAllReactionRateAxData,meanAllReactionRateAxPos)
-# plt.title('All Reaction Rate')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/All/xy_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Thermal Plots
-
-# plt.subplot(4,2,1)
-# meanThermalFlux = dfThermalFlux['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanThermalFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Flux')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanThermalFluxAx = np.column_stack((np.arange(200), meanThermalFlux[100]))
-# np.savetxt('./dataFiles/xy/meanThermalFluxAx.csv', meanThermalFluxAx, delimiter=',', fmt='%s')
-# meanThermalFluxAxData, meanThermalFluxAxPos = meanThermalFluxAx[:,0], meanThermalFluxAx[:,1]
-# plt.plot(meanThermalFluxAxData,meanThermalFluxAxPos)
-# plt.title('Thermal Flux')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanThermalFission = dfThermalFission['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanThermalFission, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanThermalFissionAx = np.column_stack((np.arange(200), meanThermalFission[100]))
-# np.savetxt('./dataFiles/xy/meanThermalFissionAx.csv', meanThermalFissionAx, delimiter=',', fmt='%s')
-# meanThermalFissionAxData, meanThermalFissionAxPos = meanThermalFissionAx[:,0], meanThermalFissionAx[:,1]
-# plt.plot(meanThermalFissionAxData,meanThermalFissionAxPos)
-# plt.title('Thermal nu-fission')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanThermalAbsorption = dfThermalAbsorption['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanThermalAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Absorption')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanThermalAbsorptionAx = np.column_stack((np.arange(200), meanThermalAbsorption[100]))
-# np.savetxt('./dataFiles/xy/meanThermalAbsorptionAx.csv', meanThermalAbsorptionAx, delimiter=',', fmt='%s')
-# meanThermalAbsorptionAxData, meanThermalAbsorptionAxPos = meanThermalAbsorptionAx[:,0], meanThermalAbsorptionAx[:,1]
-# plt.plot(meanThermalAbsorptionAxData,meanThermalAbsorptionAxPos)
-# plt.title('Thermal Absorption')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanThermalElastic = dfThermalElastic['mean'].values.reshape((50,500,500))[-1]
-# # plt.imshow(meanThermalElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Thermal Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('y')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanThermalReactionRate = dfThermalReactionRate['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanThermalReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanThermalReactionRateAx = np.column_stack((np.arange(200), meanThermalReactionRate[100]))
-# np.savetxt('./dataFiles/xy/meanThermalReactionRateAx.csv', meanThermalReactionRateAx, delimiter=',', fmt='%s')
-# meanThermalReactionRateAxData, meanThermalReactionRateAxPos = meanThermalReactionRateAx[:,0], meanThermalReactionRateAx[:,1]
-# plt.plot(meanThermalReactionRateAxData,meanThermalReactionRateAxPos)
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Thermal/xy_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Fast Plots
-
-# plt.subplot(4,2,1)
-# meanFastFlux = dfFastFlux['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanFastFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Flux')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanFastFluxAx = np.column_stack((np.arange(200), meanFastFlux[100]))
-# np.savetxt('./dataFiles/xy/meanFastFluxAx.csv', meanFastFluxAx, delimiter=',', fmt='%s')
-# meanFastFluxAxData, meanFastFluxAxPos = meanFastFluxAx[:,0], meanFastFluxAx[:,1]
-# plt.plot(meanFastFluxAxData,meanFastFluxAxPos)
-# plt.title('Fast Flux')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanFastFission = dfFastFission['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanFastFission, interpolation='spline16', cmap='turbo')
-# plt.title('Fast nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanFastFissionAx = np.column_stack((np.arange(200), meanFastFission[100]))
-# np.savetxt('./dataFiles/xy/meanFastFissionAx.csv', meanFastFissionAx, delimiter=',', fmt='%s')
-# meanFastFissionAxData, meanFastFissionAxPos = meanFastFissionAx[:,0], meanFastFissionAx[:,1]
-# plt.plot(meanFastFissionAxData,meanFastFissionAxPos)
-# plt.title('Fast nu-fission')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanFastAbsorption = dfFastAbsorption['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanFastAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Absorption')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanFastAbsorptionAx = np.column_stack((np.arange(200), meanFastAbsorption[100]))
-# np.savetxt('./dataFiles/xy/meanFastAbsorptionAx.csv', meanFastAbsorptionAx, delimiter=',', fmt='%s')
-# meanFastAbsorptionAxData, meanFastAbsorptionAxPos = meanFastAbsorptionAx[:,0], meanFastAbsorptionAx[:,1]
-# plt.plot(meanFastAbsorptionAxData,meanFastAbsorptionAxPos)
-# plt.title('Fast Absorption')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanFastElastic = dfFastElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanFastElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Fast Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('y')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanFastReactionRate = dfFastReactionRate['mean'].values.reshape((100,200,200))[60,:,:]
-# plt.imshow(meanFastReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('y')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanFastReactionRateAx = np.column_stack((np.arange(200), meanFastReactionRate[100]))
-# np.savetxt('./dataFiles/xy/meanFastReactionRateAx.csv', meanFastReactionRateAx, delimiter=',', fmt='%s')
-# meanFastReactionRateAxData, meanFastReactionRateAxPos = meanFastReactionRateAx[:,0], meanFastReactionRateAx[:,1]
-# plt.plot(meanFastReactionRateAxData,meanFastReactionRateAxPos)
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('x')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Fast/xy_Plots{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.tight_layout(pad=2.0)
-# # plt.show()
-
-# ############################################################################################################
-# ############################################################################################################
-# ############################################################################################################
-
-# # x-z Plots
-
-# # All Plots
-
-# plt.subplot(4,2,1)
-# meanAllFlux = dfAllFlux['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanAllFlux, interpolation='spline16', cmap='turbo')
-# plt.title('All Flux')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanAllFluxAx = np.column_stack((np.arange(100), meanAllFlux[:,100]))
-# np.savetxt('./dataFiles/xz/meanAllFluxAx.csv', meanAllFluxAx, delimiter=',', fmt='%s')
-# meanAllFluxAxData, meanAllFluxAxPos = meanAllFluxAx[:,0], meanAllFluxAx[:,1]
-# plt.plot(meanAllFluxAxData,meanAllFluxAxPos)
-# plt.title('All Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanAllFission = dfAllFission['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanAllFission, interpolation='spline16', cmap='turbo')
-# plt.title('All nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanAllFissionAx = np.column_stack((np.arange(100), meanAllFission[:,100]))
-# np.savetxt('./dataFiles/xz/meanAllFissionAx.csv', meanAllFissionAx, delimiter=',', fmt='%s')
-# meanAllFissionAxData, meanAllFissionAxPos = meanAllFissionAx[:,0], meanAllFissionAx[:,1]
-# plt.plot(meanAllFissionAxData,meanAllFissionAxPos)
-# plt.title('All nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanAllAbsorption = dfAllAbsorption['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanAllAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('All Absorption')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanAllAbsorptionAx = np.column_stack((np.arange(100), meanAllAbsorption[:,100]))
-# np.savetxt('./dataFiles/xz/meanAllAbsorptionAx.csv', meanAllAbsorptionAx, delimiter=',', fmt='%s')
-# meanAllAbsorptionAxData, meanAllAbsorptionAxPos = meanAllAbsorptionAx[:,0], meanAllAbsorptionAx[:,1]
-# plt.plot(meanAllAbsorptionAxData,meanAllAbsorptionAxPos)
-# plt.title('All Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanAllElastic = dfAllElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanAllElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('All Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanAllReactionRate = dfAllReactionRate['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanAllReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('All Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanAllReactionRateAx = np.column_stack((np.arange(100), meanAllReactionRate[:,100]))
-# np.savetxt('./dataFiles/xz/meanAllReactionRateAx.csv', meanAllReactionRateAx, delimiter=',', fmt='%s')
-# meanAllReactionRateAxData, meanAllReactionRateAxPos = meanAllReactionRateAx[:,0], meanAllReactionRateAx[:,1]
-# plt.plot(meanAllReactionRateAxData,meanAllReactionRateAxPos)
-# plt.title('All Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/All/xz_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Thermal Plots
-
-# plt.subplot(4,2,1)
-# meanThermalFlux = dfThermalFlux['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanThermalFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Flux')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-
-# plt.subplot(4,2,2)
-# meanThermalFluxAx = np.column_stack((np.arange(100), meanThermalFlux[:,100]))
-# np.savetxt('./dataFiles/xz/meanThermalFluxAx.csv', meanThermalFluxAx, delimiter=',', fmt='%s')
-# meanThermalFluxAxData, meanThermalFluxAxPos = meanThermalFluxAx[:,0], meanThermalFluxAx[:,1]
-# plt.plot(meanThermalFluxAxData,meanThermalFluxAxPos)
-# plt.title('Thermal Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanThermalFission = dfThermalFission['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanThermalFission, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanThermalFissionAx = np.column_stack((np.arange(100), meanThermalFission[:,100]))
-# np.savetxt('./dataFiles/xz/meanThermalFissionAx.csv', meanThermalFissionAx, delimiter=',', fmt='%s')
-# meanThermalFissionAxData, meanThermalFissionAxPos = meanThermalFissionAx[:,0], meanThermalFissionAx[:,1]
-# plt.plot(meanThermalFissionAxData,meanThermalFissionAxPos)
-# plt.title('Thermal nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanThermalAbsorption = dfThermalAbsorption['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanThermalAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Absorption')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanThermalAbsorptionAx = np.column_stack((np.arange(100), meanThermalAbsorption[:,100]))
-# np.savetxt('./dataFiles/xz/meanThermalAbsorptionAx.csv', meanThermalAbsorptionAx, delimiter=',', fmt='%s')
-# meanThermalAbsorptionAxData, meanThermalAbsorptionAxPos = meanThermalAbsorptionAx[:,0], meanThermalAbsorptionAx[:,1]
-# plt.plot(meanThermalAbsorptionAxData,meanThermalAbsorptionAxPos)
-# plt.title('Thermal Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanThermalElastic = dfThermalElastic['mean'].values.reshape((50,500,500))[-1]
-# # plt.imshow(meanThermalElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Thermal Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanThermalReactionRate = dfThermalReactionRate['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanThermalReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanThermalReactionRateAx = np.column_stack((np.arange(100), meanThermalReactionRate[:,100]))
-# np.savetxt('./dataFiles/xz/meanThermalReactionRateAx.csv', meanThermalReactionRateAx, delimiter=',', fmt='%s')
-# meanThermalReactionRateAxData, meanThermalReactionRateAxPos = meanThermalReactionRateAx[:,0], meanThermalReactionRateAx[:,1]
-# plt.plot(meanThermalReactionRateAxData,meanThermalReactionRateAxPos)
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Thermal/xz_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Fast Plots
-
-# plt.subplot(4,2,1)
-# meanFastFlux = dfFastFlux['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanFastFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Flux')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanFastFluxAx = np.column_stack((np.arange(100), meanFastFlux[:,100]))
-# np.savetxt('./dataFiles/xz/meanFastFluxAx.csv', meanFastFluxAx, delimiter=',', fmt='%s')
-# meanFastFluxAxData, meanFastFluxAxPos = meanFastFluxAx[:,0], meanFastFluxAx[:,1]
-# plt.plot(meanFastFluxAxData,meanFastFluxAxPos)
-# plt.title('Fast Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanFastFission = dfFastFission['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanFastFission, interpolation='spline16', cmap='turbo')
-# plt.title('Fast nu-fission')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanFastFissionAx = np.column_stack((np.arange(100), meanFastFission[:,100]))
-# np.savetxt('./dataFiles/xz/meanFastFissionAx.csv', meanFastFissionAx, delimiter=',', fmt='%s')
-# meanFastFissionAxData, meanFastFissionAxPos = meanFastFissionAx[:,0], meanFastFissionAx[:,1]
-# plt.plot(meanFastFissionAxData,meanFastFissionAxPos)
-# plt.title('Fast nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanFastAbsorption = dfFastAbsorption['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanFastAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Absorption')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanFastAbsorptionAx = np.column_stack((np.arange(100), meanFastAbsorption[:,100]))
-# np.savetxt('./dataFiles/xz/meanFastAbsorptionAx.csv', meanFastAbsorptionAx, delimiter=',', fmt='%s')
-# meanFastAbsorptionAxData, meanFastAbsorptionAxPos = meanFastAbsorptionAx[:,0], meanFastAbsorptionAx[:,1]
-# plt.plot(meanFastAbsorptionAxData,meanFastAbsorptionAxPos)
-# plt.title('Fast Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanFastElastic = dfFastElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanFastElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Fast Elastic Scattering')
-# # plt.xlabel('x')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanFastReactionRate = dfFastReactionRate['mean'].values.reshape((100,200,200))[:,100,:]
-# plt.imshow(meanFastReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('x')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanFastReactionRateAx = np.column_stack((np.arange(100), meanFastReactionRate[:,100]))
-# np.savetxt('./dataFiles/xz/meanFastReactionRateAx.csv', meanFastReactionRateAx, delimiter=',', fmt='%s')
-# meanFastReactionRateAxData, meanFastReactionRateAxPos = meanFastReactionRateAx[:,0], meanFastReactionRateAx[:,1]
-# plt.plot(meanFastReactionRateAxData,meanFastReactionRateAxPos)
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Fast/xz_Plots{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.tight_layout(pad=2.0)
-# # plt.show()
-
-# ############################################################################################################
-# ############################################################################################################
-# ############################################################################################################
-
-# # y-z Plots
-
-# # All Plots
-
-# plt.subplot(4,2,1)
-# meanAllFlux = dfAllFlux['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanAllFlux, interpolation='spline16', cmap='turbo')
-# plt.title('All Flux')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanAllFluxAx = np.column_stack((np.arange(100), meanAllFlux[:,100]))
-# np.savetxt('./dataFiles/yz/meanAllFluxAx.csv', meanAllFluxAx, delimiter=',', fmt='%s')
-# meanAllFluxAxData, meanAllFluxAxPos = meanAllFluxAx[:,0], meanAllFluxAx[:,1]
-# plt.plot(meanAllFluxAxData,meanAllFluxAxPos)
-# plt.title('All Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanAllFission = dfAllFission['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanAllFission, interpolation='spline16', cmap='turbo')
-# plt.title('All nu-fission')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanAllFissionAx = np.column_stack((np.arange(100), meanAllFission[:,100]))
-# np.savetxt('./dataFiles/yz/meanAllFissionAx.csv', meanAllFissionAx, delimiter=',', fmt='%s')
-# meanAllFissionAxData, meanAllFissionAxPos = meanAllFissionAx[:,0], meanAllFissionAx[:,1]
-# plt.plot(meanAllFissionAxData,meanAllFissionAxPos)
-# plt.title('All nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanAllAbsorption = dfAllAbsorption['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanAllAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('All Absorption')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanAllAbsorptionAx = np.column_stack((np.arange(100), meanAllAbsorption[:,100]))
-# np.savetxt('./dataFiles/yz/meanAllAbsorptionAx.csv', meanAllAbsorptionAx, delimiter=',', fmt='%s')
-# meanAllAbsorptionAxData, meanAllAbsorptionAxPos = meanAllAbsorptionAx[:,0], meanAllAbsorptionAx[:,1]
-# plt.plot(meanAllAbsorptionAxData,meanAllAbsorptionAxPos)
-# plt.title('All Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanAllElastic = dfAllElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanAllElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('All Elastic Scattering')
-# # plt.xlabel('y')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanAllReactionRate = dfAllReactionRate['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanAllReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('All Reaction Rate')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanAllReactionRateAx = np.column_stack((np.arange(100), meanAllReactionRate[:,100]))
-# np.savetxt('./dataFiles/yz/meanAllReactionRateAx.csv', meanAllReactionRateAx, delimiter=',', fmt='%s')
-# meanAllReactionRateAxData, meanAllReactionRateAxPos = meanAllReactionRateAx[:,0], meanAllReactionRateAx[:,1]
-# plt.plot(meanAllReactionRateAxData,meanAllReactionRateAxPos)
-# plt.title('All Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/All/yz_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Thermal Plots
-
-# plt.subplot(4,2,1)
-# meanThermalFlux = dfThermalFlux['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanThermalFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Flux')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-
-# plt.subplot(4,2,2)
-# meanThermalFluxAx = np.column_stack((np.arange(100), meanThermalFlux[:,100]))
-# np.savetxt('./dataFiles/yz/meanThermalFluxAx.csv', meanThermalFluxAx, delimiter=',', fmt='%s')
-# meanThermalFluxAxData, meanThermalFluxAxPos = meanThermalFluxAx[:,0], meanThermalFluxAx[:,1]
-# plt.plot(meanThermalFluxAxData,meanThermalFluxAxPos)
-# plt.title('Thermal Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanThermalFission = dfThermalFission['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanThermalFission, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal nu-fission')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanThermalFissionAx = np.column_stack((np.arange(100), meanThermalFission[:,100]))
-# np.savetxt('./dataFiles/yz/meanThermalFissionAx.csv', meanThermalFissionAx, delimiter=',', fmt='%s')
-# meanThermalFissionAxData, meanThermalFissionAxPos = meanThermalFissionAx[:,0], meanThermalFissionAx[:,1]
-# plt.plot(meanThermalFissionAxData,meanThermalFissionAxPos)
-# plt.title('Thermal nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanThermalAbsorption = dfThermalAbsorption['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanThermalAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Absorption')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanThermalAbsorptionAx = np.column_stack((np.arange(100), meanThermalAbsorption[:,100]))
-# np.savetxt('./dataFiles/yz/meanThermalAbsorptionAx.csv', meanThermalAbsorptionAx, delimiter=',', fmt='%s')
-# meanThermalAbsorptionAxData, meanThermalAbsorptionAxPos = meanThermalAbsorptionAx[:,0], meanThermalAbsorptionAx[:,1]
-# plt.plot(meanThermalAbsorptionAxData,meanThermalAbsorptionAxPos)
-# plt.title('Thermal Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanThermalElastic = dfThermalElastic['mean'].values.reshape((50,500,500))[-1]
-# # plt.imshow(meanThermalElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Thermal Elastic Scattering')
-# # plt.xlabel('y')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanThermalReactionRate = dfThermalReactionRate['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanThermalReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanThermalReactionRateAx = np.column_stack((np.arange(100), meanThermalReactionRate[:,100]))
-# np.savetxt('./dataFiles/yz/meanThermalReactionRateAx.csv', meanThermalReactionRateAx, delimiter=',', fmt='%s')
-# meanThermalReactionRateAxData, meanThermalReactionRateAxPos = meanThermalReactionRateAx[:,0], meanThermalReactionRateAx[:,1]
-# plt.plot(meanThermalReactionRateAxData,meanThermalReactionRateAxPos)
-# plt.title('Thermal Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Thermal/yz_Plots.png', dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()
-
-# # Fast Plots
-
-# plt.subplot(4,2,1)
-# meanFastFlux = dfFastFlux['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanFastFlux, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Flux')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(0.0008,0.0012)
-
-# plt.subplot(4,2,2)
-# meanFastFluxAx = np.column_stack((np.arange(100), meanFastFlux[:,100]))
-# np.savetxt('./dataFiles/yz/meanFastFluxAx.csv', meanFastFluxAx, delimiter=',', fmt='%s')
-# meanFastFluxAxData, meanFastFluxAxPos = meanFastFluxAx[:,0], meanFastFluxAx[:,1]
-# plt.plot(meanFastFluxAxData,meanFastFluxAxPos)
-# plt.title('Fast Flux')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Flux')
-
-# plt.subplot(4,2,3)
-# meanFastFission = dfFastFission['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanFastFission, interpolation='spline16', cmap='turbo')
-# plt.title('Fast nu-fission')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,4)
-# meanFastFissionAx = np.column_stack((np.arange(100), meanFastFission[:,100]))
-# np.savetxt('./dataFiles/yz/meanFastFissionAx.csv', meanFastFissionAx, delimiter=',', fmt='%s')
-# meanFastFissionAxData, meanFastFissionAxPos = meanFastFissionAx[:,0], meanFastFissionAx[:,1]
-# plt.plot(meanFastFissionAxData,meanFastFissionAxPos)
-# plt.title('Fast nu-fission')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('nu-fission')
-
-# plt.subplot(4,2,5)
-# meanFastAbsorption = dfFastAbsorption['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanFastAbsorption, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Absorption')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,6)
-# meanFastAbsorptionAx = np.column_stack((np.arange(100), meanFastAbsorption[:,100]))
-# np.savetxt('./dataFiles/yz/meanFastAbsorptionAx.csv', meanFastAbsorptionAx, delimiter=',', fmt='%s')
-# meanFastAbsorptionAxData, meanFastAbsorptionAxPos = meanFastAbsorptionAx[:,0], meanFastAbsorptionAx[:,1]
-# plt.plot(meanFastAbsorptionAxData,meanFastAbsorptionAxPos)
-# plt.title('Fast Absorption')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Absorption')
-
-# # meanFastElastic = dfFastElastic['mean'].values.reshape((1000,1000))
-# # plt.imshow(meanFastElastic, interpolation='spline16', cmap='turbo')
-# # plt.title('Fast Elastic Scattering')
-# # plt.xlabel('y')
-# # plt.ylabel('z')
-# # plt.colorbar()
-# # #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,7)
-# meanFastReactionRate = dfFastReactionRate['mean'].values.reshape((100,200,200))[:,:,100]
-# plt.imshow(meanFastReactionRate, interpolation='spline16', cmap='turbo')
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('y')
-# plt.ylabel('z')
-# plt.colorbar()
-# #plt.clim(6e-6,8e-6)
-
-# plt.subplot(4,2,8)
-# meanFastReactionRateAx = np.column_stack((np.arange(100), meanFastReactionRate[:,100]))
-# np.savetxt('./dataFiles/yz/meanFastReactionRateAx.csv', meanFastReactionRateAx, delimiter=',', fmt='%s')
-# meanFastReactionRateAxData, meanFastReactionRateAxPos = meanFastReactionRateAx[:,0], meanFastReactionRateAx[:,1]
-# plt.plot(meanFastReactionRateAxData,meanFastReactionRateAxPos)
-# plt.title('Fast Reaction Rate')
-# plt.xlabel('z')
-# #plt.ylim(bottom=0.0008)
-# plt.ylabel('Reaction Rate')
-
-# plt.savefig('./pics/Fast/yz_Plots{}.png'.format(int(CD_drumAngularPos)), dpi=300)
-# plt.tight_layout(pad=2.0)
-# plt.show()

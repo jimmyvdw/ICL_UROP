@@ -34,12 +34,6 @@ ene CAe0 1 0 6.25E-07 19.6403
 det CAd00 dr -2 void de CAe0 dm FE_fuel dn 1 0.0 100 1 0 360 1 0 0 1
 det CAd01 dr -2 void de CAe0 dm FE_coolant dn 1 0.0 100 1 0 360 1 0 0 1
 det CAd02 dr -2 void de CAe0 dm FE_cladding dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd03 dr -2 void de CAe0 dm SE_coolantStagnant dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd04 dr -2 void de CAe0 dm SE_inconel718 dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd05 dr -2 void de CAe0 dm SE_moderator dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd06 dr -2 void de CAe0 dm SE_insulator dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd07 dr -2 void de CAe0 dm SE_supportSleeve dn 1 0.0 100 1 0 360 1 0 0 1
-% det CAd50 dr -6 void de CAe0 dm FE_fuel FE_coolant FE_claddingInner FE_claddingOuter SE_coolant SE_coolantStagnant SE_inconel718 SE_moderator SE_insulator SE_supportSleeve SE_supportCoating
 
 % --- Conditions:
 
