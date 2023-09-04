@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <geometry>
-  <cell id="10" material="9" region="-45 46 -47 48 49 -50 -43 44" universe="13"/>
-  <surface coeffs="0.0" id="43" type="z-plane"/>
-  <surface coeffs="-89.0" id="44" type="z-plane"/>
-  <surface coeffs="0.9525000000000001" id="45" type="y-plane"/>
-  <surface coeffs="-0.9525000000000001" id="46" type="y-plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="47" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="48" type="plane"/>
-  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="49" type="plane"/>
-  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="50" type="plane"/>
+  <cell id="36" material="9" region="-1002 1003 -1004 1005 1006 -1007 -1000 1001" universe="249"/>
+  <surface coeffs="0.0" id="1000" type="z-plane"/>
+  <surface coeffs="-89.0" id="1001" type="z-plane"/>
+  <surface coeffs="0.9525000000000001" id="1002" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="1003" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="1004" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="1005" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="1006" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="1007" type="plane"/>
 </geometry>

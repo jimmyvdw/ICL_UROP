@@ -380,7 +380,7 @@ CD_drumAngularPos = 0.0 # 0.0 = Fully Subcritical, 90.0 = Critical, 180.0 = Full
 # Fuel Element Geometry
 
 # Boudaries and outer universe
-FE_fuelOut = openmc.Cell(cell_id=300, fill=FE_fuel)
+FE_fuelOut = openmc.Cell(cell_id=1, fill=FE_fuel)
 
 # Top and Bottom Boundary
 FE_topBoundaryPlane = openmc.ZPlane(z0=RH_coreTopBoundary)
@@ -394,9 +394,9 @@ FE_assemblyHex = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctInner / np
 FE_cladOuterHex = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctOuter / np.sqrt(3.),
                                         orientation='x')
 
-FE_assemblyCell = openmc.Cell()
-FE_cladOuterCell = openmc.Cell()
-FE_voidCell = openmc.Cell()
+FE_assemblyCell = openmc.Cell(cell_id=2)
+FE_cladOuterCell = openmc.Cell(cell_id=3)
+FE_voidCell = openmc.Cell(cell_id=4)
 
 FE_assemblyCell.region = FE_assemblyHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
 FE_cladOuterCell.region = ~FE_assemblyHex & FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
@@ -408,12 +408,12 @@ FE_fuelOutUni = openmc.Universe(cells=(FE_fuelOut,))
 FE_cladOuterUni = openmc.Universe(cells=[FE_cladOuterCell])
 FE_rootUni = openmc.Universe()
 
-FE_coolantChannelOuter = openmc.ZCylinder(surface_id=301, r=FE_channelRadius)
-FE_cladChannelOuter = openmc.ZCylinder(surface_id=302, r=FE_cladOuterRadius)
+FE_coolantChannelOuter = openmc.ZCylinder(r=FE_channelRadius)
+FE_cladChannelOuter = openmc.ZCylinder(r=FE_cladOuterRadius)
 
-FE_coolantChannelCell  = openmc.Cell(cell_id=311, fill=FE_coolant, region=-FE_coolantChannelOuter)
-FE_cladChannelCell  = openmc.Cell(cell_id=312, fill=FE_cladding, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
-FE_fuelChannelCell = openmc.Cell(cell_id=313, fill=FE_fuel, region=+FE_cladChannelOuter)
+FE_coolantChannelCell  = openmc.Cell(cell_id=5,fill=FE_coolant, region=-FE_coolantChannelOuter)
+FE_cladChannelCell  = openmc.Cell(cell_id=6,fill=FE_cladding, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
+FE_fuelChannelCell = openmc.Cell(cell_id=7,fill=FE_fuel, region=+FE_cladChannelOuter)
 
 FE_channelUni = openmc.Universe(cells=[FE_fuelChannelCell, FE_cladChannelCell, FE_coolantChannelCell])
 
@@ -451,59 +451,62 @@ plt.savefig('./pics/Geometry/xy/fuelElementCrossSection_xy.png', dpi=300)
     
 # ANALYSE Fuel Element Geometry
 
-# Boudaries and outer universe
-FE_fuelOutANALYSE = openmc.Cell(cell_id=350, fill=FE_fuel)
-
-# Top and Bottom Boundary
-FE_topBoundaryPlaneANALYSE = openmc.ZPlane(z0=RH_coreTopBoundary)
-FE_bottomBoundaryPlaneANALYSE = openmc.ZPlane(z0=RH_coreBottomBoundary)
-
-# Inner Hexagon
-FE_assemblyHexANALYSE = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctInner / np.sqrt(3.),
-                                        orientation='x')
-
-# Outer Hexagon
-FE_cladOuterHexANALYSE = openmc.hexagonal_prism(edge_length=FE_subassemblyDuctOuter / np.sqrt(3.),
-                                        orientation='x')
-
-FE_assemblyCellANALYSE = openmc.Cell()
-FE_cladOuterCellANALYSE = openmc.Cell()
-FE_voidCellANALYSE = openmc.Cell()
-
-FE_assemblyCellANALYSE.region = FE_assemblyHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
-FE_cladOuterCellANALYSE.region = ~FE_assemblyHex & FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
-FE_voidCellANALYSE.region = ~FE_cladOuterHex & -FE_topBoundaryPlane & +FE_bottomBoundaryPlane
-FE_cladOuterCellANALYSE.fill = FE_cladding
-
-# Create universes
-FE_fuelOutUniANALYSE = openmc.Universe(cells=(FE_fuelOut,))
-FE_cladOuterUniANALYSE = openmc.Universe(cells=[FE_cladOuterCell])
-FE_rootUniANALYSE = openmc.Universe(universe_id=999)
-
-FE_coolantChannelOuterANALYSE = openmc.ZCylinder(surface_id=351, r=FE_channelRadius)
-FE_cladChannelOuterANALYSE = openmc.ZCylinder(surface_id=352, r=FE_cladOuterRadius)
-
-FE_coolantChannelCellANALYSE  = openmc.Cell(cell_id=351, fill=FE_coolant, region=-FE_coolantChannelOuter)
-FE_cladChannelCellANALYSE  = openmc.Cell(cell_id=352, fill=FE_cladding, region=+FE_coolantChannelOuter & -FE_cladChannelOuter)
-FE_fuelChannelCellANALYSE = openmc.Cell(cell_id=353, fill=FE_fuel, region=+FE_cladChannelOuter)
-
-FE_channelUniANALYSE = openmc.Universe(cells=[FE_fuelChannelCell, FE_cladChannelCell, FE_coolantChannelCell])
-
-# Creating the hexagonal lattice
-FE_latticeANALYSE=openmc.HexLattice(name='assembly')
-FE_latticeANALYSE.center = (0., 0.)
-FE_latticeANALYSE.pitch = (FE_pinPitch,)
-FE_latticeANALYSE.outer = FE_fuelOutUni
-FE_ring2ANALYSE=[FE_channelUni]*12
-FE_ring1ANALYSE=[FE_channelUni]*6
-FE_ring0ANALYSE=[FE_channelUni]
-FE_latticeANALYSE.universes = [FE_ring2, FE_ring1, FE_ring0]
-FE_latticeANALYSE.orientation='x'
-FE_assemblyCellANALYSE.fill = FE_lattice
-
-FE_rootUniANALYSE.add_cells([FE_assemblyCellANALYSE, FE_cladOuterCellANALYSE, FE_voidCellANALYSE])
-FE_geomANALYSE=openmc.Geometry(FE_rootUniANALYSE)
-FE_geomANALYSE.export_to_xml('./xmlFiles/FE_geometryANALYSE.xml')
+FE_fuelOutANALYSEi = []
+FE_topBoundaryPlaneANALYSEi = []
+FE_bottomBoundaryPlaneANALYSEi = []
+FE_assemblyHexANALYSEi = []
+FE_cladOuterHexANALYSEi = []
+FE_assemblyCellANALYSEi = []
+FE_cladOuterCellANALYSEi = []
+FE_voidCellANALYSEi = []
+FE_fuelOutUniANALYSEi = []
+FE_cladOuterUniANALYSEi = []
+FE_rootUniANALYSEi = []
+FE_coolantChannelOuterANALYSEi = []
+FE_cladChannelOuterANALYSEi = []
+FE_coolantChannelCellANALYSEi = []
+FE_cladChannelCellANALYSEi = []
+FE_fuelChannelCellANALYSEi = []
+FE_channelUniANALYSEi = []
+FE_latticeANALYSEi = []
+FE_ring2ANALYSEi = []
+FE_ring1ANALYSEi = []
+FE_ring0ANALYSEi = []
+for i in range(0, 60):
+        FE_fuelOutANALYSEi.append(openmc.Cell(cell_id=(7*i)+100, fill=FE_fuel))
+        FE_topBoundaryPlaneANALYSEi.append(openmc.ZPlane(z0=RH_coreTopBoundary))
+        FE_bottomBoundaryPlaneANALYSEi.append(openmc.ZPlane(z0=RH_coreBottomBoundary))
+        FE_assemblyHexANALYSEi.append(openmc.hexagonal_prism(edge_length=FE_subassemblyDuctInner / np.sqrt(3.), orientation='x'))
+        FE_cladOuterHexANALYSEi.append(openmc.hexagonal_prism(edge_length=FE_subassemblyDuctOuter / np.sqrt(3.), orientation='x'))
+        FE_assemblyCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+101))
+        FE_cladOuterCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+102))
+        FE_voidCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+103))
+        FE_assemblyCellANALYSEi[i].region = FE_assemblyHexANALYSEi[i] & -FE_topBoundaryPlaneANALYSEi[i] & +FE_bottomBoundaryPlaneANALYSEi[i]
+        FE_cladOuterCellANALYSEi[i].region = ~FE_assemblyHexANALYSEi[i] & FE_cladOuterHexANALYSEi[i] & -FE_topBoundaryPlaneANALYSEi[i] & +FE_bottomBoundaryPlaneANALYSEi[i]
+        FE_voidCellANALYSEi[i].region = ~FE_cladOuterHexANALYSEi[i] & -FE_topBoundaryPlaneANALYSEi[i] & +FE_bottomBoundaryPlaneANALYSEi[i]
+        FE_cladOuterCellANALYSEi[i].fill = FE_cladding
+        FE_fuelOutUniANALYSEi.append(openmc.Universe(cells=(FE_fuelOutANALYSEi[i],)))
+        FE_cladOuterUniANALYSEi.append(openmc.Universe(cells=[FE_cladOuterCellANALYSEi[i]]))
+        FE_rootUniANALYSEi.append(openmc.Universe(universe_id=301+i))
+        FE_coolantChannelOuterANALYSEi.append(openmc.ZCylinder(r=FE_channelRadius))
+        FE_cladChannelOuterANALYSEi.append(openmc.ZCylinder(r=FE_cladOuterRadius))
+        FE_coolantChannelCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+104,fill=FE_coolant, region=-FE_coolantChannelOuterANALYSEi[i]))
+        FE_cladChannelCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+105,fill=FE_cladding, region=+FE_coolantChannelOuterANALYSEi[i] & -FE_cladChannelOuterANALYSEi[i]))
+        FE_fuelChannelCellANALYSEi.append(openmc.Cell(cell_id=(7*i)+106,fill=FE_fuel, region=+FE_cladChannelOuterANALYSEi[i]))
+        FE_channelUniANALYSEi.append(openmc.Universe(cells=[FE_fuelChannelCellANALYSEi[i], FE_cladChannelCellANALYSEi[i], FE_coolantChannelCellANALYSEi[i]]))
+        FE_latticeANALYSEi.append(openmc.HexLattice(name='assembly'))
+        FE_latticeANALYSEi[i].center = (0., 0.)
+        FE_latticeANALYSEi[i].pitch = (FE_pinPitch,)
+        FE_latticeANALYSEi[i].outer = FE_fuelOutUniANALYSEi[i]
+        FE_ring2ANALYSEi.append([FE_channelUniANALYSEi[i]]*12)
+        FE_ring1ANALYSEi.append([FE_channelUniANALYSEi[i]]*6)
+        FE_ring0ANALYSEi.append([FE_channelUniANALYSEi[i]])
+        FE_latticeANALYSEi[i].universes = [FE_ring2ANALYSEi[i], FE_ring1ANALYSEi[i], FE_ring0ANALYSEi[i]]
+        FE_latticeANALYSEi[i].orientation='x'
+        FE_assemblyCellANALYSEi[i].fill = FE_latticeANALYSEi[i]
+        FE_rootUniANALYSEi[i].add_cells([FE_assemblyCellANALYSEi[i], FE_cladOuterCellANALYSEi[i], FE_voidCellANALYSEi[i]])
+        FE_geomANALYSEi=openmc.Geometry(FE_rootUniANALYSEi[i])
+        FE_geomANALYSEi.export_to_xml('./xmlFiles/FE_geometryANALYSE'+str(i)+'.xml')
 
 #############################################################################################################
 #############################################################################################################
@@ -523,9 +526,9 @@ SE_cladInnerHex = openmc.hexagonal_prism(edge_length=SE_subassemblyDuctInner / n
 SE_cladOuterHex = openmc.hexagonal_prism(edge_length=SE_subassemblyDuctOuter / np.sqrt(3.),
                                         orientation='x')
 
-SE_assemblyCell = openmc.Cell()
-SE_cladOuterCell = openmc.Cell()
-SE_voidCell = openmc.Cell()
+SE_assemblyCell = openmc.Cell(cell_id=23)
+SE_cladOuterCell = openmc.Cell(cell_id=24)
+SE_voidCell = openmc.Cell(cell_id=25)
 
 SE_assemblyCell.region = SE_cladInnerHex & -SE_topBoundaryPlane & +SE_bottomBoundaryPlane
 SE_cladOuterCell.region = ~SE_cladInnerHex & SE_cladOuterHex & -SE_topBoundaryPlane & +SE_bottomBoundaryPlane
@@ -536,27 +539,27 @@ SE_cladOuterCell.fill = FE_cladding
 SE_cladOuterUni = openmc.Universe(cells=[SE_cladOuterCell])
 SE_rootUni = openmc.Universe()
 
-SE_centralChannelOuter = openmc.ZCylinder(surface_id=400, r=SE_centralChannelRadius)
-SE_tieTubeInnerOuter = openmc.ZCylinder(surface_id=401, r=SE_tieTubeInnerRadius)
-SE_innerHGapOuter = openmc.ZCylinder(surface_id=402, r=SE_innerHGapRadius)
-SE_moderatorOuter = openmc.ZCylinder(surface_id=403, r=SE_moderatorRadius)
-SE_outerCoolantChannelOuter = openmc.ZCylinder(surface_id=404, r=SE_outerCoolantChannelRadius)
-SE_tieTubeOuterOuter = openmc.ZCylinder(surface_id=405, r=SE_tieTubeOuterRadius)
-SE_midHGapOuter = openmc.ZCylinder(surface_id=406, r=SE_midHGapRadius)
-SE_insulatorOuter = openmc.ZCylinder(surface_id=407, r=SE_insulatorRadius)
-SE_outerHGapOuter = openmc.ZCylinder(surface_id=408, r=SE_outerHGapRadius)
+SE_centralChannelOuter = openmc.ZCylinder(r=SE_centralChannelRadius)
+SE_tieTubeInnerOuter = openmc.ZCylinder(r=SE_tieTubeInnerRadius)
+SE_innerHGapOuter = openmc.ZCylinder(r=SE_innerHGapRadius)
+SE_moderatorOuter = openmc.ZCylinder(r=SE_moderatorRadius)
+SE_outerCoolantChannelOuter = openmc.ZCylinder(r=SE_outerCoolantChannelRadius)
+SE_tieTubeOuterOuter = openmc.ZCylinder(r=SE_tieTubeOuterRadius)
+SE_midHGapOuter = openmc.ZCylinder(r=SE_midHGapRadius)
+SE_insulatorOuter = openmc.ZCylinder(r=SE_insulatorRadius)
+SE_outerHGapOuter = openmc.ZCylinder(r=SE_outerHGapRadius)
 
 # Boudaries and outer universe
-SE_centralChannelCell = openmc.Cell(cell_id=410, fill=FE_coolant, region=-SE_centralChannelOuter)
-SE_tieTubeInnerCell = openmc.Cell(cell_id=411, fill=SE_inconel718, region=+SE_centralChannelOuter & -SE_tieTubeInnerOuter)
-SE_innerHGapCell = openmc.Cell(cell_id=412, fill=SE_coolantStagnant, region=+SE_tieTubeInnerOuter & -SE_innerHGapOuter)
-SE_moderatorCell = openmc.Cell(cell_id=413, fill=SE_moderator, region=+SE_innerHGapOuter & -SE_moderatorOuter)
-SE_outerCoolantChannelCell = openmc.Cell(cell_id=414, fill=FE_coolant, region=+SE_moderatorOuter & -SE_outerCoolantChannelOuter)
-SE_tieTubeOuterCell = openmc.Cell(cell_id=415, fill=SE_inconel718, region=+SE_outerCoolantChannelOuter & -SE_tieTubeOuterOuter)
-SE_midHGapCell = openmc.Cell(cell_id=416, fill=SE_coolantStagnant, region=+SE_tieTubeOuterOuter & -SE_midHGapOuter)
-SE_insulatorCell = openmc.Cell(cell_id=417, fill=SE_insulator, region=+SE_midHGapOuter & -SE_insulatorOuter)
-SE_outerHGapCell = openmc.Cell(cell_id=418, fill=SE_coolantStagnant, region=+SE_insulatorOuter & -SE_outerHGapOuter)
-SE_sleeveOutCell = openmc.Cell(cell_id=419, fill=SE_supportSleeve, region=+SE_outerHGapOuter)
+SE_centralChannelCell = openmc.Cell(cell_id=26,fill=FE_coolant, region=-SE_centralChannelOuter)
+SE_tieTubeInnerCell = openmc.Cell(cell_id=27,fill=SE_inconel718, region=+SE_centralChannelOuter & -SE_tieTubeInnerOuter)
+SE_innerHGapCell = openmc.Cell(cell_id=28,fill=SE_coolantStagnant, region=+SE_tieTubeInnerOuter & -SE_innerHGapOuter)
+SE_moderatorCell = openmc.Cell(cell_id=29,fill=SE_moderator, region=+SE_innerHGapOuter & -SE_moderatorOuter)
+SE_outerCoolantChannelCell = openmc.Cell(cell_id=30,fill=FE_coolant, region=+SE_moderatorOuter & -SE_outerCoolantChannelOuter)
+SE_tieTubeOuterCell = openmc.Cell(cell_id=31,fill=SE_inconel718, region=+SE_outerCoolantChannelOuter & -SE_tieTubeOuterOuter)
+SE_midHGapCell = openmc.Cell(cell_id=32,fill=SE_coolantStagnant, region=+SE_tieTubeOuterOuter & -SE_midHGapOuter)
+SE_insulatorCell = openmc.Cell(cell_id=33,fill=SE_insulator, region=+SE_midHGapOuter & -SE_insulatorOuter)
+SE_outerHGapCell = openmc.Cell(cell_id=34,fill=SE_coolantStagnant, region=+SE_insulatorOuter & -SE_outerHGapOuter)
+SE_sleeveOutCell = openmc.Cell(cell_id=35,fill=SE_supportSleeve, region=+SE_outerHGapOuter)
 
 SE_channelUni = openmc.Universe(cells=[SE_centralChannelCell,
                                     SE_tieTubeInnerCell,
@@ -605,7 +608,7 @@ BE_bottomBoundaryPlane = openmc.ZPlane(z0=RH_coreBottomBoundary)
 BE_subassemblyCoreFillerHex = openmc.hexagonal_prism(edge_length=BE_subassemblyCoreFillerOuter / np.sqrt(3.),
                                         orientation='x')
 
-BE_subassemblyCoreFillerCell = openmc.Cell()
+BE_subassemblyCoreFillerCell = openmc.Cell(cell_id=36)
 BE_subassemblyCoreFillerCell.region = BE_subassemblyCoreFillerHex & -BE_topBoundaryPlane & +BE_bottomBoundaryPlane
 BE_subassemblyCoreFillerCell.fill = BE_coreFiller
 BE_rootUni = openmc.Universe(cells=[BE_subassemblyCoreFillerCell])
@@ -627,8 +630,8 @@ CA_bottomBoundaryPlane = openmc.ZPlane(z0=RH_coreBottomBoundary)
 CA_assemblyHex = openmc.hexagonal_prism(edge_length=CA_assemblyOuter / np.sqrt(3.),
                                         orientation='x')
 
-CA_assemblyCell = openmc.Cell()
-CA_voidCell = openmc.Cell()
+CA_assemblyCell = openmc.Cell(cell_id=37)
+CA_voidCell = openmc.Cell(cell_id=38)
 
 CA_assemblyCell.region = CA_assemblyHex & -CA_topBoundaryPlane & +CA_bottomBoundaryPlane
 CA_voidCell.region = ~CA_assemblyHex & -CA_topBoundaryPlane & +CA_bottomBoundaryPlane
@@ -641,24 +644,24 @@ CA_lattice=openmc.HexLattice(name='assembly')
 CA_lattice.center = (0., 0.)
 CA_lattice.pitch = (FE_subassemblyDuctOuter,)
 CA_lattice.outer = BE_rootUni
-CA_ring17=([BE_rootUni] + ([BE_rootUni] + [BE_rootUni]*2)*2 + [FE_rootUni] + [FE_rootUni]*2+ [FE_rootUni] + ([BE_rootUni] + [BE_rootUni]*2)*2)*6
-CA_ring16=([BE_rootUni]*2 + [BE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [BE_rootUni] + [BE_rootUni]*3 + [BE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [FE_rootUni] + [FE_rootUni]*2 + [BE_rootUni] + [BE_rootUni])*3
-CA_ring15=([BE_rootUni] + [FE_rootUni]*2 + ([SE_rootUni] + [FE_rootUni]*2)*4)*6
-CA_ring14=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*4 + [SE_rootUni])*6
-CA_ring13=([FE_rootUniANALYSE] + [FE_rootUni] +  [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
-CA_ring12=([SE_rootUni] + [FE_rootUni]*2 + ([SE_rootUni] + [FE_rootUni]*2)*3)*6
-CA_ring11=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*3 + [SE_rootUni])*6
-CA_ring10=([FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
-CA_ring9=([SE_rootUni] + [FE_rootUni]*2)*18
-CA_ring8=([FE_rootUniANALYSE] + ([SE_rootUni] + [FE_rootUni]*2)*2 + [SE_rootUni])*6
-CA_ring7=([FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUni])*3
-CA_ring6=([SE_rootUni] + [FE_rootUni]*2)*12
-CA_ring5=([FE_rootUniANALYSE] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni] + [FE_rootUniANALYSE] + [SE_rootUni] + [FE_rootUni]*2 + [SE_rootUni])*3
-CA_ring4=[FE_rootUniANALYSE] + [FE_rootUni] + ([SE_rootUni] + [FE_rootUni] + [FE_rootUniANALYSE] + [FE_rootUni])*5 + [SE_rootUni] + [FE_rootUni]
-CA_ring3=([SE_rootUni] + [FE_rootUni]*2)*6
-CA_ring2=([FE_rootUniANALYSE] + [SE_rootUni])*6
-CA_ring1=[FE_rootUniANALYSE]*6
-CA_ring0=[SE_rootUni]
+CA_ring17 = [*[val for pair in zip([BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6) for val in pair]]
+CA_ring16 = [*[val for pair in zip([BE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [BE_rootUni]*6, [BE_rootUni]*6) for val in pair]]
+CA_ring15 = [*[val for pair in zip([BE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6) for val in pair]]
+CA_ring14 = [*[val for pair in zip(FE_rootUniANALYSEi[54:60], [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6) for val in pair]]
+CA_ring13 = [*[val for pair in zip(FE_rootUniANALYSEi[48:54], [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6) for val in pair]]
+CA_ring12 = [*[val for pair in zip([SE_rootUni]*24, [FE_rootUni]*24, [FE_rootUni]*24) for val in pair]]
+CA_ring11 = [*[val for pair in zip(FE_rootUniANALYSEi[42:48], [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6) for val in pair]]
+CA_ring10 = [*[val for pair in zip(FE_rootUniANALYSEi[36:42], [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6) for val in pair]]
+CA_ring9 = [*[val for pair in zip([SE_rootUni]*18, [FE_rootUni]*18, [FE_rootUni]*18) for val in pair]]
+CA_ring8 = [*[val for pair in zip(FE_rootUniANALYSEi[30:36], [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6) for val in pair]]
+CA_ring7 = [*[val for pair in zip(FE_rootUniANALYSEi[24:30], [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6) for val in pair]]
+CA_ring6 = [*[val for pair in zip([SE_rootUni]*12, [FE_rootUni]*12, [FE_rootUni]*12) for val in pair]]
+CA_ring5 = [*[val for pair in zip(FE_rootUniANALYSEi[18:24], [SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6, [SE_rootUni]*6) for val in pair]]
+CA_ring4 = [*[val for set in zip(FE_rootUniANALYSEi[12:18], [FE_rootUni]*6, [SE_rootUni]*6, [FE_rootUni]*6) for val in set]]
+CA_ring3 = [*[val for pair in zip([SE_rootUni]*6, [FE_rootUni]*6, [FE_rootUni]*6) for val in pair]]
+CA_ring2 = [*[val for pair in zip(FE_rootUniANALYSEi[6:12], [SE_rootUni]*6) for val in pair]]
+CA_ring1 = [*[val for pair in zip(FE_rootUniANALYSEi[0:6]) for val in pair]]
+CA_ring0 = [SE_rootUni]
 CA_lattice.universes = [CA_ring17, CA_ring16, CA_ring15, CA_ring14, CA_ring13, CA_ring12, CA_ring11, CA_ring10, CA_ring9, CA_ring8, CA_ring7, CA_ring6, CA_ring5, CA_ring4, CA_ring3, CA_ring2, CA_ring1, CA_ring0]
 CA_lattice.orientation='y'
 CA_assemblyCell.fill = CA_lattice
@@ -726,7 +729,7 @@ plt.savefig('./pics/Geometry/yz/coreAssemblyAxial_yz.png', dpi=300)
 # Control Drum Geometry
 
 CD_berylliumReflectorOuter = openmc.ZCylinder(r=RH_berylliumReflectorRadius)
-CD_berylliumReflectorCell = openmc.Cell(fill=RH_berylliumReflector, region=-CD_berylliumReflectorOuter)
+CD_berylliumReflectorCell = openmc.Cell(cell_id=39,fill=RH_berylliumReflector, region=-CD_berylliumReflectorOuter)
 
 CD_controlDrumPinBundleUniverse = openmc.Universe(cells=[CD_berylliumReflectorCell])
 
@@ -741,21 +744,21 @@ for i, (r, n, a) in enumerate(zip(CD_ringRadii, CD_controlDrumNum, CD_bundleAngu
         CD_controlPlateRegion = -openmc.Plane(a=coefficients[0][0], b=coefficients[0][1], c=0, d=0) & -openmc.Plane(a=coefficients[0][2], b=coefficients[0][3], c=0, d=0) & + openmc.ZCylinder(r=CD_controlPlateInnerRadius)
         CD_controlDrumInnerOuter = openmc.ZCylinder(r=CD_controlPlateInnerRadius)
         CD_controlDrumOuterRegion = ~CD_controlPlateRegion
-        CD_controlDrumOuterCell = openmc.Cell(fill=RH_controlDrum, region=CD_controlDrumOuterRegion)
-        CD_controlDrumInnerCell = openmc.Cell(fill=RH_controlDrum, region=-CD_controlDrumInnerOuter)
-        CD_controlPlateCell = openmc.Cell(fill=RH_controlPlate, region=CD_controlPlateRegion)
+        CD_controlDrumOuterCell = openmc.Cell(cell_id=(4*j)+900,fill=RH_controlDrum, region=CD_controlDrumOuterRegion)
+        CD_controlDrumInnerCell = openmc.Cell(cell_id=(4*j)+901,fill=RH_controlDrum, region=-CD_controlDrumInnerOuter)
+        CD_controlPlateCell = openmc.Cell(cell_id=(4*j)+902,fill=RH_controlPlate, region=CD_controlPlateRegion)
         CD_controlDrumPinUniverse = openmc.Universe(cells=(CD_controlDrumInnerCell, CD_controlPlateCell, CD_controlDrumOuterCell))
 
         CD_controlDrumPinOuter = openmc.ZCylinder(x0=x, y0=y, r=CD_controlDrumRadius)
         CD_berylliumReflectorCell.region &= +CD_controlDrumPinOuter
 
-        CD_controlDrumPinCell = openmc.Cell(fill=CD_controlDrumPinUniverse, region=-CD_controlDrumPinOuter)
+        CD_controlDrumPinCell = openmc.Cell(cell_id=(4*j)+903,fill=CD_controlDrumPinUniverse, region=-CD_controlDrumPinOuter)
         CD_controlDrumPinCell.translation = (x, y, 0)
         CD_controlDrumPinCell.rotation = [0.0,0.0,float((360/n)*j)-75 - CD_drumAngularPos]
-        CD_controlDrumPinCell.id = (i + 1)*500 + j
+        CD_controlDrumPinCell.id = (i + 1)*800 + j
         CD_controlDrumPinBundleUniverse.add_cell(CD_controlDrumPinCell)
 
-CD_bundleAssemblyCell = openmc.Cell(fill=CD_controlDrumPinBundleUniverse)
+CD_bundleAssemblyCell = openmc.Cell(cell_id=44,fill=CD_controlDrumPinBundleUniverse)
 
 CD_rootUni = openmc.Universe(cells=[CD_bundleAssemblyCell])
 CD_geom=openmc.Geometry(CD_rootUni)
@@ -767,49 +770,49 @@ CD_geom.export_to_xml('./xmlFiles/CD_geometry.xml')
 
 # Reactor Housing Geometry
 
-RH_coreOuter = openmc.ZCylinder(surface_id=600, r=RH_coreRadius)
-RH_gapInnerOuter = openmc.ZCylinder(surface_id=601, r=RH_gapInnerRadius)
-RH_steelWrapperOuter = openmc.ZCylinder(surface_id=602, r=RH_steelWrapperRadius)
-RH_gapMid1Outer = openmc.ZCylinder(surface_id=603, r=RH_gapMid1Radius)
-RH_berylliumBarrelOuter = openmc.ZCylinder(surface_id=604, r=RH_berylliumBarrelRadius)
-RH_gapMid2Outer = openmc.ZCylinder(surface_id=605, r=RH_gapMid2Radius)
-RH_berylliumReflectorOuter = openmc.ZCylinder(surface_id=606, r=RH_berylliumReflectorRadius)
-RH_gapOuterOuter = openmc.ZCylinder(surface_id=607, r=RH_gapOuterRadius)
-RH_pressureVesselOuter = openmc.ZCylinder(surface_id=608, r=RH_pressureVesselRadius, boundary_type='vacuum')
+RH_coreOuter = openmc.ZCylinder(r=RH_coreRadius)
+RH_gapInnerOuter = openmc.ZCylinder(r=RH_gapInnerRadius)
+RH_steelWrapperOuter = openmc.ZCylinder(r=RH_steelWrapperRadius)
+RH_gapMid1Outer = openmc.ZCylinder(r=RH_gapMid1Radius)
+RH_berylliumBarrelOuter = openmc.ZCylinder(r=RH_berylliumBarrelRadius)
+RH_gapMid2Outer = openmc.ZCylinder(r=RH_gapMid2Radius)
+RH_berylliumReflectorOuter = openmc.ZCylinder(r=RH_berylliumReflectorRadius)
+RH_gapOuterOuter = openmc.ZCylinder(r=RH_gapOuterRadius)
+RH_pressureVesselOuter = openmc.ZCylinder(r=RH_pressureVesselRadius, boundary_type='vacuum')
 
 # Reactor Housing Planes
 
-RH_coreTopBoundaryPlane = openmc.ZPlane(surface_id=620, z0=RH_coreTopBoundary, boundary_type='vacuum')
-RH_coreBottomBoundaryPlane = openmc.ZPlane(surface_id=621, z0=RH_coreBottomBoundary)
-RH_berylliumReflectorBottomPlane = openmc.ZPlane(surface_id=622, z0=RH_berylliumReflectorBottomBoundary)
-RH_pressureVesselBottomPlane = openmc.ZPlane(surface_id=623, z0=RH_pressureVesselBottomBoundary, boundary_type='vacuum')
-RH_lowerTieTubePlenumBottomPlane = openmc.ZPlane(surface_id=624, z0=RH_lowerTieTubePlenumBottomBoundary)
-RH_coreSupportPlateBottomPlane = openmc.ZPlane(surface_id=625, z0=RH_coreSupportPlateBottomBoundary)
-RH_upperTieTubePlenumBottomPlane = openmc.ZPlane(surface_id=626, z0=RH_upperTieTubePlenumBottomBoundary)
-RH_lowerInternalShieldBottomPlane = openmc.ZPlane(surface_id=627, z0=RH_lowerInternalShieldBottomBoundary)
-RH_hydrogenInnerPlenumBottomPlane = openmc.ZPlane(surface_id=628, z0=RH_hydrogenInnerPlenumBottomBoundary)
-RH_upperInternalShieldBottomPlane = openmc.ZPlane(surface_id=629, z0=RH_upperInternalShieldBottomBoundary)
+RH_coreTopBoundaryPlane = openmc.ZPlane(z0=RH_coreTopBoundary, boundary_type='vacuum')
+RH_coreBottomBoundaryPlane = openmc.ZPlane(z0=RH_coreBottomBoundary)
+RH_berylliumReflectorBottomPlane = openmc.ZPlane(z0=RH_berylliumReflectorBottomBoundary)
+RH_pressureVesselBottomPlane = openmc.ZPlane(z0=RH_pressureVesselBottomBoundary, boundary_type='vacuum')
+RH_lowerTieTubePlenumBottomPlane = openmc.ZPlane(z0=RH_lowerTieTubePlenumBottomBoundary)
+RH_coreSupportPlateBottomPlane = openmc.ZPlane(z0=RH_coreSupportPlateBottomBoundary)
+RH_upperTieTubePlenumBottomPlane = openmc.ZPlane(z0=RH_upperTieTubePlenumBottomBoundary)
+RH_lowerInternalShieldBottomPlane = openmc.ZPlane(z0=RH_lowerInternalShieldBottomBoundary)
+RH_hydrogenInnerPlenumBottomPlane = openmc.ZPlane(z0=RH_hydrogenInnerPlenumBottomBoundary)
+RH_upperInternalShieldBottomPlane = openmc.ZPlane(z0=RH_upperInternalShieldBottomBoundary)
 
 # Reactor Housing Cell
 
-RH_coreCell = openmc.Cell(cell_id=650, fill=CA_rootUni, region=-RH_coreOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_gapInnerCell = openmc.Cell(cell_id=651, fill=RH_gapCoolant, region=+RH_coreOuter & -RH_gapInnerOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_steelWrapperCell = openmc.Cell(cell_id=652, fill=RH_steelWrapper, region=+RH_gapInnerOuter & -RH_steelWrapperOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_gapMid1Cell = openmc.Cell(cell_id=653, fill=RH_gapCoolant, region=+RH_steelWrapperOuter & -RH_gapMid1Outer & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_berylliumBarrelCell = openmc.Cell(cell_id=654, fill=RH_berylliumBarrel, region=+RH_gapMid1Outer & -RH_berylliumBarrelOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_gapMid2Cell = openmc.Cell(cell_id=655, fill=RH_gapCoolant, region=+RH_berylliumBarrelOuter & -RH_gapMid2Outer & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
-RH_berylliumReflectorCell = openmc.Cell(cell_id=656, fill=CD_rootUni, region=+RH_gapMid2Outer & -RH_berylliumReflectorOuter & -RH_coreTopBoundaryPlane & +RH_berylliumReflectorBottomPlane)
-RH_gapOuterCell = openmc.Cell(cell_id=657, fill=RH_gapCoolant,region=+RH_berylliumReflectorOuter & -RH_gapOuterOuter & -RH_coreTopBoundaryPlane & +RH_pressureVesselBottomPlane)
-RH_pressureVesselCell = openmc.Cell(cell_id=658, fill=RH_pressureVessel, region=+RH_gapOuterOuter & -RH_pressureVesselOuter & -RH_coreTopBoundaryPlane & +RH_pressureVesselBottomPlane)
-RH_lowerTieTubePlenumCell = openmc.Cell(cell_id=659, fill=RH_lowerTieTubePlenum, region=-RH_gapMid2Outer & -RH_coreBottomBoundaryPlane & +RH_lowerTieTubePlenumBottomPlane)
-RH_coreSupportPlateCell = openmc.Cell(cell_id=660, fill=RH_coreSupportPlate, region=-RH_gapMid2Outer & -RH_lowerTieTubePlenumBottomPlane & +RH_coreSupportPlateBottomPlane)
-RH_upperTieTubePlenumCell = openmc.Cell(cell_id=661, fill=RH_upperTieTubePlenum, region=-RH_gapMid2Outer & -RH_coreSupportPlateBottomPlane & +RH_upperTieTubePlenumBottomPlane)
-RH_lowerInternalShieldCell = openmc.Cell(cell_id=662, fill=RH_lowerInternalShield, region=-RH_gapMid2Outer & -RH_upperTieTubePlenumBottomPlane & +RH_lowerInternalShieldBottomPlane)
-RH_hydrogenInnerPlenumCell = openmc.Cell(cell_id=663, fill=RH_hydrogenInnerPlenum, region=-RH_gapMid2Outer & -RH_lowerInternalShieldBottomPlane & +RH_hydrogenInnerPlenumBottomPlane)
-RH_upperInternalShieldCell = openmc.Cell(cell_id=664, fill=RH_upperInternalShield, region=-RH_gapMid2Outer & -RH_hydrogenInnerPlenumBottomPlane & +RH_pressureVesselBottomPlane)
-RH_controlDrumActuatorZoneCell = openmc.Cell(cell_id=665, fill=RH_controlDrumActuatorZone, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_berylliumReflectorBottomPlane & +RH_upperTieTubePlenumBottomPlane)
-RH_brimShieldCell = openmc.Cell(cell_id=666, fill=RH_brimShield, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_upperTieTubePlenumBottomPlane & +RH_lowerInternalShieldBottomPlane)
-RH_hydrogenOuterPlenumCell = openmc.Cell(cell_id=667, fill=RH_hydrogenOuterPlenum, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_lowerInternalShieldBottomPlane & +RH_pressureVesselBottomPlane)
+RH_coreCell = openmc.Cell(cell_id=45,fill=CA_rootUni, region=-RH_coreOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_gapInnerCell = openmc.Cell(cell_id=46,fill=RH_gapCoolant, region=+RH_coreOuter & -RH_gapInnerOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_steelWrapperCell = openmc.Cell(cell_id=47,fill=RH_steelWrapper, region=+RH_gapInnerOuter & -RH_steelWrapperOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_gapMid1Cell = openmc.Cell(cell_id=48,fill=RH_gapCoolant, region=+RH_steelWrapperOuter & -RH_gapMid1Outer & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_berylliumBarrelCell = openmc.Cell(cell_id=49,fill=RH_berylliumBarrel, region=+RH_gapMid1Outer & -RH_berylliumBarrelOuter & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_gapMid2Cell = openmc.Cell(cell_id=50,fill=RH_gapCoolant, region=+RH_berylliumBarrelOuter & -RH_gapMid2Outer & -RH_coreTopBoundaryPlane & +RH_coreBottomBoundaryPlane)
+RH_berylliumReflectorCell = openmc.Cell(cell_id=51,fill=CD_rootUni, region=+RH_gapMid2Outer & -RH_berylliumReflectorOuter & -RH_coreTopBoundaryPlane & +RH_berylliumReflectorBottomPlane)
+RH_gapOuterCell = openmc.Cell(cell_id=52,fill=RH_gapCoolant,region=+RH_berylliumReflectorOuter & -RH_gapOuterOuter & -RH_coreTopBoundaryPlane & +RH_pressureVesselBottomPlane)
+RH_pressureVesselCell = openmc.Cell(cell_id=53,fill=RH_pressureVessel, region=+RH_gapOuterOuter & -RH_pressureVesselOuter & -RH_coreTopBoundaryPlane & +RH_pressureVesselBottomPlane)
+RH_lowerTieTubePlenumCell = openmc.Cell(cell_id=54,fill=RH_lowerTieTubePlenum, region=-RH_gapMid2Outer & -RH_coreBottomBoundaryPlane & +RH_lowerTieTubePlenumBottomPlane)
+RH_coreSupportPlateCell = openmc.Cell(cell_id=55,fill=RH_coreSupportPlate, region=-RH_gapMid2Outer & -RH_lowerTieTubePlenumBottomPlane & +RH_coreSupportPlateBottomPlane)
+RH_upperTieTubePlenumCell = openmc.Cell(cell_id=56,fill=RH_upperTieTubePlenum, region=-RH_gapMid2Outer & -RH_coreSupportPlateBottomPlane & +RH_upperTieTubePlenumBottomPlane)
+RH_lowerInternalShieldCell = openmc.Cell(cell_id=57,fill=RH_lowerInternalShield, region=-RH_gapMid2Outer & -RH_upperTieTubePlenumBottomPlane & +RH_lowerInternalShieldBottomPlane)
+RH_hydrogenInnerPlenumCell = openmc.Cell(cell_id=58,fill=RH_hydrogenInnerPlenum, region=-RH_gapMid2Outer & -RH_lowerInternalShieldBottomPlane & +RH_hydrogenInnerPlenumBottomPlane)
+RH_upperInternalShieldCell = openmc.Cell(cell_id=59,fill=RH_upperInternalShield, region=-RH_gapMid2Outer & -RH_hydrogenInnerPlenumBottomPlane & +RH_pressureVesselBottomPlane)
+RH_controlDrumActuatorZoneCell = openmc.Cell(cell_id=60,fill=RH_controlDrumActuatorZone, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_berylliumReflectorBottomPlane & +RH_upperTieTubePlenumBottomPlane)
+RH_brimShieldCell = openmc.Cell(cell_id=61,fill=RH_brimShield, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_upperTieTubePlenumBottomPlane & +RH_lowerInternalShieldBottomPlane)
+RH_hydrogenOuterPlenumCell = openmc.Cell(cell_id=62,fill=RH_hydrogenOuterPlenum, region=-RH_berylliumReflectorOuter & +RH_gapMid2Outer & -RH_lowerInternalShieldBottomPlane & +RH_pressureVesselBottomPlane)
 
 RH_rootUni = openmc.Universe()
 RH_rootUni.add_cells((RH_coreCell,
@@ -961,15 +964,18 @@ settings.export_to_xml('./xmlFiles/')
 
 tallies = openmc.Tallies()
 
-FE_fuelThermalTally = openmc.Tally(tally_id=1)
-FE_fuelThermalTally.filters = [openmc.EnergyFilter([0,0.625]), openmc.UniverseFilter(999)]
-FE_fuelThermalTally.scores = ['absorption', 'fission']
-tallies.append(FE_fuelThermalTally)
+FE_fuelThermalTallyi = []
+FE_fuelFastTallyi = []
+for i in range(0, 60):
+        FE_fuelThermalTallyi.append(openmc.Tally(tally_id=(2*i)+1))
+        FE_fuelThermalTallyi[i].filters = [openmc.EnergyFilter([0,0.625]), openmc.UniverseFilter(301+i)]
+        FE_fuelThermalTallyi[i].scores = ['absorption', 'fission']
+        tallies.append(FE_fuelThermalTallyi[i])
 
-FE_fuelFastTally = openmc.Tally(tally_id=2)
-FE_fuelFastTally.filters = [openmc.EnergyFilter([0.625,19.6403e6]), openmc.UniverseFilter(999)]
-FE_fuelFastTally.scores = ['absorption', 'fission']
-tallies.append(FE_fuelFastTally)
+        FE_fuelFastTallyi.append(openmc.Tally(tally_id=(2*i)+2))
+        FE_fuelFastTallyi[i].filters = [openmc.EnergyFilter([0.625,19.6403e6]), openmc.UniverseFilter(301+i)]
+        FE_fuelFastTallyi[i].scores = ['absorption', 'fission']
+        tallies.append(FE_fuelFastTallyi[i])
 
 tallies.export_to_xml('./xmlFiles/')
 

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<geometry>
+  <cell id="240" material="1" universe="86"/>
+  <cell fill="89" id="241" region="-339 340 -341 342 343 -344 -337 338" universe="321"/>
+  <cell id="242" material="3" region="~(-339 340 -341 342 343 -344) (-345 346 -347 348 349 -350) -337 338" universe="321"/>
+  <cell id="243" material="void" region="~(-345 346 -347 348 349 -350) -337 338" universe="321"/>
+  <cell id="244" material="2" region="-351" universe="88"/>
+  <cell id="245" material="3" region="351 -352" universe="88"/>
+  <cell id="246" material="1" region="352" universe="88"/>
+  <hex_lattice id="89" n_rings="3" name="assembly" orientation="x">
+    <pitch>0.40894</pitch>
+    <outer>86</outer>
+    <center>0.0 0.0</center>
+    <universes>
+    88  88  88
+  88  88  88  88
+88  88  88  88  88
+  88  88  88  88
+    88  88  88</universes>
+  </hex_lattice>
+  <surface coeffs="0.0" id="337" type="z-plane"/>
+  <surface coeffs="-89.0" id="338" type="z-plane"/>
+  <surface coeffs="0.9475" id="339" type="y-plane"/>
+  <surface coeffs="-0.9475" id="340" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="341" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="342" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="343" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="344" type="plane"/>
+  <surface coeffs="0.9525000000000001" id="345" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="346" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="347" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="348" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="349" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="350" type="plane"/>
+  <surface coeffs="0.0 0.0 0.11827" id="351" type="z-cylinder"/>
+  <surface coeffs="0.0 0.0 0.12827" id="352" type="z-cylinder"/>
+</geometry>

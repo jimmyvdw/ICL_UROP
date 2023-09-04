@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<geometry>
+  <cell id="135" material="1" universe="26"/>
+  <cell fill="29" id="136" region="-99 100 -101 102 103 -104 -97 98" universe="306"/>
+  <cell id="137" material="3" region="~(-99 100 -101 102 103 -104) (-105 106 -107 108 109 -110) -97 98" universe="306"/>
+  <cell id="138" material="void" region="~(-105 106 -107 108 109 -110) -97 98" universe="306"/>
+  <cell id="139" material="2" region="-111" universe="28"/>
+  <cell id="140" material="3" region="111 -112" universe="28"/>
+  <cell id="141" material="1" region="112" universe="28"/>
+  <hex_lattice id="29" n_rings="3" name="assembly" orientation="x">
+    <pitch>0.40894</pitch>
+    <outer>26</outer>
+    <center>0.0 0.0</center>
+    <universes>
+    28  28  28
+  28  28  28  28
+28  28  28  28  28
+  28  28  28  28
+    28  28  28</universes>
+  </hex_lattice>
+  <surface coeffs="0.0" id="97" type="z-plane"/>
+  <surface coeffs="-89.0" id="98" type="z-plane"/>
+  <surface coeffs="0.9475" id="99" type="y-plane"/>
+  <surface coeffs="-0.9475" id="100" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="101" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="102" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="103" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="104" type="plane"/>
+  <surface coeffs="0.9525000000000001" id="105" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="106" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="107" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="108" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="109" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="110" type="plane"/>
+  <surface coeffs="0.0 0.0 0.11827" id="111" type="z-cylinder"/>
+  <surface coeffs="0.0 0.0 0.12827" id="112" type="z-cylinder"/>
+</geometry>

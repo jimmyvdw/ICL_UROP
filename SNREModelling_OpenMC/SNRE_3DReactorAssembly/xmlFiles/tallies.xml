@@ -4,10 +4,187 @@
     <bins>0.0 0.625</bins>
   </filter>
   <filter id="2" type="universe">
-    <bins>999</bins>
+    <bins>301</bins>
   </filter>
   <filter id="3" type="energy">
     <bins>0.625 19640300.0</bins>
+  </filter>
+  <filter id="6" type="universe">
+    <bins>302</bins>
+  </filter>
+  <filter id="10" type="universe">
+    <bins>303</bins>
+  </filter>
+  <filter id="14" type="universe">
+    <bins>304</bins>
+  </filter>
+  <filter id="18" type="universe">
+    <bins>305</bins>
+  </filter>
+  <filter id="22" type="universe">
+    <bins>306</bins>
+  </filter>
+  <filter id="26" type="universe">
+    <bins>307</bins>
+  </filter>
+  <filter id="30" type="universe">
+    <bins>308</bins>
+  </filter>
+  <filter id="34" type="universe">
+    <bins>309</bins>
+  </filter>
+  <filter id="38" type="universe">
+    <bins>310</bins>
+  </filter>
+  <filter id="42" type="universe">
+    <bins>311</bins>
+  </filter>
+  <filter id="46" type="universe">
+    <bins>312</bins>
+  </filter>
+  <filter id="50" type="universe">
+    <bins>313</bins>
+  </filter>
+  <filter id="54" type="universe">
+    <bins>314</bins>
+  </filter>
+  <filter id="58" type="universe">
+    <bins>315</bins>
+  </filter>
+  <filter id="62" type="universe">
+    <bins>316</bins>
+  </filter>
+  <filter id="66" type="universe">
+    <bins>317</bins>
+  </filter>
+  <filter id="70" type="universe">
+    <bins>318</bins>
+  </filter>
+  <filter id="74" type="universe">
+    <bins>319</bins>
+  </filter>
+  <filter id="78" type="universe">
+    <bins>320</bins>
+  </filter>
+  <filter id="82" type="universe">
+    <bins>321</bins>
+  </filter>
+  <filter id="86" type="universe">
+    <bins>322</bins>
+  </filter>
+  <filter id="90" type="universe">
+    <bins>323</bins>
+  </filter>
+  <filter id="94" type="universe">
+    <bins>324</bins>
+  </filter>
+  <filter id="98" type="universe">
+    <bins>325</bins>
+  </filter>
+  <filter id="102" type="universe">
+    <bins>326</bins>
+  </filter>
+  <filter id="106" type="universe">
+    <bins>327</bins>
+  </filter>
+  <filter id="110" type="universe">
+    <bins>328</bins>
+  </filter>
+  <filter id="114" type="universe">
+    <bins>329</bins>
+  </filter>
+  <filter id="118" type="universe">
+    <bins>330</bins>
+  </filter>
+  <filter id="122" type="universe">
+    <bins>331</bins>
+  </filter>
+  <filter id="126" type="universe">
+    <bins>332</bins>
+  </filter>
+  <filter id="130" type="universe">
+    <bins>333</bins>
+  </filter>
+  <filter id="134" type="universe">
+    <bins>334</bins>
+  </filter>
+  <filter id="138" type="universe">
+    <bins>335</bins>
+  </filter>
+  <filter id="142" type="universe">
+    <bins>336</bins>
+  </filter>
+  <filter id="146" type="universe">
+    <bins>337</bins>
+  </filter>
+  <filter id="150" type="universe">
+    <bins>338</bins>
+  </filter>
+  <filter id="154" type="universe">
+    <bins>339</bins>
+  </filter>
+  <filter id="158" type="universe">
+    <bins>340</bins>
+  </filter>
+  <filter id="162" type="universe">
+    <bins>341</bins>
+  </filter>
+  <filter id="166" type="universe">
+    <bins>342</bins>
+  </filter>
+  <filter id="170" type="universe">
+    <bins>343</bins>
+  </filter>
+  <filter id="174" type="universe">
+    <bins>344</bins>
+  </filter>
+  <filter id="178" type="universe">
+    <bins>345</bins>
+  </filter>
+  <filter id="182" type="universe">
+    <bins>346</bins>
+  </filter>
+  <filter id="186" type="universe">
+    <bins>347</bins>
+  </filter>
+  <filter id="190" type="universe">
+    <bins>348</bins>
+  </filter>
+  <filter id="194" type="universe">
+    <bins>349</bins>
+  </filter>
+  <filter id="198" type="universe">
+    <bins>350</bins>
+  </filter>
+  <filter id="202" type="universe">
+    <bins>351</bins>
+  </filter>
+  <filter id="206" type="universe">
+    <bins>352</bins>
+  </filter>
+  <filter id="210" type="universe">
+    <bins>353</bins>
+  </filter>
+  <filter id="214" type="universe">
+    <bins>354</bins>
+  </filter>
+  <filter id="218" type="universe">
+    <bins>355</bins>
+  </filter>
+  <filter id="222" type="universe">
+    <bins>356</bins>
+  </filter>
+  <filter id="226" type="universe">
+    <bins>357</bins>
+  </filter>
+  <filter id="230" type="universe">
+    <bins>358</bins>
+  </filter>
+  <filter id="234" type="universe">
+    <bins>359</bins>
+  </filter>
+  <filter id="238" type="universe">
+    <bins>360</bins>
   </filter>
   <tally id="1">
     <filters>1 2</filters>
@@ -15,6 +192,478 @@
   </tally>
   <tally id="2">
     <filters>3 2</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="3">
+    <filters>1 6</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="4">
+    <filters>3 6</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="5">
+    <filters>1 10</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="6">
+    <filters>3 10</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="7">
+    <filters>1 14</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="8">
+    <filters>3 14</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="9">
+    <filters>1 18</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="10">
+    <filters>3 18</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="11">
+    <filters>1 22</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="12">
+    <filters>3 22</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="13">
+    <filters>1 26</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="14">
+    <filters>3 26</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="15">
+    <filters>1 30</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="16">
+    <filters>3 30</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="17">
+    <filters>1 34</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="18">
+    <filters>3 34</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="19">
+    <filters>1 38</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="20">
+    <filters>3 38</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="21">
+    <filters>1 42</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="22">
+    <filters>3 42</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="23">
+    <filters>1 46</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="24">
+    <filters>3 46</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="25">
+    <filters>1 50</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="26">
+    <filters>3 50</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="27">
+    <filters>1 54</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="28">
+    <filters>3 54</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="29">
+    <filters>1 58</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="30">
+    <filters>3 58</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="31">
+    <filters>1 62</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="32">
+    <filters>3 62</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="33">
+    <filters>1 66</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="34">
+    <filters>3 66</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="35">
+    <filters>1 70</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="36">
+    <filters>3 70</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="37">
+    <filters>1 74</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="38">
+    <filters>3 74</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="39">
+    <filters>1 78</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="40">
+    <filters>3 78</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="41">
+    <filters>1 82</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="42">
+    <filters>3 82</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="43">
+    <filters>1 86</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="44">
+    <filters>3 86</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="45">
+    <filters>1 90</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="46">
+    <filters>3 90</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="47">
+    <filters>1 94</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="48">
+    <filters>3 94</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="49">
+    <filters>1 98</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="50">
+    <filters>3 98</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="51">
+    <filters>1 102</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="52">
+    <filters>3 102</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="53">
+    <filters>1 106</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="54">
+    <filters>3 106</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="55">
+    <filters>1 110</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="56">
+    <filters>3 110</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="57">
+    <filters>1 114</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="58">
+    <filters>3 114</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="59">
+    <filters>1 118</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="60">
+    <filters>3 118</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="61">
+    <filters>1 122</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="62">
+    <filters>3 122</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="63">
+    <filters>1 126</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="64">
+    <filters>3 126</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="65">
+    <filters>1 130</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="66">
+    <filters>3 130</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="67">
+    <filters>1 134</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="68">
+    <filters>3 134</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="69">
+    <filters>1 138</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="70">
+    <filters>3 138</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="71">
+    <filters>1 142</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="72">
+    <filters>3 142</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="73">
+    <filters>1 146</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="74">
+    <filters>3 146</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="75">
+    <filters>1 150</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="76">
+    <filters>3 150</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="77">
+    <filters>1 154</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="78">
+    <filters>3 154</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="79">
+    <filters>1 158</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="80">
+    <filters>3 158</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="81">
+    <filters>1 162</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="82">
+    <filters>3 162</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="83">
+    <filters>1 166</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="84">
+    <filters>3 166</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="85">
+    <filters>1 170</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="86">
+    <filters>3 170</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="87">
+    <filters>1 174</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="88">
+    <filters>3 174</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="89">
+    <filters>1 178</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="90">
+    <filters>3 178</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="91">
+    <filters>1 182</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="92">
+    <filters>3 182</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="93">
+    <filters>1 186</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="94">
+    <filters>3 186</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="95">
+    <filters>1 190</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="96">
+    <filters>3 190</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="97">
+    <filters>1 194</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="98">
+    <filters>3 194</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="99">
+    <filters>1 198</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="100">
+    <filters>3 198</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="101">
+    <filters>1 202</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="102">
+    <filters>3 202</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="103">
+    <filters>1 206</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="104">
+    <filters>3 206</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="105">
+    <filters>1 210</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="106">
+    <filters>3 210</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="107">
+    <filters>1 214</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="108">
+    <filters>3 214</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="109">
+    <filters>1 218</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="110">
+    <filters>3 218</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="111">
+    <filters>1 222</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="112">
+    <filters>3 222</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="113">
+    <filters>1 226</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="114">
+    <filters>3 226</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="115">
+    <filters>1 230</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="116">
+    <filters>3 230</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="117">
+    <filters>1 234</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="118">
+    <filters>3 234</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="119">
+    <filters>1 238</filters>
+    <scores>absorption fission</scores>
+  </tally>
+  <tally id="120">
+    <filters>3 238</filters>
     <scores>absorption fission</scores>
   </tally>
 </tallies>

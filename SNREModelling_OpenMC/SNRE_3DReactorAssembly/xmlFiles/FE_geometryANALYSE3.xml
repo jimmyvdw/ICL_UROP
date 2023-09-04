@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<geometry>
+  <cell id="121" material="1" universe="18"/>
+  <cell fill="21" id="122" region="-67 68 -69 70 71 -72 -65 66" universe="304"/>
+  <cell id="123" material="3" region="~(-67 68 -69 70 71 -72) (-73 74 -75 76 77 -78) -65 66" universe="304"/>
+  <cell id="124" material="void" region="~(-73 74 -75 76 77 -78) -65 66" universe="304"/>
+  <cell id="125" material="2" region="-79" universe="20"/>
+  <cell id="126" material="3" region="79 -80" universe="20"/>
+  <cell id="127" material="1" region="80" universe="20"/>
+  <hex_lattice id="21" n_rings="3" name="assembly" orientation="x">
+    <pitch>0.40894</pitch>
+    <outer>18</outer>
+    <center>0.0 0.0</center>
+    <universes>
+    20  20  20
+  20  20  20  20
+20  20  20  20  20
+  20  20  20  20
+    20  20  20</universes>
+  </hex_lattice>
+  <surface coeffs="0.0" id="65" type="z-plane"/>
+  <surface coeffs="-89.0" id="66" type="z-plane"/>
+  <surface coeffs="0.9475" id="67" type="y-plane"/>
+  <surface coeffs="-0.9475" id="68" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="69" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="70" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="71" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="72" type="plane"/>
+  <surface coeffs="0.9525000000000001" id="73" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="74" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="75" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="76" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="77" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="78" type="plane"/>
+  <surface coeffs="0.0 0.0 0.11827" id="79" type="z-cylinder"/>
+  <surface coeffs="0.0 0.0 0.12827" id="80" type="z-cylinder"/>
+</geometry>

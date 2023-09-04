@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<geometry>
+  <cell id="492" material="1" universe="230"/>
+  <cell fill="233" id="493" region="-915 916 -917 918 919 -920 -913 914" universe="357"/>
+  <cell id="494" material="3" region="~(-915 916 -917 918 919 -920) (-921 922 -923 924 925 -926) -913 914" universe="357"/>
+  <cell id="495" material="void" region="~(-921 922 -923 924 925 -926) -913 914" universe="357"/>
+  <cell id="496" material="2" region="-927" universe="232"/>
+  <cell id="497" material="3" region="927 -928" universe="232"/>
+  <cell id="498" material="1" region="928" universe="232"/>
+  <hex_lattice id="233" n_rings="3" name="assembly" orientation="x">
+    <pitch>0.40894</pitch>
+    <outer>230</outer>
+    <center>0.0 0.0</center>
+    <universes>
+      232   232   232
+   232   232   232   232
+232   232   232   232   232
+   232   232   232   232
+      232   232   232</universes>
+  </hex_lattice>
+  <surface coeffs="0.0" id="913" type="z-plane"/>
+  <surface coeffs="-89.0" id="914" type="z-plane"/>
+  <surface coeffs="0.9475" id="915" type="y-plane"/>
+  <surface coeffs="-0.9475" id="916" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.895" id="917" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.895" id="918" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.895" id="919" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.895" id="920" type="plane"/>
+  <surface coeffs="0.9525000000000001" id="921" type="y-plane"/>
+  <surface coeffs="-0.9525000000000001" id="922" type="y-plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 1.9050000000000002" id="923" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 -1.9050000000000002" id="924" type="plane"/>
+  <surface coeffs="1.7320508075688772 1.0 0.0 -1.9050000000000002" id="925" type="plane"/>
+  <surface coeffs="-1.7320508075688772 1.0 0.0 1.9050000000000002" id="926" type="plane"/>
+  <surface coeffs="0.0 0.0 0.11827" id="927" type="z-cylinder"/>
+  <surface coeffs="0.0 0.0 0.12827" id="928" type="z-cylinder"/>
+</geometry>
