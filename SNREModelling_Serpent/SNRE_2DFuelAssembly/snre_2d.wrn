@@ -2,7 +2,7 @@
  ***** Warning: Outside cells should be used only in universe 0
 
 
-***** Fri Sep  1 11:53:47 2023 (seed = 1693565590833)
+***** Mon Sep  4 16:01:07 2023 (seed = 1693839631419)
 Warning message from function CheckNuclideData:
 
 Stable nuclide 40096.03c has 1 decay modes
@@ -10,5 +10,5 @@ Stable nuclide 40096.03c has 1 decay modes
 
 Simulation completed.
 ------------------------------------------------------------
-Fri Sep  1 11:57:00 2023  (errors: 0, warnings: 1, notes: 1)
+Mon Sep  4 16:04:19 2023  (errors: 0, warnings: 1, notes: 1)
 
