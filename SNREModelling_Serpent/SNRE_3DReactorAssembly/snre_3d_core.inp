@@ -7,6 +7,7 @@ include "snre_3d_mat.inp"
 % --- Naming Convention:
 
     % FExx - Fuel Element
+    % FAxx - Fuel ANALYSIS Element
     % SExx - Support Element
     % BExx - Beryllium Core Periphery Filler
     % CAxx - Core Assembly
@@ -52,6 +53,71 @@ cell   FEc2  FEu0  FE_fuel                        FEs1                          
 cell   FEc3  FEu1  fill FEl0              -FEs2                                                                                       % Inner Pin Hex                 
 cell   FEc4  FEu1  FE_claddingOuter       -FEs3   FEs2                                                                                % Outer Cladding Hex  
 cell   FEc5  FEu2  FE_fuel                -FEs4                                                                                       % Fuel              
+cell   FEc6  FEu3  fill FEu1              -FEs3                                                                                       % Fuel Pin
+
+% --- Fuel Element ANALYSIS Cells:
+
+cell   FAc1  FAu1  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 1                 
+cell   FAc2  FAu2  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 2
+cell   FAc3  FAu3  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 3                 
+cell   FAc4  FAu4  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 4
+cell   FAc5  FAu5  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 5                 
+cell   FAc6  FAu6  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 6
+cell   FAc7  FAu7  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 7                 
+cell   FAc8  FAu8  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 8
+cell   FAc9  FAu9  fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 9                 
+cell   FAc10 FAu10 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 10
+cell   FAc11 FAu11 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 11                 
+cell   FAc12 FAu12 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 12
+cell   FAc13 FAu13 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 13                 
+cell   FAc14 FAu14 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 14
+cell   FAc15 FAu15 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 15                 
+cell   FAc16 FAu16 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 16
+cell   FAc17 FAu17 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 17                 
+cell   FAc18 FAu18 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 18
+cell   FAc19 FAu19 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 19                 
+cell   FAc20 FAu20 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 20
+cell   FAc21 FAu21 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 21                 
+cell   FAc22 FAu22 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 22
+cell   FAc23 FAu23 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 23                 
+cell   FAc24 FAu24 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 24
+cell   FAc25 FAu25 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 25                 
+cell   FAc26 FAu26 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 26
+cell   FAc27 FAu27 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 27                 
+cell   FAc28 FAu28 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 28
+cell   FAc29 FAu29 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 29                 
+cell   FAc30 FAu30 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 30
+cell   FAc31 FAu31 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 31                 
+cell   FAc32 FAu32 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 32
+cell   FAc33 FAu33 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 33                 
+cell   FAc34 FAu34 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 34
+cell   FAc35 FAu35 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 35                 
+cell   FAc36 FAu36 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 36
+cell   FAc37 FAu37 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 37                 
+cell   FAc38 FAu38 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 38
+cell   FAc39 FAu39 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 39                 
+cell   FAc40 FAu40 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 40
+cell   FAc41 FAu41 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 41                 
+cell   FAc42 FAu42 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 42
+cell   FAc43 FAu43 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 43                 
+cell   FAc44 FAu44 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 44
+cell   FAc45 FAu45 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 45                 
+cell   FAc46 FAu46 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 46
+cell   FAc47 FAu47 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 47                 
+cell   FAc48 FAu48 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 48
+cell   FAc49 FAu49 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 49                 
+cell   FAc50 FAu50 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 50
+cell   FAc51 FAu51 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 51                 
+cell   FAc52 FAu52 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 52
+cell   FAc53 FAu53 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 53                 
+cell   FAc54 FAu54 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 54
+cell   FAc55 FAu55 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 55                 
+cell   FAc56 FAu56 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 56
+cell   FAc57 FAu57 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 57                 
+cell   FAc58 FAu58 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 58
+cell   FAc59 FAu59 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 59                 
+cell   FAc60 FAu60 fill FEu1              -FEs3                                                                                       % ANALYSIS Fuel Pin 60
+
 
 % -----------------------------------------------------------------------------
 
@@ -108,41 +174,41 @@ surf   CAs0  cylz      0.0      0.0      29.5275    0.0000  89.0000             
 
 lat    CAl0  3  0.0  0.0  37  37  1.905
     BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-     BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-      BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
-       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0
-        BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0
-         BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0
-          BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
-           BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0
-            BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0
-             BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0
-              BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0
-               BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0
-                BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
-                 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0
-                  BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0
-                   BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0
-                    BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0
-                     BEu0 BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0
-                      BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0
-                       BEu0 BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0
-                        BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
-                         BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0
-                          BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                           BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                            BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                             BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                              BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                               BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                 BEu0 BEu0 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                  BEu0 BEu0 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                   BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                    BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                     BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 SEu0 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                      BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 FEu1 SEu0 FEu1 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
-                                       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu1 FEu1 FEu1 FEu1 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+     BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+      BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0
+       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0
+        BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FAu40 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu50 FEu3 BEu0 BEu0 BEu0
+         BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FAu39 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu49 SEu0 FEu3 FEu3 BEu0 BEu0
+          BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0
+           BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FAu38 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu48 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0
+            BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu37 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu47 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0
+             BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0
+              BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu36 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu46 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0
+               BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu35 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu45 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0
+                BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0
+                 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu34 SEu0 FEu3 FEu3 SEu0 FAu44 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0
+                  BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu33 FEu3 SEu0 FEu3 FAu43 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0
+                   BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0
+                    BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu32 SEu0 FAu42 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0
+                     BEu0 BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu31 FAu41 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0
+                      BEu0 BEu0 BEu0 BEu0 FAu30 FAu29 SEu0 FAu28 FAu27 SEu0 FAu26 FAu25 SEu0 FAu24 FAu23 SEu0 FAu22 FAu21 SEu0 FAu51 FAu52 SEu0 FAu53 FAu54 SEu0 FAu55 FAu56 SEu0 FAu57 FAu58 SEu0 FAu59 FAu60 BEu0 BEu0 BEu0 BEu0
+                       BEu0 BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu11 FAu1 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0 BEu0
+                        BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu12 SEu0 FAu2 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0
+                         BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0
+                          BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu13 FEu3 SEu0 FEu3 FAu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                           BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu14 SEu0 FEu3 FEu3 SEu0 FAu4 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                            BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                             BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu15 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu5 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                              BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu16 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu6 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                               BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu17 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu7 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                 BEu0 BEu0 FEu3 FEu3 FEu3 SEu0 FEu3 FAu18 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu8 FEu3 SEu0 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                  BEu0 BEu0 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                   BEu0 BEu0 FEu3 FEu3 SEu0 FAu19 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FAu9 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                    BEu0 BEu0 BEu0 FEu3 FAu20 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FAu10 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                     BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 SEu0 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                      BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 FEu3 FEu3 SEu0 FEu3 FEu3 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
+                                       BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 FEu3 FEu3 FEu3 FEu3 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
                                         BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0 BEu0
 
 % -----------------------------------------------------------------------------

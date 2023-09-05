@@ -953,7 +953,7 @@ settings.run_mode = 'eigenvalue'
 
 source = openmc.IndependentSource()
 source.space = openmc.stats.Box([-RH_pressureVesselRadius, -RH_pressureVesselRadius, RH_pressureVesselBottomBoundary],[RH_pressureVesselRadius, RH_pressureVesselRadius, 0.0], only_fissionable=True)
-source.strength = 367.0E+06
+source.strength = 1.0E+06
 
 settings.source = source
 settings.particles = 50

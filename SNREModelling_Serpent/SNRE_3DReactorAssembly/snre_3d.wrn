@@ -1,0 +1,23 @@
+
+***** Tue Sep  5 15:24:49 2023 (seed = 1693923809701)
+Warning message from function CheckNuclideData:
+
+Stable nuclide 40096.03c has 1 decay modes
+
+
+ ***** Warning: Unable to process ures data for 40000.03c, tables discarded
+
+
+ ***** Warning: Unable to process ures data for 40000.03s, tables discarded
+
+
+***** Tue Sep  5 15:24:51 2023 (seed = 1693923809701)
+Warning message from function ProcessUresData:
+
+10 negative values in ures data
+
+
+Simulation completed.
+------------------------------------------------------------
+Tue Sep  5 15:32:02 2023  (errors: 0, warnings: 2, notes: 2)
+

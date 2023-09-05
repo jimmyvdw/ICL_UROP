@@ -29,15 +29,19 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t
 
 ene CAe0 1 0 6.25E-07 19.6403
 
-% --- Detectors:
+% --- Capture Detectors:
 
-det CAd00 dr -2 void de CAe0 dm FE_fuel dn 1 0.0 100 1 0 360 1 0 0 1
-det CAd01 dr -2 void de CAe0 dm FE_coolant dn 1 0.0 100 1 0 360 1 0 0 1
-det CAd02 dr -2 void de CAe0 dm FE_cladding dn 1 0.0 100 1 0 360 1 0 0 1
+det CAd00 dr -2 void de CAe0 dm FE_fuel
+det CAd01 dr -2 void de CAe0 dm FE_coolant
+det CAd02 dr -2 void de CAe0 dm FE_cladding
+
+% --- Fission Detectors:
+
+det CAd03 dr -6 void de CAe0 dm FE_fuel
 
 % --- Conditions:
 
-set power 367.0E+06
+set power 1.0E+06
 set ures 1
 set mcvol 50000000
 

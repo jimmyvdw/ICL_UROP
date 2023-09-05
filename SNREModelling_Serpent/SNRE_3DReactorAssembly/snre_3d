@@ -33,18 +33,18 @@ therm zrzrh 300 zrzrh.10t zrzrh.11t
     % 90  - Critical Position
     % 180 - Super-critical Position, i.e. Fully Withdrawn
 
-utrans CDu0  rot   0.0000  41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
-utrans CDu1  rot  20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
-utrans CDu2  rot  35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  3 (NEE) Rotation
-utrans CDu3  rot  41.0210   0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum  4 (E) Rotation
-utrans CDu4  rot  35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  5 (SEE) Rotation
-utrans CDu5  rot  20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  6 (SSE) Rotation
-utrans CDu6  rot   0.0000 -41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  7 (S) Rotation
-utrans CDu7  rot -20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  8 (SSW) Rotation
-utrans CDu8  rot -35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  9 (SWW) Rotation
-utrans CDu9  rot -41.0210  -0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum 10 (W) Rotation
-utrans CDu10 rot -35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum 11 (NWW) Rotation
-utrans CDu11 rot -20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum 12 (NNW) Rotation
+% utrans CDu0  rot   0.0000  41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  1 (N) Rotation
+% utrans CDu1  rot  20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  2 (NNE) Rotation
+% utrans CDu2  rot  35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  3 (NEE) Rotation
+% utrans CDu3  rot  41.0210   0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum  4 (E) Rotation
+% utrans CDu4  rot  35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  5 (SEE) Rotation
+% utrans CDu5  rot  20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  6 (SSE) Rotation
+% utrans CDu6  rot   0.0000 -41.0210  0.0  0.0  0.0  -1.0  90.000           % Control Drum  7 (S) Rotation
+% utrans CDu7  rot -20.5105 -35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum  8 (SSW) Rotation
+% utrans CDu8  rot -35.5252 -20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum  9 (SWW) Rotation
+% utrans CDu9  rot -41.0210  -0.0000  0.0  0.0  0.0  -1.0  90.000           % Control Drum 10 (W) Rotation
+% utrans CDu10 rot -35.5252  20.5105  0.0  0.0  0.0  -1.0  90.000           % Control Drum 11 (NWW) Rotation
+% utrans CDu11 rot -20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Control Drum 12 (NNW) Rotation
 
 % -----------------------------------------------------------------------------
 
@@ -52,13 +52,153 @@ utrans CDu11 rot -20.5105  35.5252  0.0  0.0  0.0  -1.0  90.000           % Cont
 
 % -----------------------------------------------------------------------------
 
+% --- Energy Filter:
+
+ene CAe0 1 0 6.25E-07 19.6403
+
+% --- Capture Detectors:
+
+det CAd01  dr -2 void de CAe0 du FAu1
+det CAd02  dr -2 void de CAe0 du FAu2
+det CAd03  dr -2 void de CAe0 du FAu3
+det CAd04  dr -2 void de CAe0 du FAu4
+det CAd05  dr -2 void de CAe0 du FAu5
+det CAd06  dr -2 void de CAe0 du FAu6
+det CAd07  dr -2 void de CAe0 du FAu7
+det CAd08  dr -2 void de CAe0 du FAu8
+det CAd09  dr -2 void de CAe0 du FAu9
+det CAd10  dr -2 void de CAe0 du FAu10
+det CAd11  dr -2 void de CAe0 du FAu11
+det CAd12  dr -2 void de CAe0 du FAu12
+det CAd13  dr -2 void de CAe0 du FAu13
+det CAd14  dr -2 void de CAe0 du FAu14
+det CAd15  dr -2 void de CAe0 du FAu15
+det CAd16  dr -2 void de CAe0 du FAu16
+det CAd17  dr -2 void de CAe0 du FAu17
+det CAd18  dr -2 void de CAe0 du FAu18
+det CAd19  dr -2 void de CAe0 du FAu19
+det CAd20  dr -2 void de CAe0 du FAu20
+det CAd21  dr -2 void de CAe0 du FAu21
+det CAd22  dr -2 void de CAe0 du FAu22
+det CAd23  dr -2 void de CAe0 du FAu23
+det CAd24  dr -2 void de CAe0 du FAu24
+det CAd25  dr -2 void de CAe0 du FAu25
+det CAd26  dr -2 void de CAe0 du FAu26
+det CAd27  dr -2 void de CAe0 du FAu27
+det CAd28  dr -2 void de CAe0 du FAu28
+det CAd29  dr -2 void de CAe0 du FAu29
+det CAd30  dr -2 void de CAe0 du FAu30
+det CAd31  dr -2 void de CAe0 du FAu31
+det CAd32  dr -2 void de CAe0 du FAu32
+det CAd33  dr -2 void de CAe0 du FAu33
+det CAd34  dr -2 void de CAe0 du FAu34
+det CAd35  dr -2 void de CAe0 du FAu35
+det CAd36  dr -2 void de CAe0 du FAu36
+det CAd37  dr -2 void de CAe0 du FAu37
+det CAd38  dr -2 void de CAe0 du FAu38
+det CAd39  dr -2 void de CAe0 du FAu39
+det CAd40  dr -2 void de CAe0 du FAu40
+det CAd41  dr -2 void de CAe0 du FAu41
+det CAd42  dr -2 void de CAe0 du FAu42
+det CAd43  dr -2 void de CAe0 du FAu43
+det CAd44  dr -2 void de CAe0 du FAu44
+det CAd45  dr -2 void de CAe0 du FAu45
+det CAd46  dr -2 void de CAe0 du FAu46
+det CAd47  dr -2 void de CAe0 du FAu47
+det CAd48  dr -2 void de CAe0 du FAu48
+det CAd49  dr -2 void de CAe0 du FAu49
+det CAd50  dr -2 void de CAe0 du FAu50
+det CAd51  dr -2 void de CAe0 du FAu51
+det CAd52  dr -2 void de CAe0 du FAu52
+det CAd53  dr -2 void de CAe0 du FAu53
+det CAd54  dr -2 void de CAe0 du FAu54
+det CAd55  dr -2 void de CAe0 du FAu55
+det CAd56  dr -2 void de CAe0 du FAu56
+det CAd57  dr -2 void de CAe0 du FAu57
+det CAd58  dr -2 void de CAe0 du FAu58
+det CAd59  dr -2 void de CAe0 du FAu59
+det CAd60  dr -2 void de CAe0 du FAu60
+
+% --- Fission Detectors:
+
+det CAd61  dr -6 void de CAe0 du FAu1
+det CAd62  dr -6 void de CAe0 du FAu2
+det CAd63  dr -6 void de CAe0 du FAu3
+det CAd64  dr -6 void de CAe0 du FAu4
+det CAd65  dr -6 void de CAe0 du FAu5
+det CAd66  dr -6 void de CAe0 du FAu6
+det CAd67  dr -6 void de CAe0 du FAu7
+det CAd68  dr -6 void de CAe0 du FAu8
+det CAd69  dr -6 void de CAe0 du FAu9
+det CAd70  dr -6 void de CAe0 du FAu10
+det CAd71  dr -6 void de CAe0 du FAu11
+det CAd72  dr -6 void de CAe0 du FAu12
+det CAd73  dr -6 void de CAe0 du FAu13
+det CAd74  dr -6 void de CAe0 du FAu14
+det CAd75  dr -6 void de CAe0 du FAu15
+det CAd76  dr -6 void de CAe0 du FAu16
+det CAd77  dr -6 void de CAe0 du FAu17
+det CAd78  dr -6 void de CAe0 du FAu18
+det CAd79  dr -6 void de CAe0 du FAu19
+det CAd80  dr -6 void de CAe0 du FAu20
+det CAd81  dr -6 void de CAe0 du FAu21
+det CAd82  dr -6 void de CAe0 du FAu22
+det CAd83  dr -6 void de CAe0 du FAu23
+det CAd84  dr -6 void de CAe0 du FAu24
+det CAd85  dr -6 void de CAe0 du FAu25
+det CAd86  dr -6 void de CAe0 du FAu26
+det CAd87  dr -6 void de CAe0 du FAu27
+det CAd88  dr -6 void de CAe0 du FAu28
+det CAd89  dr -6 void de CAe0 du FAu29
+det CAd90  dr -6 void de CAe0 du FAu30
+det CAd91  dr -6 void de CAe0 du FAu31
+det CAd92  dr -6 void de CAe0 du FAu32
+det CAd93  dr -6 void de CAe0 du FAu33
+det CAd94  dr -6 void de CAe0 du FAu34
+det CAd95  dr -6 void de CAe0 du FAu35
+det CAd96  dr -6 void de CAe0 du FAu36
+det CAd97  dr -6 void de CAe0 du FAu37
+det CAd98  dr -6 void de CAe0 du FAu38
+det CAd99  dr -6 void de CAe0 du FAu39
+det CAd100 dr -6 void de CAe0 du FAu40
+det CAd101 dr -6 void de CAe0 du FAu41
+det CAd102 dr -6 void de CAe0 du FAu42
+det CAd103 dr -6 void de CAe0 du FAu43
+det CAd104 dr -6 void de CAe0 du FAu44
+det CAd105 dr -6 void de CAe0 du FAu45
+det CAd106 dr -6 void de CAe0 du FAu46
+det CAd107 dr -6 void de CAe0 du FAu47
+det CAd108 dr -6 void de CAe0 du FAu48
+det CAd109 dr -6 void de CAe0 du FAu49
+det CAd110 dr -6 void de CAe0 du FAu50
+det CAd111 dr -6 void de CAe0 du FAu51
+det CAd112 dr -6 void de CAe0 du FAu52
+det CAd113 dr -6 void de CAe0 du FAu53
+det CAd114 dr -6 void de CAe0 du FAu54
+det CAd115 dr -6 void de CAe0 du FAu55
+det CAd116 dr -6 void de CAe0 du FAu56
+det CAd117 dr -6 void de CAe0 du FAu57
+det CAd118 dr -6 void de CAe0 du FAu58
+det CAd119 dr -6 void de CAe0 du FAu59
+det CAd120 dr -6 void de CAe0 du FAu60
+
+% --- Conditions:
+
+set power 1.0E+06
+set ures 1
+set mcvol 50000000
+
+% --- Source Definition:
+
+src src01 n sm FE_fuel
+
 % --- Reflective boundary condition:
 
 set bc 1
 
 % --- Neutron population and criticality cycles:
 
-set pop 100000 800 50
+set pop 1000 500 20
 
 % --- Geometry and mesh plots:
 
