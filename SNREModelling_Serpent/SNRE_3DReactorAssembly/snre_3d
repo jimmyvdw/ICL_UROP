@@ -184,7 +184,7 @@ det CAd120 dr -6 void de CAe0 du FAu60
 
 % --- Conditions:
 
-set power 1.0E+06
+set power 367.0E+06
 set ures 1
 set mcvol 50000000
 
