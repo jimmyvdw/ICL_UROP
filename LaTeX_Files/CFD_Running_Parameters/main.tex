@@ -1,0 +1,166 @@
+\documentclass[8pt,a5paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements
+\usepackage{longtable}
+\usepackage{ragged2e}
+
+\renewcommand{\familydefault}{\sfdefault}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+
+\begin{document}
+
+\small
+
+\pagenumbering{arabic}
+
+\centering
+
+\section*{Fuel Pin CFD Parameters \& Configuration}
+
+\raggedright
+
+\subsection*{Meshing Parameters}
+
+\vspace{-0.25in}
+
+\begin{table}[h!]
+    \label{table: Table 1}
+    \centering
+    \small
+    \caption{Mesh Characteristics.}
+    \begin{tabular}{|m{0.2\linewidth}|m{0.4\linewidth}|m{0.2\linewidth}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Automated Mesh}}\\\hline
+    & \multicolumn{2}{l|}{Surface Remesher}\\\cline{2-3}
+    Meshers & \multicolumn{2}{l|}{Tetrahedral Mesher}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Prism Layer Meshers}\\\hline
+    & Base Size & \SI{5.0E-3}{mm}\\\cline{2-3}
+    Default Controls & Number of Prism Layers & \SI{5}{}\\\cline{2-3}
+    & Prism Layer Total Thickness & \SI{5.0}{\%} (Rel.-to-Base)\\\hline
+    \end{tabular}
+\end{table}
+
+\subsection*{Continua Parameters}
+
+\vspace{-0.25in}
+
+\begin{table}[h!]
+    \label{table: Table 2}
+    \centering
+    \small
+    \caption{Continua Characteristics of the Cladding Groups.}
+    \begin{tabular}{|m{0.2\linewidth}|m{0.4\linewidth}|m{0.2\linewidth}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Coolant Channel Cladding Group \& Outer Cladding Physics}}\\\hline
+    & \multicolumn{2}{l|}{Three Dimenstional}\\\cline{2-3}
+    & Solid & $ZrC$\\\cline{2-3}
+    & \multicolumn{2}{l|}{Implicit Unsteady}\\\cline{2-3}
+    Models & \multicolumn{2}{l|}{Gradients}\\\cline{2-3}
+    & \multicolumn{2}{l|}{User Defined EOS}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Solution Interpolation}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Segregated Solid Energy}\\\hline
+    Reference Values & Minimum Allowable Temperature & \SI{100.0}{K}\\\cline{2-3}
+    & Maximum Allowable Temperature & \SI{5000.0}{K}\\\hline
+    Initial Conditions & Static Temperature & \SI{300.0}{K}\\\hline
+    \end{tabular}
+\end{table}
+
+\vspace{-0.25in}
+
+\begin{table}[h!]
+    \label{table: Table 3}
+    \centering
+    \small
+    \caption{Continua Characteristics of the Fuel Group.}
+    \begin{tabular}{|m{0.2\linewidth}|m{0.4\linewidth}|m{0.2\linewidth}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Fuel Physics}}\\\hline
+    & \multicolumn{2}{l|}{Three Dimenstional}\\\cline{2-3}
+    & Solid & $(U, Zr)-C$\\\cline{2-3}
+    & \multicolumn{2}{l|}{Implicit Unsteady}\\\cline{2-3}
+    Models & \multicolumn{2}{l|}{Gradients}\\\cline{2-3}
+    & \multicolumn{2}{l|}{User Defined EOS}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Solution Interpolation}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Segregated Solid Energy}\\\hline
+    Reference Values & Minimum Allowable Temperature & \SI{100.0}{K}\\\cline{2-3}
+    & Maximum Allowable Temperature & \SI{5000.0}{K}\\\hline
+    Initial Conditions & Static Temperature & \SI{300.0}{K}\\\hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \label{table: Table 4}
+    \centering
+    \small
+    \caption{Continua Characteristics of the Coolant Groups.}
+    \begin{tabular}{|m{0.2\linewidth}|m{0.4\linewidth}|m{0.2\linewidth}|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Coolant Channel Group Physics}}\\\hline
+    & \multicolumn{2}{l|}{Three Dimenstional}\\\cline{2-3}
+    & Gas & $^{2}H$\\\cline{2-3}
+    & \multicolumn{2}{l|}{Implicit Unsteady}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Turbulent}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Reynolds-Averaged Navier-Stokes}\\\cline{2-3}
+    & \multicolumn{2}{l|}{K-Epsilon Turbulence}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Realizable K-Epsilon Two-Layer}\\\cline{2-3}
+    Models & \multicolumn{2}{l|}{Wall Distance}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Two-Layer All y+ Wall Treatment}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Gradients}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Solution Interpolation}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Segregated Flow}\\\cline{2-3}
+    & \multicolumn{2}{l|}{User Defined EOS}\\\cline{2-3}
+    & \multicolumn{2}{l|}{Segregated Fluid Temperature}\\\hline
+    & Minimum Allowable Wall Distance & \SI{1.0E-6}{m}\\\cline{2-3}
+    & Minimum Allowable Abs. Pressure & \SI{1.0E3}{Pa}\\\cline{2-3}
+    Reference Values & Maximum Allowable Abs. Pressure & \SI{1.0E8}{Pa}\\\cline{2-3}
+    & Reference Pressure & \SI{1.01325E5}{Pa}\\\cline{2-3}
+    & Minimum Allowable Temperature & \SI{100.0}{K}\\\cline{2-3}
+    & Maximum Allowable Temperature & \SI{5000.0}{K}\\\hline
+    & Pressure & \SI{3.962E6E6}{Pa}\\\cline{2-3}
+    & Static Temperature & \SI{600.0}{K}\\\cline{2-3}
+    Initial Conditions & Turbulence Specification & K-Epsilon\\\cline{2-3}
+    & Turbulent Dissipation Rate & \SI{0.1}{m^2/s^3}\\\cline{2-3}
+    & Turbulent Kinetic Energy & \SI{0.001}{J/kg}\\\cline{2-3}
+    & Velocity & $-75.96\hat{\textbf{k}}$ \SI{}{m/s}\\\hline
+    \end{tabular}
+\end{table}
+
+% \subsection*{Region Parameters}
+
+% \vspace{-0.25in}
+
+% \begin{table}[h!]
+%     \label{table: Table 5}
+%     \centering
+%     \small
+%     \caption{Region Parameters.}
+%     \begin{tabular}{|m{0.2\linewidth}|m{0.4\linewidth}|m{0.2\linewidth}|}
+%     \hline
+%     \multicolumn{3}{|c|}{\textbf{Coolant Channel Cladding Group \& Outer Cladding Regions}}\\\hline
+%     & Upstream & Wall\\\cline{2-3}
+%     Boundaries & Downstream & Wall\\\cline{2-3}
+%     & Inner Wall & Wall\\\cline{2-3}
+%     & Outer Wall & Wall\\\hline
+%     \multicolumn{3}{|c|}{\textbf{Fuel Regions}}\\\hline
+%     & Upstream & Wall\\\cline{2-3}
+%     Boundaries & Downstream & Wall\\\cline{2-3}
+%     & Inner Wall & Wall\\\cline{2-3}
+%     & Outer Wall & Wall\\\hline
+%     \multicolumn{3}{|c|}{\textbf{Coolant Channel Group Regions}}\\\hline
+%     & Upstream & Mass Flow Inlet\\\cline{2-3}
+%     Boundaries & Downstream & Outlet\\\cline{2-3}
+%     & Outer Wall & Wall\\\hline
+%     \end{tabular}
+% \end{table}
+
+\end{document}
