@@ -43,6 +43,8 @@
 # CFD Files #
 #############
 *.sim
+*.sim~
+*.mdb
 
 # csv Files #
 #############
