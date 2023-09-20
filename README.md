@@ -23,6 +23,7 @@ This repository hosts the code for the Undergraduate Research Oppurtunities Prog
 
 Future crewed deep space missions will almost certainly require propulsion systems levels that exceed those of the most efficient chemical rockets. One possible space propulsion system which is being investigated by NASA, and companies such as Rolls-Royce and BWXT, is space nuclear thermal rocket propulsion (SNTRP). The efficiency of a space propulsion system is characterised by the specific impulse (the time required for 1 kg of propellant to produce 1 Newton of thrust). Compared to chemical rockets, SNTRP has a very high specific impulse and thus a comparatively high efficiency due to the very high temperatures achieved. The use of high specific impulse propulsion technologies means deep space missions can be of shorter duration and thus reduce the radiation dose astronauts receive from background cosmic radiation. SNTRP technology uses nuclear energy to heat a propellant, usually hydrogen, which then expands and is then expelled out of a nozzle to produce thrust. However, one of the key challenges of SNTRP is the safety and performance of the nuclear fuel during long deep space missions. The high temperatures achieved (greater than 3000 Kelvin) can affect the nuclear fuel integrity and lead to fuel failure which can be catastrophic for deep space missions. Therefore, the aim of this UROP project will be to develop mechanistic, coupled, multiphysics, CFD and thermal stress models of SNRTP systems. The SNTRP system which will be analysed is the small nuclear rocket engine (SNRE) which was the last engine design studied by Los Alamos National Laboratory (LANL) during their Nuclear Engine for Rocket Vehicle Application (NERVA) programme which ran from 1955-1973. By analysing the results of these multiphysics simulations, it will then be possible to understand how nuclear fuel assemblies will behave during start-up and shutdown of space nuclear thermal rockets during long duration deep space missions. 
 
+
 More specifically this UROP programme will focus on the following research tasks:
 * Development of a spatially dependent neutronics model of the SNRE nuclear fuel assemblies using the SERPENT Monte Carlo code. This will compute the nuclear heat sources that are required for the CFD and finite element (FE) thermal stress models.
 * Development of CFD and conjugate heat transfer models of the SNRE nuclear fuel assemblies using the Star-CCM+ CFD code.
@@ -171,11 +172,23 @@ Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24
 ## References
 
 [1] Borowski, S., McCurdy, D., Packard, T. (2009), ‘Nuclear Thermal Rocket/Vehicle Characteristics And Sensitivity Trades For NASA's Mars Design Reference Architecture (DRA) 5.0 Study’, NASA Center for AeroSpace Information (CASI), 203599
+
+
 [2] Stewart, M., Schnitzler, B. (2007), ‘Thermal Hydraulics and Structural Analysis of the Small Nuclear Rocket Engine (SNRE) Core’, American Institute of Aeronautics and Astronautics, AIAA 2007-5619
+
+
 [3] Venneri, P., Kim, Y. (2015), ‘A Feasibility Study on Low-Enriched Uranium Fuel for Nuclear Thermal Rockets – I: Reactivity potential ’, Progress in Nuclear Energy, 83 (2015) 406 – 418
+
+
 [4] Durham, F. (1972), ‘Nuclear Engine Definition Study Preliminary Report – Volume I – Engine Description (U)’, Los Alamos National Laboratory, LA-5044-MS, Vol. I
+
+
 [5] Schnitzler, B., Borowski, S. (2007), ‘Neutronics Models and Analysis of the Small Nuclear Rocket Engine (SNRE)’, American Institute of Aeronautics and Astronautics, AIAA 2007-5618
+
+
 [6] Barroso, D. (2021), ‘Physics of Nuclear Explosives’, Military Institute of Engineering, ISBN 9798703344972
+
+
 [7] Bragg-Sitton, S. (2004), ‘Analysis of Space Reactor System Components: Investigation through Simulation and non-Nuclear Testing’, The University of Michigan, UMI 3138119
 
 ## Acknowledgements
