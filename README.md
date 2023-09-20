@@ -6,14 +6,14 @@
 
 ## Contents
 
- - Introduction
- - Project Brief
- - Repository and Code Structure
- - Prerequisites
- - Results
- - References
- - Acknowledgements
- - About Author
+- [Introduction](#introduction)
+- [Project Brief](#project-brief)
+- [Repository and Code Structure](#repository-and-code-structure)
+- [Prerequisites](#prerequisites)
+- [Results](#results)
+- [References](#references)
+- [Acknowledgements](#acknowledgements)
+- [About Author](#about-author)
 
 ## Introduction
 
@@ -78,7 +78,8 @@ The following packages and/or software codes are required to run the code in thi
 * [Python](https://www.python.org/) - Python is an interpreted, high-level and general-purpose programming language.
 * [Jupyter Notebook](https://jupyter.org/) - Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 * [LaTeX](https://www.latex-project.org/) - LaTeX is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation.
-* [Siemens Simulia](https://www.3ds.com/products-services/simulia/) - Siemens Simulia is a finite element analysis (FEA) software suite developed by Dassault Systèmes Simulia Corp.
+* [Geant4](https://geant4.web.cern.ch/) - Geant4 is a software toolkit for the simulation of the passage of particles through matter, often used in high-energy physics and other applications.  
+* [FLUKA](https://fluka.cern/) - FLUKA is a fully integrated particle physics Monte Carlo simulation package, which allows users to simulate the interactions of particles and nuclei with matter.
 * [Star-CCM+](https://www.cd-adapco.com/products/star-ccm) - Star-CCM+ is a multi-physics computational fluid dynamics (CFD) software tool.
 * [ABAQUS](https://www.3ds.com/products-services/simulia/products/abaqus/) - ABAQUS is a finite element analysis (FEA) software suite developed by Dassault Systèmes Simulia Corp.
 
@@ -167,7 +168,7 @@ This distribution is then incorporated into the neutronics code, enhancing model
 ![Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24)cm^2 ) [6]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/bb681e5f-3fc4-402f-9edf-00a2fa1170fa)
 
 
-Figure 6. Total and fission microscopic cross sections of U235 in barns ($10^(-24)$cm$^2$ ) [6]
+Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24)cm^2 ) [6]
 
 ## References
 
