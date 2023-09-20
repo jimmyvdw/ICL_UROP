@@ -99,13 +99,17 @@ Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]
 ### Space Nuclear Thermal Rockets (SNTRs)
 
 Space Nuclear Thermal Rockets (SNTRs) represent a cutting-edge spacecraft propulsion system that relies on nuclear reactions to facilitate space travel. First conceptualized in 1946 [2], an SNTR is equipped with a nuclear reactor that generates a substantial amount of heat energy. This intense heat is then harnessed to superheat a chosen propellant, typically hydrogen gas, to extreme temperatures, often surpassing 3000K. Subsequently, the superheated hydrogen is forcefully expelled through a rocket nozzle, producing thrust in accordance with Newton's third law of motion.
+
 What sets SNTRs apart from conventional chemical rockets is their remarkable efficiency, denoted by a high specific impulse (~900s) [3]. This efficiency translates into swifter interplanetary voyages, reduced propellant requirements, cost-effective launches, and reduced cosmic radiation exposure for astronauts. Nevertheless, SNTRs are not without their challenges, notably related to safety and environmental considerations that demand rigorous scrutiny. As ongoing research and development endeavours continue, SNTRs emerge as a leading contender for propelling crewed missions to distant celestial bodies, including Mars, lunar missions, and extended journeys into the depths of the cosmos.
+
 Notably, the development of SNTR technology can trace its roots to the Nuclear Engine for Rocket Vehicle Application (NERVA) program, which spanned from 1955 to 1973 and was conducted by the Los Alamos National Laboratory (LANL). Within the NERVA program, the Small Nuclear Rocket Engine (SNRE) emerged as a significant milestone of which future designs will be benchmarked against. The SNRE, characterized by its compact design, represents a noteworthy advancement in nuclear thermal propulsion. The SNRE uses an expander cycle, with liquid hydrogen drawn from storage tanks at 20K. It's vaporized to 370K at the core inlet, serving as a coolant and reaching around 2700K before expanding through the nozzle for thrust. 
+
 This historical legacy underscores the enduring potential of SNTRs in advancing the frontiers of space exploration given rigorous analysis into the safety of future rocket designs.
 
 ### Nuclear Fuel Design
 
 The SNRE employs a specialized (U, Zr)-C composite fuel, featuring UC particles dispersed in a ZrC matrix, chosen for superior thermal properties and high-temperature resilience in the reactor. ZrC cladding safeguards fuel integrity, preventing radioactive material release, with each fuel element having 19 hydrogen coolant channels for efficient heat transfer and nuclear reaction moderation.
+
 Tie tubes, with further coolant channels and moderating material, are integrated into the SNRE's design for structural support. Elements are arranged in a hexagonal lattice (Figure 2), enabled by their hexagonal shape, optimizing tessellation. The fuel-to-support element ratio is carefully balanced to maximize nuclear reactor efficiency and safety, ensuring reliable space propulsion performance.
 
 ![Figure 2. Schematic illustrating hardware of the Fuel and Support Elements [4]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/78625f79-1ac3-48cc-993d-6a02c6684017)
@@ -122,7 +126,9 @@ Figure 3. 2-Dimensional Periphery Model of the Fuel Assembly
 
 Neutronics involves analysing neutron interactions with materials, and when applied to nuclear reactors, Monte Carlo codes, utilizing statistical random sampling methods, can be employed to simulate these reactors. 
 The SNRE can be accurately modelled using geometry and material properties described in benchmark literature [5], considering various scales of the reactor. This includes the core assembly and lattice arrays (Figure 3), alongside the complete three-dimensional reactor core (Figure 4) with control drums surrounding the core that rotate for reactivity control. For the analysis, a critical parameter of interest is the k-effective, which signifies reactor stability by measuring neutron production compared to losses through absorption or leakage. 
+
 The SNRE is simulated using two different Monte Carlo codes, Serpent2 and OpenMC, and a comparison against literature yields an accuracy of k-effective within 0.017657%, demonstrating significant agreement between the models.
+
 Furthermore, Physics Informed Neural Networks (PINNs) based on the neutron diffusion equation are in development as part of my Final Year Project (FYP) to establish precise models for control drum positions where data was previously not simulated. This enhancement further refines the dataset for comparative analysis of reactor criticality.
 
 ![Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane, (b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/61a68e21-91ad-455f-9028-f9c7feca4362)
