@@ -125,10 +125,11 @@ The SNRE can be accurately modelled using geometry and material properties descr
 The SNRE is simulated using two different Monte Carlo codes, Serpent2 and OpenMC, and a comparison against literature yields an accuracy of k-effective within 0.017657%, demonstrating significant agreement between the models.
 Furthermore, Physics Informed Neural Networks (PINNs) based on the neutron diffusion equation are in development as part of my Final Year Project (FYP) to establish precise models for control drum positions where data was previously not simulated. This enhancement further refines the dataset for comparative analysis of reactor criticality.
 
-![Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane, (b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/0beca2bb-64f6-4be9-9a89-02204cf0dda4)
+![Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane, (b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/61a68e21-91ad-455f-9028-f9c7feca4362)
 
 
-Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane,(b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane
+Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane,
+(b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane
 
 ## Acknowledgements
 
