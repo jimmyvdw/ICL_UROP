@@ -36,36 +36,65 @@ More specifically this UROP programme will focus on the following research tasks
 
     .
     ├── dataLibrary/                              
-    │   ├── cross_sections.xml                     # Source Code for OpenMC Data Library in .xml format
-    │   ├── cross_sections.xsdir                   # Source Code for Serpent Data Library in .xsdir format
-    │   └── dataLibrary.py                         # Source Code for Library Conversion from Serpent Data Library to OpenMC Data Library
-    ├── LaTeX_Files/                                
-    │   ├── ICL_RR_MoD_Meeting_Script/             # Contains Custom Source Files for the LaTeX Script on the ICL-RR-MoD Meeting
-    │   └── SNRE_Configuration/                    # Contains Custom Source Files for the LaTeX Script on the SNRE Configuration
+    │   ├── cross_sections.xml                         # Source Code for OpenMC Data Library in .xml format
+    │   ├── cross_sections.xsdir                       # Source Code for Serpent Data Library in .xsdir format
+    │   └── dataLibrary.py                             # Source Code for Library Conversion from Serpent Data Library to OpenMC Data Library
     ├── SNREModelling_OpenMC/   
-    │   ├── SNRE_2DFuelAssemblyModelling/          
-    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Assembly in 2D
-    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Assembly in 2D
-    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Assembly in 2D
-    |   │   └── SNRE_2DFuelAssemblyModelling.ipynb # Source Code for OpenMC Model of the SNRE Fuel Assembly in 2D
-    │   ├── SNRE_2DFuelPinModelling/               
-    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Pin in 2D
-    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Pin in 2D
-    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Pin in 2D
-    |   │   └── SNRE_2DFuelPinModelling.ipynb      # Source Code for OpenMC Model of the SNRE Fuel Pin in 2D
-    │   └── SNRE_3DFuelPinModelling/               
-    |   │   ├── dataFiles/                         # Contains Custom Data Files for the SNRE Fuel Pin in 3D
-    |   │   ├── pics/                              # Contains Custom Image Files for the SNRE Fuel Pin in 3D
-    |   │   ├── xmlFiles/                          # Contains Custom Source Files for the SNRE Fuel Pin in 3D
-    |   │   └── SNRE_3DFuelPinModelling.ipynb      # Source Code for OpenMC Model of the SNRE Fuel Pin in 3D    
+    │   ├── SNRE_2DFuelAssembly/          
+    |   │   ├── dataFiles/                             # Contains Custom Data Files for the SNRE Fuel Assembly in 2D
+    |   │   ├── pics/                                  # Contains Custom Image Files for the SNRE Fuel Assembly in 2D
+    |   │   ├── xmlFiles/                              # Contains Custom Source Files for the SNRE Fuel Assembly in 2D
+    |   │   └── SNRE_2DFuelAssemblyModelling.ipynb     # Source Code for OpenMC Model of the SNRE Fuel Assembly in 2D
+    │   ├── SNRE_2DFuelPin/               
+    |   │   ├── dataFiles/                             # Contains Custom Data Files for the SNRE Fuel Pin in 2D
+    |   │   ├── pics/                                  # Contains Custom Image Files for the SNRE Fuel Pin in 2D
+    |   │   ├── xmlFiles/                              # Contains Custom Source Files for the SNRE Fuel Pin in 2D
+    |   │   └── SNRE_2DFuelPinModelling.ipynb          # Source Code for OpenMC Model of the SNRE Fuel Pin in 2D
+    │   └── SNRE_2DReactorAssembly/               
+    |   │   ├── dataFiles/                             # Contains Custom Data Files for the SNRE Reactor in 2D
+    |   │   ├── pics/                                  # Contains Custom Image Files for the SNRE Reactor in 2D
+    |   │   ├── xmlFiles/                              # Contains Custom Source Files for the SNRE Reactor in 2D
+    |   │   └── SNRE_3DFuelPinModelling.ipynb          # Source Code for OpenMC Model of the SNRE Reactor in 2D 
+    │   └── SNRE_3DReactorAssembly/               
+    |   │   ├── dataFiles/                             # Contains Custom Data Files for the SNRE Reactor in 3D
+    |   │   ├── pics/                                  # Contains Custom Image Files for the SNRE Reactor in 3D
+    |   │   ├── xmlFiles/                              # Contains Custom Source Files for the SNRE Reactor in 3D
+    |   │   └── SNRE_3DFuelPinModelling.ipynb          # Source Code for OpenMC Model of the SNRE Reactor in 3D 
     ├── SNREModelling_Serpent/   
-    │   ├── SNRE_2DFuelAssemblyModelling/          
-    |   │   ├── SNRE_2DAssemblyPinModelling            # Source Code for Serpent Model of the SNRE Fuel Assembly in 2D  
-    |   │   └── SNRE_2DAssemblyPinModelling_res.m      # Custom Data Files for the SNRE Fuel Assembly in 2D 
-    │   ├── SNRE_2DFuelPinModelling/               
-    |   │   ├── SNRE_2DFuelPinModelling            # Source Code for Serpent Model of the SNRE Fuel Pin in 2D  
-    |   │   └── SNRE_2DFuelPinModelling_res.m      # Custom Data Files for the SNRE Fuel Pin in 2D 
+    │   ├── SNRE_2DFuelAssembly/          
+    |   │   ├── snre_2d                                # Main Source Code for Serpent Model of the SNRE Fuel Assembly in 2D  
+    |   │   ├── snre_2d_core.inp                       # Core Source Code for Serpent Model of the SNRE Fuel Assembly in 2D  
+    |   │   ├── snre_2d_mat.inp                        # Material Source Code for Serpent Model of the SNRE Fuel Assembly in 2D  
+    |   │   └── snre_2d_res.m                          # Custom Data Files for the SNRE Fuel Assembly in 2D  
+    │   ├── SNRE_2DFuelPin/               
+    |   │   ├── snre_2d                                # Main Source Code for Serpent Model of the SNRE Fuel Pin in 2D  
+    |   │   ├── snre_2d_core.inp                       # Core Source Code for Serpent Model of the SNRE Fuel Pin in 2D  
+    |   │   ├── snre_2d_mat.inp                        # Material Source Code for Serpent Model of the SNRE Fuel Pin in 2D  
+    |   │   └── snre_2d_res.m                          # Custom Data Files for the SNRE Fuel Pin in 2D 
+    │   ├── SNRE_2DReactorAssembly/          
+    |   │   ├── snre_2d                                # Main Source Code for Serpent Model of the SNRE Reactor in 2D  
+    |   │   ├── snre_2d_core.inp                       # Core Source Code for Serpent Model of the SNRE Reactor in 2D  
+    |   │   ├── snre_2d_mat.inp                        # Material Source Code for Serpent Model of the SNRE Reactor in 2D  
+    |   │   └── snre_2d_res.m                          # Custom Data Files for the SNRE Reactor in 2D
+    │   └── SNRE_3DReactorAssembly/               
+    |   │   ├── snre_2d                                # Main Source Code for Serpent Model of the SNRE Reactor in 3D  
+    |   │   ├── snre_2d_core.inp                       # Core Source Code for Serpent Model of the SNRE Reactor in 3D  
+    |   │   ├── snre_2d_mat.inp                        # Material Source Code for Serpent Model of the SNRE Reactor in 3D  
+    |   │   └── snre_2d_res.m                          # Custom Data Files for the SNRE Reactor in 3D
+    ├── SNREModelling_Geant4/   
+    │   └── SNRE_3DReactorAssembly/         
+    |   │   ├── build/                                 # Contains Custom Build Files for the SNRE Reactor Assembly in 3D
+    |   |   │   └── SNRE                               # Executable File for the SNRE Reactor Assembly in 3D
+    |   │   ├── include/                               # Contains Custom Header Files (.hh) for the SNRE Reactor Assembly in 3D
+    |   │   ├── src/                                   # Contains Custom Source Files (.cc) for the SNRE Reactor Assembly in 3D
+    |   │   └── SNRE_2DFuelPinModelling.ipynb          # Source Code for OpenMC Model of the SNRE Reactor Assembly in 3D
+    ├── SNREModelling_FLUKA/   
+    ├── SNREModelling_Star-CCM+/ 
+    │   ├── materialProperties/                        # Contains Data Files for the Material Properties of the SNRE Reactor
+    │   └── materialProcessing.py                      # Source Code for Machine Learning Model Fitting and Interpolation of Material Properties
+    ├── SNREModelling_ABAQUS/   
     ├── .gitignore
+    ├── snre_results.xlsx                              # Comparison Results of Monte Carlo Neutronics Codes for SNRE
     └── README.md
 
 ## Prerequisites
