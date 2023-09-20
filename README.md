@@ -92,7 +92,7 @@ Additionally, the following Python packages are required to run the code in this
 ## Results
 
 ![Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/a94a4284-a0d7-4fed-9177-94f6231ee972)
-
+Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]
 
 Space Nuclear Thermal Rockets (SNTRs) represent a cutting-edge spacecraft propulsion system that relies on nuclear reactions to facilitate space travel. First conceptualized in 1946 [2], an SNTR is equipped with a nuclear reactor that generates a substantial amount of heat energy. This intense heat is then harnessed to superheat a chosen propellant, typically hydrogen gas, to extreme temperatures, often surpassing 3000K. Subsequently, the superheated hydrogen is forcefully expelled through a rocket nozzle, producing thrust in accordance with Newton's third law of motion.
 What sets SNTRs apart from conventional chemical rockets is their remarkable efficiency, denoted by a high specific impulse (~900s) [3]. This efficiency translates into swifter interplanetary voyages, reduced propellant requirements, cost-effective launches, and reduced cosmic radiation exposure for astronauts. Nevertheless, SNTRs are not without their challenges, notably related to safety and environmental considerations that demand rigorous scrutiny. As ongoing research and development endeavours continue, SNTRs emerge as a leading contender for propelling crewed missions to distant celestial bodies, including Mars, lunar missions, and extended journeys into the depths of the cosmos.
