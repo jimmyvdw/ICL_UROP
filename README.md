@@ -182,12 +182,9 @@ Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24
 
 [4] Durham, F. (1972), ‘Nuclear Engine Definition Study Preliminary Report – Volume I – Engine Description (U)’, Los Alamos National Laboratory, LA-5044-MS, Vol. I
 
-
 [5] Schnitzler, B., Borowski, S. (2007), ‘Neutronics Models and Analysis of the Small Nuclear Rocket Engine (SNRE)’, American Institute of Aeronautics and Astronautics, AIAA 2007-5618
 
-
 [6] Barroso, D. (2021), ‘Physics of Nuclear Explosives’, Military Institute of Engineering, ISBN 9798703344972
-
 
 [7] Bragg-Sitton, S. (2004), ‘Analysis of Space Reactor System Components: Investigation through Simulation and non-Nuclear Testing’, The University of Michigan, UMI 3138119
 
