@@ -103,6 +103,20 @@ What sets SNTRs apart from conventional chemical rockets is their remarkable eff
 Notably, the development of SNTR technology can trace its roots to the Nuclear Engine for Rocket Vehicle Application (NERVA) program, which spanned from 1955 to 1973 and was conducted by the Los Alamos National Laboratory (LANL). Within the NERVA program, the Small Nuclear Rocket Engine (SNRE) emerged as a significant milestone of which future designs will be benchmarked against. The SNRE, characterized by its compact design, represents a noteworthy advancement in nuclear thermal propulsion. The SNRE uses an expander cycle, with liquid hydrogen drawn from storage tanks at 20K. It's vaporized to 370K at the core inlet, serving as a coolant and reaching around 2700K before expanding through the nozzle for thrust. 
 This historical legacy underscores the enduring potential of SNTRs in advancing the frontiers of space exploration given rigorous analysis into the safety of future rocket designs.
 
+### Nuclear Fuel Design
+
+The SNRE employs a specialized (U, Zr)-C composite fuel, featuring UC particles dispersed in a ZrC matrix, chosen for superior thermal properties and high-temperature resilience in the reactor. ZrC cladding safeguards fuel integrity, preventing radioactive material release, with each fuel element having 19 hydrogen coolant channels for efficient heat transfer and nuclear reaction moderation.
+Tie tubes, with further coolant channels and moderating material, are integrated into the SNRE's design for structural support. Elements are arranged in a hexagonal lattice (Figure 2), enabled by their hexagonal shape, optimizing tessellation. The fuel-to-support element ratio is carefully balanced to maximize nuclear reactor efficiency and safety, ensuring reliable space propulsion performance.
+
+![Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/a94a4284-a0d7-4fed-9177-94f6231ee972)
+
+
+![image](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/1d3f9a6c-3eaf-4e51-918d-d82efa623abb)
+
+
+
+Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]
+
 ## Acknowledgements
 
 * [Dr. Matthew Eaton](https://www.imperial.ac.uk/people/m.eaton) - Imperial College London
