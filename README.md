@@ -11,6 +11,7 @@
  - Repository and Code Structure
  - Prerequisites
  - Results
+ - References
  - Acknowledgements
  - About Author
 
@@ -166,6 +167,16 @@ This distribution is then incorporated into the neutronics code, enhancing model
 
 
 Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24)cm^2 ) [6]
+
+## References
+
+[1] Borowski, S., McCurdy, D., Packard, T. (2009), ‘Nuclear Thermal Rocket/Vehicle Characteristics And Sensitivity Trades For NASA's Mars Design Reference Architecture (DRA) 5.0 Study’, NASA Center for AeroSpace Information (CASI), 203599
+[2] Stewart, M., Schnitzler, B. (2007), ‘Thermal Hydraulics and Structural Analysis of the Small Nuclear Rocket Engine (SNRE) Core’, American Institute of Aeronautics and Astronautics, AIAA 2007-5619
+[3] Venneri, P., Kim, Y. (2015), ‘A Feasibility Study on Low-Enriched Uranium Fuel for Nuclear Thermal Rockets – I: Reactivity potential ’, Progress in Nuclear Energy, 83 (2015) 406 – 418
+[4] Durham, F. (1972), ‘Nuclear Engine Definition Study Preliminary Report – Volume I – Engine Description (U)’, Los Alamos National Laboratory, LA-5044-MS, Vol. I
+[5] Schnitzler, B., Borowski, S. (2007), ‘Neutronics Models and Analysis of the Small Nuclear Rocket Engine (SNRE)’, American Institute of Aeronautics and Astronautics, AIAA 2007-5618
+[6] Barroso, D. (2021), ‘Physics of Nuclear Explosives’, Military Institute of Engineering, ISBN 9798703344972
+[7] Bragg-Sitton, S. (2004), ‘Analysis of Space Reactor System Components: Investigation through Simulation and non-Nuclear Testing’, The University of Michigan, UMI 3138119
 
 ## Acknowledgements
 
