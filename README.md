@@ -143,11 +143,33 @@ Furthermore, Physics Informed Neural Networks (PINNs) based on the neutron diffu
 Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane,
 (b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane
 
+### CFD & FEA Simulations
+
+The spatial fission power density, derived from MC codes, is essential for evaluating heat sources impacting fuel element temperatures. Siemens Star-CCM+ software was employed for Computational Fluid Dynamics (CFD) simulations and heat transfer analyses to study hydrogen gas flow dynamics within SNRE fuel pins' coolant channels and conjugate heat transfer in nuclear fuel assemblies.
+
+
+The outcomes were integrated into ABAQUS for Finite Element Analysis (FEA) of fuel pins, providing critical insights into thermal stresses, particularly in the ZrC cladding—a historical point of concern regarding potential failures. This comprehensive approach enables a thorough understanding of thermal behaviour in the fuel assembly, supporting the development of safer and more efficient space technologies while upholding the legacy of nuclear thermal propulsion's pioneering spirit and meticulous design considerations.
+
+![Figure 5. Mesh Plot for the Fuel Pin with Symmetric Walls in Star-CCM+](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/73b7e96b-fbe2-4a80-b64c-c6d26d26652f)
+
+
+Figure 5. Mesh Plot for the Fuel Pin with Symmetric Walls in Star-CCM+
+
+### Deep Space Atmosphere Neutron Source Modelling
+
+As the Small Nuclear Rocket Engine (SNRE) predominantly functions in deep space, modelling the deep space environment is crucial, especially considering the impact of space particles and radiation. These factors can induce fuel fission, necessitating inclusion in SNRE analysis. To achieve this, the deep space atmosphere's composition [7] is integrated into the SNRE model via bombardment. A model for the SNRE geometry and space atmosphere is in development using Geant4 and FLUKA software, generating a two-dimensional neutron source distribution as part of my FYP.
+
+
+This distribution is then incorporated into the neutronics code, enhancing model realism and accuracy in simulating operating conditions. This meticulous approach aligns with the rigorous analysis and safety commitment that characterize advanced space propulsion systems like SNRE.
+
+![Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24)cm^2 ) [6]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/bb681e5f-3fc4-402f-9edf-00a2fa1170fa)
+
+
+Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24)cm^2 ) [6]
+
 ## Acknowledgements
 
 * [Dr. Matthew Eaton](https://www.imperial.ac.uk/people/m.eaton) - Imperial College London
-* [Serpent](http://montecarlo.vtt.fi/download/Serpent_manual.pdf) - Serpent Documentation
-* [OpenMC](https://docs.openmc.org/en/stable/usersguide/index.html) - OpenMC Documentation
 
 ## About Author
 
