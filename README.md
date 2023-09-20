@@ -87,7 +87,7 @@ More specifically this UROP programme will focus on the following research tasks
     |   |   │   └── SNRE                               # Executable File for the SNRE Reactor Assembly in 3D
     |   │   ├── include/                               # Contains Custom Header Files (.hh) for the SNRE Reactor Assembly in 3D
     |   │   ├── src/                                   # Contains Custom Source Files (.cc) for the SNRE Reactor Assembly in 3D
-    |   │   └── SNRE_2DFuelPinModelling.ipynb          # Source Code for OpenMC Model of the SNRE Reactor Assembly in 3D
+    |   │   └── run.mac                                # Custom Macro File for the Running Conditions of the Geant4 Model of the SNRE Reactor Assembly in 3D
     ├── SNREModelling_FLUKA/   
     ├── SNREModelling_Star-CCM+/ 
     │   ├── materialProperties/                        # Contains Data Files for the Material Properties of the SNRE Reactor
