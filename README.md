@@ -91,25 +91,11 @@ Additionally, the following Python packages are required to run the code in this
 
 ## Results
 
-The results of the OpenMC and Serpent models are presented in the following figures:
-
-### SNRE Fuel Pin
-
-The following figures show the geometry of the SNRE Fuel Pin in 2D:
-
-#### SNRE Fuel Element
-
-![SNRE Fuel Element](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/fuelElementCrossSection.png)
-
-#### SNRE Support Element
-
-![SNRE Support Element](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/supportElementCrossSection.png)
-
-### SNRE Fuel Assembly
-
-The following figures show the geometry of the SNRE Fuel Assembly in 2D:
-
-![SNRE Fuel Assembly](./SNREModelling_OpenMC/SNRE_2DFuelAssemblyModelling/pics/Geometry/coreAssemblyCrossSection.png)
+Space Nuclear Thermal Rockets (SNTRs) represent a cutting-edge spacecraft propulsion system that relies on nuclear reactions to facilitate space travel. First conceptualized in 1946 [2], an SNTR is equipped with a nuclear reactor that generates a substantial amount of heat energy. This intense heat is then harnessed to superheat a chosen propellant, typically hydrogen gas, to extreme temperatures, often surpassing 3000K. Subsequently, the superheated hydrogen is forcefully expelled through a rocket nozzle, producing thrust in accordance with Newton's third law of motion.
+What sets SNTRs apart from conventional chemical rockets is their remarkable efficiency, denoted by a high specific impulse (~900s) [3]. This efficiency translates into swifter interplanetary voyages, reduced propellant requirements, cost-effective launches, and reduced cosmic radiation exposure for astronauts. Nevertheless, SNTRs are not without their challenges, notably related to safety and environmental considerations that demand rigorous scrutiny. As ongoing research and development endeavours continue, SNTRs emerge as a leading contender for propelling crewed missions to distant celestial bodies, including Mars, lunar missions, and extended journeys into the depths of the cosmos.
+Notably, the development of SNTR technology can trace its roots to the Nuclear Engine for Rocket Vehicle Application (NERVA) program, which spanned from 1955 to 1973 and was conducted by the Los Alamos National Laboratory (LANL). Within the NERVA program, the Small Nuclear Rocket Engine (SNRE) emerged as a significant milestone of which future designs will be benchmarked against. The SNRE, characterized by its compact design, represents a noteworthy advancement in nuclear thermal propulsion. The SNRE uses an expander cycle, with liquid hydrogen drawn from storage tanks at 20K. It's vaporized to 370K at the core inlet, serving as a coolant and reaching around 2700K before expanding through the nozzle for thrust. 
+This historical legacy underscores the enduring potential of SNTRs in advancing the frontiers of space exploration given rigorous analysis into the safety of future rocket designs.
+![image](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/e549c306-1ba7-40ee-8cc3-e71d79481a3f)
 
 ## Acknowledgements
 
