@@ -113,6 +113,23 @@ Tie tubes, with further coolant channels and moderating material, are integrated
 
 Figure 2. Schematic illustrating hardware of the Fuel and Support Elements [4]
 
+### Neutronics Modelling
+
+![Figure 3. 2-Dimensional Periphery Model of the Fuel Assembly](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/ad15773a-4caf-40d9-9b5b-8a09bd671764)
+
+
+Figure 3. 2-Dimensional Periphery Model of the Fuel Assembly
+
+Neutronics involves analysing neutron interactions with materials, and when applied to nuclear reactors, Monte Carlo codes, utilizing statistical random sampling methods, can be employed to simulate these reactors. 
+The SNRE can be accurately modelled using geometry and material properties described in benchmark literature [5], considering various scales of the reactor. This includes the core assembly and lattice arrays (Figure 3), alongside the complete three-dimensional reactor core (Figure 4) with control drums surrounding the core that rotate for reactivity control. For the analysis, a critical parameter of interest is the k-effective, which signifies reactor stability by measuring neutron production compared to losses through absorption or leakage. 
+The SNRE is simulated using two different Monte Carlo codes, Serpent2 and OpenMC, and a comparison against literature yields an accuracy of k-effective within 0.017657%, demonstrating significant agreement between the models.
+Furthermore, Physics Informed Neural Networks (PINNs) based on the neutron diffusion equation are in development as part of my Final Year Project (FYP) to establish precise models for control drum positions where data was previously not simulated. This enhancement further refines the dataset for comparative analysis of reactor criticality.
+
+![Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane, (b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/0beca2bb-64f6-4be9-9a89-02204cf0dda4)
+
+
+Figure 4. (a) 3-Dimensional Model of the Reactor Core Assembly in x-y plane,(b) Plot of the Neutron Flux in the Reactor Core Assembly in the x-y centre plane
+
 ## Acknowledgements
 
 * [Dr. Matthew Eaton](https://www.imperial.ac.uk/people/m.eaton) - Imperial College London
