@@ -108,14 +108,10 @@ This historical legacy underscores the enduring potential of SNTRs in advancing 
 The SNRE employs a specialized (U, Zr)-C composite fuel, featuring UC particles dispersed in a ZrC matrix, chosen for superior thermal properties and high-temperature resilience in the reactor. ZrC cladding safeguards fuel integrity, preventing radioactive material release, with each fuel element having 19 hydrogen coolant channels for efficient heat transfer and nuclear reaction moderation.
 Tie tubes, with further coolant channels and moderating material, are integrated into the SNRE's design for structural support. Elements are arranged in a hexagonal lattice (Figure 2), enabled by their hexagonal shape, optimizing tessellation. The fuel-to-support element ratio is carefully balanced to maximize nuclear reactor efficiency and safety, ensuring reliable space propulsion performance.
 
-![Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/a94a4284-a0d7-4fed-9177-94f6231ee972)
+![Figure 2. Schematic illustrating hardware of the Fuel and Support Elements [4]](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/78625f79-1ac3-48cc-993d-6a02c6684017)
 
 
-![image](https://github.com/jimmyvdw/ICL_UROP/assets/104867016/1d3f9a6c-3eaf-4e51-918d-d82efa623abb)
-
-
-
-Figure 1. Artist’s depiction of a Space Nuclear Thermal Rocket (SNTR) [1]
+Figure 2. Schematic illustrating hardware of the Fuel and Support Elements [4]
 
 ## Acknowledgements
 
