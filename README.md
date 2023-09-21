@@ -12,6 +12,8 @@
 - [Prerequisites](#prerequisites)
 - [Results](#results)
 - [References](#references)
+- [Project Review](#project-review)
+- [My UROP Perspective](#my-urop-perspective)
 - [Acknowledgements](#acknowledgements)
 - [About Author](#about-author)
 
@@ -214,6 +216,49 @@ Figure 6. Total and fission microscopic cross sections of U235 in barns (10^(-24
 [6] Barroso, D. (2021), ‘Physics of Nuclear Explosives’, Military Institute of Engineering, ISBN 9798703344972
 
 [7] Bragg-Sitton, S. (2004), ‘Analysis of Space Reactor System Components: Investigation through Simulation and non-Nuclear Testing’, The University of Michigan, UMI 3138119
+
+## Project Review
+
+### Brief Objectives of the Project
+
+* **Develop Neutronics Models:** Create spatially dependent neutronics models of Small Nuclear Rocket Engine (SNRE) nuclear fuel assemblies using the SERPENT and OpenMC Monte Carlo code to accurately compute nuclear heat sources required for subsequent simulations.
+* **Conduct CFD and Heat Transfer Simulations:** Employ Star-CCM+ CFD software to develop comprehensive Computational Fluid Dynamics (CFD) and heat transfer models of SNRE nuclear fuel assemblies to understand hydrogen gas flow dynamics and heat distribution within the fuel pins.
+* **Perform Finite Element Analysis (FEA):** Utilise the ABAQUS finite element (FE) thermal stress code to analyse thermal stresses, especially in the ZrC cladding, to assess potential failure points and enhance safety considerations.
+* **Apply Machine Learning Techniques:** Implement GPU-enabled neural network machine learning algorithms to create surrogate models of the multi-physics simulations.
+* **Model Deep Space Neutron Source:** Model the deep space environment, including space particles and radiation, using Geant4 and FLUKA software, and integrate this data into the neutronics code to enhance the realism and accuracy of SNRE simulations.
+
+These objectives align with a larger-scale research effort to advance the understanding and safety of space nuclear thermal rockets, particularly focusing on the SNRE design. The research contributes to the field of space exploration and nuclear propulsion by addressing critical issues related to the performance and safety of SNTRs, potentially paving the way for future crewed deep space missions. Additionally, the research conducted will be used to write a journal paper in conjunction with a current PhD student on the analysis of various scales of the reactor core under various source conditions including the deep space atmosphere where the SNRE would operate.
+
+### Impacts, Outputs or Successes (including personal ones)
+
+* **Research Contribution:** The project has contributed to advancing knowledge in the field of nuclear propulsion, specifically in the context of SNTR technology. By developing mechanistic, coupled, Multiphysics models, we are addressing critical challenges related to the safety and performance of nuclear fuel in deep space missions. 
+* **Hands-on Experience:** As a researcher on this project, I have gained invaluable hands-on experience in conducting complex simulations and analyses. This practical experience has deepened my understanding of nuclear technology, computational tools, and engineering principles, setting a strong foundation for my future career in the field.
+* **Collaborative Skills:** Collaborating with other researchers and PhD students on this project has enhanced my soft skills, including teamwork and communication. Working alongside talented individuals in the field has exposed me to diverse perspectives and approaches to problem-solving.*
+* **Career Direction:** Participating in this research project has provided clarity regarding my career path. It has helped me weigh the possibilities of pursuing further research or transitioning into industry after graduation. The experience gained here will play a pivotal role in making informed decisions about my future.
+* **Publication Prospects:** The research conducted as part of this project is expected to culminate in a journal paper. Collaborating with a current PhD student on this publication is a significant achievement.
+
+Overall, my involvement in this research project has been a transformative experience, both personally and professionally. It has allowed me to pursue my lifelong passion for space exploration and nuclear technology while making meaningful contributions to a cutting-edge field of study.
+
+## My UROP Perspective
+
+My journey into the world of research through the Undergraduate Research Opportunities Programme (UROP) at Imperial College London has been nothing short of transformative. As a lifelong enthusiast of space exploration and nuclear technology, the opportunity to engage in a research project in the field of nuclear propulsion felt like a dream come true.
+
+My fascination with space exploration and nuclear technology has been a constant driving force in my life. It was during my early years that I was captivated by the idea of humans venturing beyond our planet and the immense potential of harnessing nuclear energy. This passion led me to pursue studies in the field of nuclear engineering.
+
+My motivation for participating in UROP was multifaceted. Firstly, it offered a unique opportunity to gain practical experience and develop a deeper understanding of the complexities and challenges associated with nuclear propulsion. It was a chance to bridge the gap between theory and real-world applications, a journey I was eager to embark upon.
+
+Moreover, this research project aligned perfectly with my long-term career aspirations. It provided a platform to explore various aspects of nuclear engineering, from reactor physics to thermal hydraulic analysis. This exposure would be invaluable in making informed decisions about my future specialization and career path.
+
+Preparation for this research project involved familiarizing myself with relevant software tools and literature in the field of nuclear propulsion. It was crucial to develop a foundational understanding of the subject matter before diving into the research. Additionally, I honed my critical thinking and problem-solving skills, preparing to tackle complex challenges.
+
+One of the most enriching aspects of this experience has been the opportunity to collaborate with talented researchers and PhD students. This has not only expanded my technical skills but also enhanced my ability to work in a team and communicate effectively within a research setting.
+
+My UROP experience has already left a profound impact on both my personal and professional growth. It has solidified my passion for space exploration and nuclear technology while equipping me with invaluable skills and experiences.
+
+Looking ahead, this research project will significantly influence the remainder of my course and my future career pathway. It has clarified my aspirations and deepened my commitment to contributing to the advancement of space exploration and nuclear propulsion technology. Whether I choose to continue in research, academia, or venture into the industry, the foundation I have built during this UROP experience will undoubtedly serve as a guiding light.
+
+In closing, my UROP journey has been a remarkable adventure into the world of space propulsion and nuclear engineering. It has reinforced my belief in the power of research and innovation to shape the future of space exploration. I am immensely grateful for the opportunity to be part of this project and excited about the contributions we will make to this fascinating field.
+
 
 ## Acknowledgements
 
