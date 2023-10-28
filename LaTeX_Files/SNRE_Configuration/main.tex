@@ -1,4 +1,4 @@
-\documentclass[8pt,a5paper]{article}
+\documentclass[8pt,a4paper]{article}
 
 \usepackage[english]{babel}
 \usepackage[margin=0.6in]{geometry}
@@ -19,6 +19,8 @@
 
 \begin{document}
 
+\scriptsize
+
 \pagenumbering{arabic}
 
 \centering
@@ -29,48 +31,67 @@
 
 \subsection*{SNRE Overview}
 
-\begin{table}[h!]
-    \label{table: Table 1}
-    \centering
-    \small
-    \caption{Core Overview of the SNRE.}
-    \begin{tabular}{|l|l|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
+    \caption{Core Overview of the SNRE} \\
+    
+    \hline \multicolumn{2}{|l|}{{Core Overview}} \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \multicolumn{2}{|l|}{{Core Overview}} \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
     \hline
-    \multicolumn{2}{|l|}{\textbf{Core Overview}}\\\hline
+    \endlastfoot
     Uranium Enrichment & $93.0\%$\\
     Total Number of Fuel Elements & $564$\\
     Total Number of Support Elements & $241$\\
-    Mass of U235 & \SI{59.6}{kg}\\\hline
-    \end{tabular}
-\end{table}
+    Mass of U235 & \SI{59.6}{kg}\\
+\end{longtable}
 
 \subsection*{Geometry Data}
 
-\begin{table}[h!]
-    \label{table: Table 2}
-    \centering
-    \small
-    \caption{Geometry Data of the SNRE Fuel Element}
-    \begin{tabular}{|l|l|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
+    \caption{Geometry Data of the SNRE Fuel Element} \\
+    
+    \hline \multicolumn{2}{|l|}{{Fuel Element Dimensions}} \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \multicolumn{2}{|l|}{{Fuel Element Dimensions}} \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
     \hline
-    \multicolumn{2}{|l|}{\textbf{Fuel Element Dimensions}}\\\hline
+    \endlastfoot
     Flat-to-flat width & \SI{1.905}{cm}\\
     Number of Coolant Channels & $19$\\
     Borehole Diameter & \SI{0.25654}{cm}\\
     Borehole Pitch & \SI{0.40894}{cm}\\
     Internal Coating Thickness & \SI{100}{\mu m}\\
-    External Coating Thickness & \SI{50}{\mu m}\\\hline
-    \end{tabular}
-\end{table}
+    External Coating Thickness & \SI{50}{\mu m}\\
+\end{longtable}
 
-\begin{table}[h!]
-    \label{table: Table 3}
-    \centering
-    \small
-    \caption{Geometry Data of the SNRE Support Element}
-    \begin{tabular}{|l|l|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
+    \caption{Geometry Data of the SNRE Support Element} \\
+    
+    \hline \multicolumn{2}{|l|}{{Support Element Dimensions}} \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \multicolumn{2}{|l|}{{Support Element Dimensions}} \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
     \hline
-    \multicolumn{2}{|l|}{\textbf{Support Element Dimensions}}\\\hline
+    \endlastfoot
     Flat-to-flat width & \SI{1.89484}{cm}\\
     Central Coolant Channel Radius & \SI{0.20955}{cm}\\
     Inner Tie Tube Radius & \SI{0.26035}{cm}\\
@@ -81,9 +102,8 @@
     Mid Gap (Stagnant Hydrogen) Radius & \SI{0.70485}{cm}\\
     Insulator Radius & \SI{0.80645}{cm}\\
     Outer Gap (Stagnant Hydrogen) Radius & \SI{0.81280}{cm}\\
-    External Coating Thickness & \SI{50.8}{\mu m}\\\hline
-    \end{tabular}
-\end{table}
+    External Coating Thickness & \SI{50.8}{\mu m}\\
+\end{longtable}
 
 \justifying
 
@@ -95,14 +115,21 @@ control plate of absorptive material, which covers a 120 degree segment of the c
 
 \raggedright
 
-\begin{table}[h!]
-    \label{table: Table 4}
-    \centering
-    \small
-    \caption{Geometry Data of the SNRE Core Exterior}
-    \begin{tabular}{|m{0.2\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|}
+\begin{longtable}{|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|m{0.15\linewidth}|}
+    \caption{Geometry Data of the SNRE Core Exterior} \\
+    
+    \hline Region & Inner Radius & Outer Radius& Aft Boundary& Fwd Boundary\\\hline
+    \endfirsthead
+    
+    
+    \hline Region & Inner Radius & Outer Radius& Aft Boundary& Fwd Boundary\\\hline
+    \endhead
+    
+    \hline \multicolumn{5}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
     \hline
-    Region & Inner Radius & Outer Radius& Aft Boundary& Fwd Boundary\\\hline
+    \endlastfoot
     Core & - & \SI{29.5275}{cm} & \SI{0.0}{cm} & \SI{89.0}{cm} \\
     Gap & \SI{29.5275}{cm} & \SI{29.8450}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
     Stainless-Steel Wrapper & \SI{29.8450}{cm} & \SI{30.1625}{cm} &  \SI{0.0}{cm} & \SI{89.0}{cm} \\
@@ -120,27 +147,35 @@ control plate of absorptive material, which covers a 120 degree segment of the c
     Upper Internal Shield & - & \SI{33.6550}{cm} & \SI{121.766}{cm} & \SI{129.640}{cm} \\
     Control Drum Actuator Zone & \SI{33.6550}{cm} & \SI{43.3870}{cm} & \SI{89.1}{cm} & \SI{111.860}{cm} \\
     Brim Shield & \SI{33.6550}{cm} & \SI{48.3870}{cm} & \SI{111.860}{cm} & \SI{119.734}{cm} \\
-    Hydrogen Plenum & \SI{33.6550}{cm} & \SI{48.3870}{cm} & \SI{119.734}{cm} & \SI{129.640}{cm} \\\hline
-    \end{tabular}
-\end{table}
+    Hydrogen Plenum & \SI{33.6550}{cm} & \SI{48.3870}{cm} & \SI{119.734}{cm} & \SI{129.640}{cm} \\
+\end{longtable}
 
-\begin{table}[h!]
-    \label{table: Table 5}
-    \centering
-    \small
-    \caption{Geometry Data of the SNRE Control Drum}
-    \begin{tabular}{|l|l|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
+    \caption{Geometry Data of the SNRE Control Drum} \\
+    
+    \hline \multicolumn{2}{|l|}{{Control Drum Dimensions}} \\ \hline 
+    \endfirsthead
+    
+    
+    \hline \multicolumn{2}{|l|}{{Control Drum Dimensions}} \\ \hline 
+    \endhead
+    
+    \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+    \endfoot
+    
     \hline
-    \multicolumn{2}{|l|}{\textbf{Control Drum Dimensions}}\\\hline
+    \endlastfoot
     Control Drum Radius & \SI{6.0325}{cm}\\
     Control Plate Inner Radius & \SI{5.3975}{cm}\\
-    Control Plate Thickness & \SI{0.635}{cm}\\\hline
-    \end{tabular}
-\end{table}
+    Control Plate Thickness & \SI{0.6350}{cm}\\
+    Coolant Channel Radius & \SI{6.3500}{cm}\\
+\end{longtable}
+
+\pagebreak
 
 \subsection*{Material Data}
 
-\begin{longtable}{|m{0.3\linewidth}|m{0.45\linewidth}|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
     \caption{Material Data of the SNRE Fuel Element} \\
     
     \hline \textbf{Material} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
@@ -156,9 +191,8 @@ control plate of absorptive material, which covers a 120 degree segment of the c
     \hline
     \endlastfoot
     \multicolumn{2}{|c|}{\textbf{Fuel Element Coolant}}\\\hline
-    Density & \SI{2.7002E-03}{} \\
-    $^{1}$H & \SI{9.9977E-01}{} \\
-    $^{2}$H & \SI{2.2980E-04}{} \\\hline
+    Density & \SI{5.4004E-03}{} \\
+    $^{2}$H & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Fuel}}\\\hline
     Density & \SI{3.6400E+00}{} \\
     $^{\text{nat}}$C & \SI{3.3791E-01}{} \\
@@ -179,7 +213,7 @@ control plate of absorptive material, which covers a 120 degree segment of the c
     $^{96}$Zr & \SI{2.6016E-02}{} \\\hline
 \end{longtable}
 
-\begin{longtable}{|m{0.3\linewidth}|m{0.45\linewidth}|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
     \caption{Material Data of the SNRE Support Element} \\
     
     \hline \textbf{Material} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
@@ -195,13 +229,12 @@ control plate of absorptive material, which covers a 120 degree segment of the c
     \hline
     \endlastfoot
     \multicolumn{2}{|c|}{\textbf{Support Element Coolant}}\\\hline
-    Density & \SI{2.7002E-03}{} \\
-    $^{1}$H & \SI{9.9977E-01}{} \\
-    $^{2}$H & \SI{2.2980E-04}{} \\\hline
+    Density & \SI{5.4004E-03}{} \\
+    $^{2}$H & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Stagnant Hydrogen}}\\\hline
     Density & \SI{1.9127E-03}{} \\
     $^{1}$H & \SI{9.9977E-01}{} \\
-    $^{2}$H & \SI{2.2980E-04}{} \\\pagebreak
+    $^{2}$H & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Inconel 718}}\\\hline
     Density & \SI{8.1900E+00}{} \\
     $^{10}$B & \SI{9.2155E-06}{} \\
@@ -275,9 +308,9 @@ control plate of absorptive material, which covers a 120 degree segment of the c
 \end{longtable}
 
 Note that the insulator region is porous ZrC at 50\% porosity. The support
-element contains regions of stagnant hydrogen.\pagebreak
+element contains regions of stagnant hydrogen.
 
-\begin{longtable}{|m{0.3\linewidth}|m{0.45\linewidth}|}
+\begin{longtable}{|m{0.3\linewidth}|m{0.2\linewidth}|}
     \caption{Material Data of the SNRE Core Exterior} \\
     
     \hline \textbf{Material} & \textbf{Mass Density $(\SI{}{g/cm3})$ and} w/o \\ \hline 
@@ -327,7 +360,7 @@ element contains regions of stagnant hydrogen.\pagebreak
     $^{9}$Be & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Reflector}}\\\hline
     Density & \SI{1.8480E+00}{} \\
-    $^{9}$Be & \SI{1.0000E+00}{} \\\pagebreak
+    $^{9}$Be & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Control Drum}}\\\hline
     Density & \SI{1.8480E+00}{} \\
     $^{9}$Be & \SI{1.0000E+00}{} \\\hline
@@ -339,6 +372,9 @@ element contains regions of stagnant hydrogen.\pagebreak
     $^{178}$Hf & \SI{2.7100E-01}{} \\
     $^{179}$Hf & \SI{1.3700E-01}{} \\
     $^{180}$Hf & \SI{3.5200E-01}{} \\\hline
+    \multicolumn{2}{|c|}{\textbf{Reactor Housing Coolant}}\\\hline
+    Density & \SI{5.4004E-03}{} \\
+    $^{2}$H & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Lower Tie Tube Plenum}}\\\hline
     Density & \SI{3.9080E-01}{} \\
     $^{1}$H & \SI{7.4207E-03}{} \\
@@ -375,9 +411,8 @@ element contains regions of stagnant hydrogen.\pagebreak
     $^{94}$Zr & \SI{1.7435E-01}{} \\
     $^{96}$Zr & \SI{2.8688E-02}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Hydrogen Plenum}}\\\hline
-    Density & \SI{2.7002E-03}{} \\
-    $^{1}$H & \SI{9.9977E-01}{} \\
-    $^{2}$H & \SI{2.2980E-04}{} \\\hline
+    Density & \SI{5.4004E-03}{} \\
+    $^{2}$H & \SI{1.0000E+00}{} \\\hline
     \multicolumn{2}{|c|}{\textbf{Upper Internal Shield}}\\\hline
     Density & \SI{4.4519E+00}{} \\
     $^{1}$H & \SI{2.0526E-02}{} \\
